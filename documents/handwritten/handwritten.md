@@ -5984,7 +5984,8 @@ class BST {
 
 ```
 
-![](../assets/handwritten/fc61065b2fb36d9c.png) ![](../assets/handwritten/d28e693ef5b13fdf.png)
+![](../assets/handwritten/fc61065b2fb36d9c.png) 
+![](../assets/handwritten/d28e693ef5b13fdf.png)
 
 ```
 // 测试
