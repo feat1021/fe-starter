@@ -1,0 +1,11 @@
+{
+  "scripts": {
+    "start": "vuepress dev documents",
+    "build": "vuepress build documents",
+    "commit": "sh commit.sh"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "vuepress": "^2.0.0-beta.49"
+  }
+}
