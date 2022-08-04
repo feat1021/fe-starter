@@ -11,7 +11,7 @@ export default defineUserConfig({
     ],
     sidebar: [
       {
-        text: "Basic",
+        text: "基础 Basic",
         collapsible: true,
         children: [
           "/basic/HTTP & HTML.md",
@@ -27,7 +27,7 @@ export default defineUserConfig({
         ],
       },
       {
-        text: "Advanced",
+        text: "进阶 Advanced",
         collapsible: true,
         children: [
           "/advanced/JS基础.md",
@@ -44,7 +44,7 @@ export default defineUserConfig({
         ],
       },
       {
-        text: "Selected",
+        text: "精选 Selected",
         collapsible: true,
         children: [
           "/selected/HTML模块.md",
@@ -68,11 +68,23 @@ export default defineUserConfig({
         ],
       },
       {
-        text: "Frequency",
+        text: "高频 Frequency",
         collapsible: true,
         children: [
           "/frequency/高频考点.md",
           "/frequency/性能优化.md",
+        ],
+      },
+      {
+        text: "原理 Principle",
+        collapsible: true,
+        children: [
+          "/principle/React.md",
+          "/principle/Vue.md",
+          "/principle/Webpack.md",
+          "/principle/Node.md",
+          "/principle/JavaScript.md",
+          "/principle/综合.md",
         ],
       },
     ],
