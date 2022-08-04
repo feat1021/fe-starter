@@ -1,7 +1,7 @@
 import { defineUserConfig, defaultTheme } from "vuepress";
 
 export default defineUserConfig({
-  base: "/fe-starter/",
+  base: "/",
   lang: "zh-CN",
   title: "Frontend Starter",
   description: "",
