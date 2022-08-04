@@ -38,7 +38,7 @@ Vue模块
 | beforeDestroy | 组件销毁前调用 |
 | destroyed | 组件销毁后调用 |
 
-![](https://s.poetries.work/gitee/2020/07/61.png)
+![](../assets/selected/61.png)
 
 > 由于Vue会在初始化实例时对属性执行`getter/setter`转化，所以属性必须在`data`对象上存在才能让`Vue`将它转换为响应式的。Vue提供了`$set`方法用来触发视图更新
 
@@ -121,18 +121,18 @@ DOM 渲染在哪个周期中就已经完成？
 -   在`main.js`引入`store`，注入。新建了一个目录`store`，`... export`
 -   场景有：单页应用中，组件之间的状态、音乐播放、登录状态、加入购物车
 
-![](https://s.poetries.work/gitee/2020/07/62.png)
+![](../assets/selected/62.png)
 
 -   `state`：`Vuex` 使用单一状态树,即每个应用将仅仅包含一个`store` 实例，但单一状态树和模块化并不冲突。存放的数据状态，不可以直接修改里面的数据。
 -   `mutations`：`mutations`定义的方法动态修改`Vuex` 的 `store` 中的状态或数据
 -   `getters`：类似`vue`的计算属性，主要用来过滤一些数据。
 -   `action`：`actions`可以理解为通过将`mutations`里面处里数据的方法变成可异步的处理数据的方法，简单的说就是异步操作数据。`view` 层通过 `store.dispath` 来分发 `action`
 
-![](https://s.poetries.work/gitee/2020/07/63.png)
+![](../assets/selected/63.png)
 
 > `modules`：项目特别复杂的时候，可以让每一个模块拥有自己的`state`、`mutation`、`action`、`getters`，使得结构非常清晰，方便管理
 
-![](https://s.poetries.work/gitee/2020/07/64.png)
+![](../assets/selected/64.png)
 
 7 v-if 和 v-show 区别
 ---------------------------------------------------------------------------------------------------------------------------------
@@ -582,7 +582,7 @@ Vue与React的区别
 
 > vuex的使用借助官方提供的一张图来说明:
 
-![](https://s.poetries.work/gitee/2020/07/65.png)
+![](../assets/selected/65.png)
 
 > Vuex有5种属性: 分别是 state、getter、mutation、action、module;
 
@@ -677,7 +677,7 @@ data.name = '渣渣辉';
 
 > Vue 采用数据劫持结合发布---订阅模式的方法，通过 Object.defineProperty() 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。
 
-![](https://s.poetries.work/gitee/20190922/vue.jpeg)
+![](../assets/selected/vue.jpeg)
 
 -   `Observer` 遍历数据对象，给所有属性加上 `setter` 和 `getter`，监听数据的变化
 -   `compile` 解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图
@@ -817,7 +817,7 @@ export default {
 
 > `Computed`本质是一个具备缓存的`watcher`，依赖的属性发生变化就会更新视图。 适用于计算比较消耗性能的计算场景。当表达式过于复杂时，在模板中放入过多逻辑会让模板难以维护，可以将复杂的逻辑放入计算属性中处理
 
-![](https://s.poetries.work/gitee/2020/01/25.png)
+![](../assets/selected/25.png)
 
 ```
 <template>{{fullName}}</template>
@@ -841,7 +841,7 @@ export default {
 
 > `Watch`没有缓存性，更多的是观察的作用，可以监听某些数据执行回调。当我们需要深度监听对象中的属性时，可以打开`deep：true`选项，这样便会对对象中的每一项进行监听。这样会带来性能问题，优化的话可以使用字符串形式监听，如果没有写到组件中，不要忘记使用`unWatch`手动注销
 
-![](https://s.poetries.work/gitee/2020/01/26.png)
+![](../assets/selected/26.png)
 
 ```
 <template>{{fullName}}</template>
@@ -990,7 +990,7 @@ Object.defineProperty的优势如下:
 41 你是如何理解Vue的响应式系统的?
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-![](https://s.poetries.work/gitee/2020/07/66.png)
+![](../assets/selected/66.png)
 
 响应式系统简述:
 
@@ -1029,7 +1029,7 @@ Object.defineProperty的优势如下:
 
 > 准确: 如果不加key,那么vue会选择复用节点(Vue的就地更新策略),导致之前节点的状态被保留下来,会产生一系列的bug. 快速: key的唯一性可以被Map数据结构充分利用,相比于遍历查找的时间复杂度`O(n)`,`Map`的时间复杂度仅仅为`O(1)`.
 
-![](https://s.poetries.work/gitee/2020/07/67.png)
+![](../assets/selected/67.png)
 
 45 vue 项目性能优化
 -----------------------------------------------------------------------------------------------------------------------------------------------
@@ -1599,7 +1599,8 @@ diff算法的优化策略：四种命中查找，四个指针
 
 -   `Composition API`出现就是为了解决Options API导致相同功能代码分散的现象
 
-![](https://s.poetries.work/images/202203211356041.png) ![](https://s.poetries.work/images/202203211356611.png)
+![](../assets/selected/202203211356041.png)
+![](../assets/selected/202203211356611.png)
 
 compositon api提供了以下几个函数：
 
@@ -1655,14 +1656,14 @@ Vuex 是一个专为 Vue.js 应用程序开发的状态管理模式。
 -   view，以声明方式将 state 映射到视图；
 -   actions，响应在 view 上的用户输入导致的状态变化。下图单向数据流示意图：
 
-![image-20210220193818922](https://s.poetries.work/images/image-20210220193818922.png)
+![](../assets/selected/image-20210220193818922.png)
 
 vuex，多组件共享状态，因-单向数据流简洁性很容易被破坏：
 
 -   多个视图依赖于同一状态。
 -   来自不同视图的行为需要变更同一状态
 
-![](https://s.poetries.work/images/202203211356439.png)
+![](../assets/selected/202203211356439.png)
 
 85 如何从真实DOM到虚拟DOM
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------

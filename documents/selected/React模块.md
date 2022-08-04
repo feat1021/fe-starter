@@ -413,7 +413,7 @@ Redux设计理念
 
 > `Redux`是将整个应用状态存储到一个地方上称为`store`,里面保存着一个状态树`store tree`,组件可以派发(`dispatch`)行为(`action`)给`store`,而不是直接通知其他组件，组件内部通过订阅`store`中的状态`state`来刷新自己的视图
 
-![](https://s.poetries.work/gitee/2020/07/68.png)
+![](../assets/selected/68.png)
 
 Redux三大原则
 
@@ -1102,7 +1102,7 @@ function withTiming(Comp) {
 38 react diff 算法
 -----------------------------------------------------------------------------------------------------------------------
 
-![](https://s.poetries.work/images/20210307225249.png)
+![](../assets/selected/20210307225249.png)
 
 diff算法的作用
 
@@ -1145,13 +1145,13 @@ tree diff
 -   对树分层比较，两棵树 只对同一层次节点 进行比较。如果该节点不存在时，则该节点及其子节点会被完全删除，不会再进一步比较。
 -   只需遍历一次，就能完成整棵DOM树的比较。
 
-![image-20210307224725566](https://s.poetries.work/images/image-20210307224725566.png)
+![](../assets/selected/image-20210307224725566.png)
 
 那么问题来了，如果DOM节点出现了跨层级操作,diff会咋办呢？
 
 > 答：diff只简单考虑同层级的节点位置变换，如果是跨层级的话，只有创建节点和删除节点的操作。
 
-![image-20210307224829092](https://s.poetries.work/images/image-20210307224829092.png)
+![](../assets/selected/image-20210307224829092.png)
 
 > 如上图所示，以A为根节点的整棵树会被重新创建，而不是移动，因此 官方建议不要进行DOM节点跨层级操作，可以通过CSS隐藏、显示节点，而不是真正地移除、添加DOM节点
 
@@ -1311,13 +1311,13 @@ React 最核心的方法，class 组件中必须实现的方法。
 
 这样只需要对树进行一次遍历，便能完成整个 DOM 树的比较。
 
-![image-20210302195610674](https://s.poetries.work/images/image-20210302195610674.png)
+![](../assets/selected/image-20210302195610674.png)
 
 这就意味着，如果 dom 节点发生了跨层级移动，react 会删除旧的节点，生成新的节点，而不会复用。
 
 1.  component diff：如果不是同一类型的组件，会删除旧的组件，创建新的组件
 
-![image-20210302195654736](https://s.poetries.work/images/image-20210302195654736.png)
+![](../assets/selected/image-20210302195654736.png)
 
 1.  element diff：对于同一层级的一组子节点，需要通过唯一 id 进行来区分
 
@@ -1513,7 +1513,7 @@ componentDidMount() {
 
 以 setState 为例，在 react 内部，每个组件(Fiber)的 hooks 都是以链表的形式存在 memoizeState 属性中
 
-![image-20210302195353472](https://s.poetries.work/images/image-20210302195353472.png)
+![](../assets/selected/image-20210302195353472.png)
 
 > update 阶段，每次调用 setState，链表就会执行 next 向后移动一步。如果将 setState 写在条件判断中，假设条件判断不成立，没有执行里面的 setState 方法，会导致接下来所有的 setState 的取值出现偏移，从而导致异常发生。
 
@@ -1631,7 +1631,7 @@ export default class CallingLazyComponents extends React.Component {
 64 为什么 React 元素有一个 $$typeof 属性
 -----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-![image-20210302200213923](https://s.poetries.work/images/image-20210302200213923.png)
+![](../assets/selected/image-20210302200213923.png)
 
 > 目的是为了防止 XSS 攻击。因为 Synbol 无法被序列化，所以 React 可以通过有没有 $$typeof 属性来断出当前的 element 对象是从数据库来的还是自己生成的。
 

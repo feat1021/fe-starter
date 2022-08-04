@@ -201,7 +201,7 @@ if(3n){//条件为true
 
 caniuse的结果:
 
-![](https://s.poetries.work/images/20210309092826.png)
+![](../assets/selected/20210309092826.png)
 
 其实现在的兼容性并不怎么好，只有chrome67、firefox、Opera这些主流实现，要正式成为规范，其实还有很长的路要走。
 
@@ -411,7 +411,7 @@ function type(obj) {
 -   转换为数字
 -   转换为字符串
 
-![类型转换](https://s.poetries.work/gitee/2020/02/2.png)
+![](../assets/selected/20220804152909.png)
 
 ### 3.2 转Boolean
 
@@ -762,20 +762,20 @@ const prototype = Object.prototype
 
 ```
 
-![](https://s.poetries.work/gitee/2020/09/112.png)
+![](../assets/selected/112.png)
 
 ### 5.2 原型对象和构造函数有何关系
 
 -   在JavaScript中，每当定义一个函数数据类型(普通函数、类)时候，都会天生自带一个`prototype`属性，这个属性指向函数的原型对象。
 -   当函数经过`new`调用时，这个函数就成为了构造函数，返回一个全新的实例对象，这个实例对象有一个`__proto__`属性，指向构造函数的原型对象。
 
-![](https://s.poetries.work/images/20210309102015.png)
+![](../assets/selected/20210309102015.png)
 
 ### 5.3 能不能描述一下原型链
 
 > JavaScript对象通过`__proto__` 指向父类对象，直到指向`Object`对象为止，这样就形成了一个原型指向的链条, 即原型链
 
-![](https://s.poetries.work/images/20210309102100.png)
+![](../assets/selected/20210309102100.png)
 
 -   对象的 `hasOwnProperty()` 来检查对象自身中是否含有该属性
 -   使用 `in` 检查对象中是否含有某个属性时，如果对象中没有但是原型链中有，也会返回 `true`
@@ -827,7 +827,7 @@ console.log(s1.play, s2.play);
 
 可以看到控制台：
 
-![](https://s.poetries.work/images/20210309103243.png)
+![](../assets/selected/20210309103243.png)
 
 > 明明我只改变了s1的play属性，为什么s2也跟着变了呢？很简单，因为两个实例使用的是同一个原型对象。
 
@@ -854,7 +854,7 @@ console.log(s1.play, s2.play);
 
 可以看到控制台：
 
-![](https://s.poetries.work/images/20210309103312.png)
+![](../assets/selected/20210309103312.png)
 
 > 之前的问题都得以解决。但是这里又徒增了一个新问题，那就是`Parent3`的构造函数会多执行了一次（`Child3.prototype = new Parent3();`）。这是我们不愿看到的。那么如何解决这个问题？
 
@@ -882,7 +882,7 @@ console.log(s3)
 
 ```
 
-![](https://s.poetries.work/images/20210309103358.png)
+![](../assets/selected/20210309103358.png)
 
 > 子类实例的构造函数是Parent4，显然这是不对的，应该是Child4。
 
@@ -1153,7 +1153,7 @@ foo.bind(a)() // => 'poetries'
 
 > 首先，`new` 的方式优先级最高，接下来是 `bind` 这些函数，然后是 `obj.foo()` 这种调用方式，最后是 `foo` 这种调用方式，同时，箭头函数的 `this` 一旦被绑定，就不会再被任何方式所改变。
 
-![image.png](https://s.poetries.work/gitee/2020/07/2.png)
+![](../assets/selected/20220804152910.png)
 
 总结
 
@@ -1228,7 +1228,7 @@ func(1);
 
 图示如下:
 
-![](https://s.poetries.work/images/20210309114827.png)
+![](../assets/selected/20210309114827.png)
 
 -   因此你也看到了，如果采用栈来存储相对基本类型更加复杂的对象数据，那么切换上下文的开销将变得巨大！
 -   不过堆内存虽然空间大，能存放大量的数据，但与此同时垃圾内存的回收会带来更大的开销
@@ -1463,7 +1463,7 @@ require与import的区别
     -   带async关键字的函数会返回一个promise对象，如果里面没有await，执行起来等同于普通函数；如果没有await，async函数并没有很厉害是不是
     -   await 关键字要在 async 关键字函数的内部，await 写在外面会报错；await如同他的语意，就是在等待，等待右侧的表达式完成。此时的await会让出线程，阻塞async内后续的代码，先去执行async外的代码。等外面的同步代码执行完毕，才会执行里面的后续代码。就算await的不是promise对象，是一个同步函数，也会等这样操作
 
-![](https://pic2.zhimg.com/80/v2-9540801abdfb378ae5120b0df9a96059_1440w.jpg)
+![](../assets/selected/v2-9540801abdfb378ae5120b0df9a96059_1440w.jpg)
 
 根据图片显示我们来整理一下流程：
 
@@ -2115,7 +2115,7 @@ let obj = {
 
 ```
 
-![](https://s.poetries.work/images/20210320102041.png) ![](https://s.poetries.work/images/20210320103701.png)
+![](../assets/selected/20210320103701.png)
 
 ```
 for(let key in obj) {
