@@ -7,6 +7,7 @@ export default defineUserConfig({
   description: "",
   theme: defaultTheme({
     notFound: ["404 Not Found"],
+    contributors: false,
     navbar: [
     ],
     sidebar: [
