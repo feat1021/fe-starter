@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>编程题 | Frontend Starter</title><meta name="description" content="">
+    <link rel="modulepreload" href="/assets/app.12353158.js"><link rel="modulepreload" href="/assets/编程题.html.5478af99.js"><link rel="modulepreload" href="/assets/编程题.html.cbfc1c8c.js"><link rel="prefetch" href="/assets/index.html.ee998a26.js"><link rel="prefetch" href="/assets/CSS.html.c64e9431.js"><link rel="prefetch" href="/assets/HTML.html.a70e4433.js"><link rel="prefetch" href="/assets/HTTP.html.6dbdd949.js"><link rel="prefetch" href="/assets/JS基础.html.0a913d15.js"><link rel="prefetch" href="/assets/React.html.6802a56c.js"><link rel="prefetch" href="/assets/Vue.html.a81339b7.js"><link rel="prefetch" href="/assets/工程化.html.0c152696.js"><link rel="prefetch" href="/assets/性能.html.090fde92.js"><link rel="prefetch" href="/assets/框架通识.html.1a3f58ab.js"><link rel="prefetch" href="/assets/浏览器.html.2ec19a51.js"><link rel="prefetch" href="/assets/设计模式.html.5761cd54.js"><link rel="prefetch" href="/assets/Bootstrap.html.86ad9734.js"><link rel="prefetch" href="/assets/CSS.html.e3ee6176.js"><link rel="prefetch" href="/assets/HTTP _ HTML.html.6603dd61.js"><link rel="prefetch" href="/assets/JavaScript.html.14aca0a4.js"><link rel="prefetch" href="/assets/Webpack.html.f773c5e1.js"><link rel="prefetch" href="/assets/jQuery.html.c3b9972e.js"><link rel="prefetch" href="/assets/其他.html.c716f6ee.js"><link rel="prefetch" href="/assets/微信小程序.html.0335a142.js"><link rel="prefetch" href="/assets/综合.html.5dfe757e.js"><link rel="prefetch" href="/assets/性能优化.html.30c3f1c5.js"><link rel="prefetch" href="/assets/高频考点.html.2ee4efd2.js"><link rel="prefetch" href="/assets/handwritten.html.879fcb5e.js"><link rel="prefetch" href="/assets/JavaScript.html.bcb5a0d9.js"><link rel="prefetch" href="/assets/Node.html.be9ed4e1.js"><link rel="prefetch" href="/assets/React.html.36beeb6b.js"><link rel="prefetch" href="/assets/Vue.html.b739e835.js"><link rel="prefetch" href="/assets/Webpack.html.b34fb870.js"><link rel="prefetch" href="/assets/综合.html.30e0bc70.js"><link rel="prefetch" href="/assets/CSS模块.html.99bd45d7.js"><link rel="prefetch" href="/assets/ES6模块.html.0f2bfddb.js"><link rel="prefetch" href="/assets/HTML模块.html.4fb65265.js"><link rel="prefetch" href="/assets/HTTP模块.html.b4ce19f7.js"><link rel="prefetch" href="/assets/JS模块.html.015ff251.js"><link rel="prefetch" href="/assets/Node模块.html.b1985276.js"><link rel="prefetch" href="/assets/React模块.html.f53e1f03.js"><link rel="prefetch" href="/assets/Vue模块.html.785747a6.js"><link rel="prefetch" href="/assets/前端安全模块.html.f0f98ff3.js"><link rel="prefetch" href="/assets/前端工程相关.html.183e2c9f.js"><link rel="prefetch" href="/assets/小程序模块.html.f7ab4d91.js"><link rel="prefetch" href="/assets/常用设计模式.html.03f9722f.js"><link rel="prefetch" href="/assets/性能优化相关.html.12e8a2e3.js"><link rel="prefetch" href="/assets/排序算法.html.40481e91.js"><link rel="prefetch" href="/assets/框架通识.html.c3c3096b.js"><link rel="prefetch" href="/assets/浏览器模块.html.24652566.js"><link rel="prefetch" href="/assets/移动多端开发.html.8636371c.js"><link rel="prefetch" href="/assets/计算机通识.html.728b7ceb.js"><link rel="prefetch" href="/assets/404.html.93c18560.js"><link rel="prefetch" href="/assets/index.html.60500264.js"><link rel="prefetch" href="/assets/CSS.html.02fa634c.js"><link rel="prefetch" href="/assets/HTML.html.3a31cd64.js"><link rel="prefetch" href="/assets/HTTP.html.a1df6d3a.js"><link rel="prefetch" href="/assets/JS基础.html.b88ab559.js"><link rel="prefetch" href="/assets/React.html.4ec983c7.js"><link rel="prefetch" href="/assets/Vue.html.5c58cab9.js"><link rel="prefetch" href="/assets/工程化.html.863e35db.js"><link rel="prefetch" href="/assets/性能.html.470e0a6f.js"><link rel="prefetch" href="/assets/框架通识.html.32d2fbab.js"><link rel="prefetch" href="/assets/浏览器.html.8279ebd9.js"><link rel="prefetch" href="/assets/设计模式.html.6afe6cf3.js"><link rel="prefetch" href="/assets/Bootstrap.html.2cc414a0.js"><link rel="prefetch" href="/assets/CSS.html.5d66e791.js"><link rel="prefetch" href="/assets/HTTP _ HTML.html.bbea8927.js"><link rel="prefetch" href="/assets/JavaScript.html.07acfd24.js"><link rel="prefetch" href="/assets/Webpack.html.a1c5dce1.js"><link rel="prefetch" href="/assets/jQuery.html.4e2f3899.js"><link rel="prefetch" href="/assets/其他.html.929587e1.js"><link rel="prefetch" href="/assets/微信小程序.html.69cc86fd.js"><link rel="prefetch" href="/assets/综合.html.1c892aa5.js"><link rel="prefetch" href="/assets/性能优化.html.337c4654.js"><link rel="prefetch" href="/assets/高频考点.html.8772c401.js"><link rel="prefetch" href="/assets/handwritten.html.0f0ee7e3.js"><link rel="prefetch" href="/assets/JavaScript.html.5dd72bd0.js"><link rel="prefetch" href="/assets/Node.html.7eac5124.js"><link rel="prefetch" href="/assets/React.html.d8ccb952.js"><link rel="prefetch" href="/assets/Vue.html.47efbab1.js"><link rel="prefetch" href="/assets/Webpack.html.793df544.js"><link rel="prefetch" href="/assets/综合.html.ff78888d.js"><link rel="prefetch" href="/assets/CSS模块.html.bcc3cfc7.js"><link rel="prefetch" href="/assets/ES6模块.html.2ea3507a.js"><link rel="prefetch" href="/assets/HTML模块.html.6b729342.js"><link rel="prefetch" href="/assets/HTTP模块.html.2c6adffa.js"><link rel="prefetch" href="/assets/JS模块.html.28259fe6.js"><link rel="prefetch" href="/assets/Node模块.html.c36cd1fb.js"><link rel="prefetch" href="/assets/React模块.html.b09a5954.js"><link rel="prefetch" href="/assets/Vue模块.html.a27ab950.js"><link rel="prefetch" href="/assets/前端安全模块.html.e3aebe2f.js"><link rel="prefetch" href="/assets/前端工程相关.html.281b6ffe.js"><link rel="prefetch" href="/assets/小程序模块.html.493268db.js"><link rel="prefetch" href="/assets/常用设计模式.html.a600f326.js"><link rel="prefetch" href="/assets/性能优化相关.html.aff23982.js"><link rel="prefetch" href="/assets/排序算法.html.361967d5.js"><link rel="prefetch" href="/assets/框架通识.html.7719e539.js"><link rel="prefetch" href="/assets/浏览器模块.html.ac4e495d.js"><link rel="prefetch" href="/assets/移动多端开发.html.d8fc5993.js"><link rel="prefetch" href="/assets/计算机通识.html.0e8ab127.js"><link rel="prefetch" href="/assets/404.html.232c3875.js"><link rel="prefetch" href="/assets/404.176778df.js"><link rel="prefetch" href="/assets/Layout.ac3a6e88.js">
+    <link rel="stylesheet" href="/assets/style.20e644be.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Frontend Starter</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading active collapsible">基础 Basic <span class="down arrow"></span></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/basic/HTTP%20&amp;%20HTML.html" class="sidebar-item" aria-label="HTML、HTTP、Web"><!--[--><!--]--> HTML、HTTP、Web <!--[--><!--]--></a><!----></li><li><a href="/basic/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/basic/JavaScript.html" class="sidebar-item" aria-label="JavaScript"><!--[--><!--]--> JavaScript <!--[--><!--]--></a><!----></li><li><a href="/basic/jQuery.html" class="sidebar-item" aria-label="jQuery"><!--[--><!--]--> jQuery <!--[--><!--]--></a><!----></li><li><a href="/basic/Bootstrap.html" class="sidebar-item" aria-label="Bootstrap"><!--[--><!--]--> Bootstrap <!--[--><!--]--></a><!----></li><li><a href="/basic/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/basic/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html" class="sidebar-item" aria-label="微信小程序"><!--[--><!--]--> 微信小程序 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="编程题"><!--[--><!--]--> 编程题 <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_1-写一个通用的事件侦听器函数" class="router-link-active router-link-exact-active sidebar-item" aria-label="1 写一个通用的事件侦听器函数"><!--[--><!--]--> 1 写一个通用的事件侦听器函数 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_2-如何判断一个对象是否为数组" class="router-link-active router-link-exact-active sidebar-item" aria-label="2 如何判断一个对象是否为数组"><!--[--><!--]--> 2 如何判断一个对象是否为数组 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_3-冒泡排序" class="router-link-active router-link-exact-active sidebar-item" aria-label="3 冒泡排序"><!--[--><!--]--> 3 冒泡排序 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_4-快速排序" class="router-link-active router-link-exact-active sidebar-item" aria-label="4 快速排序"><!--[--><!--]--> 4 快速排序 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_5-编写一个方法-求一个字符串的字节长度" class="router-link-active router-link-exact-active sidebar-item" aria-label="5 编写一个方法 求一个字符串的字节长度"><!--[--><!--]--> 5 编写一个方法 求一个字符串的字节长度 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_6-bind的用法-以及如何实现bind的函数和需要注意的点" class="router-link-active router-link-exact-active sidebar-item" aria-label="6 bind的用法，以及如何实现bind的函数和需要注意的点"><!--[--><!--]--> 6 bind的用法，以及如何实现bind的函数和需要注意的点 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_7-实现一个函数clone" class="router-link-active router-link-exact-active sidebar-item" aria-label="7 实现一个函数clone"><!--[--><!--]--> 7 实现一个函数clone <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_8-下面这个ul-如何点击每一列的时候alert其index" class="router-link-active router-link-exact-active sidebar-item" aria-label="8 下面这个ul，如何点击每一列的时候alert其index"><!--[--><!--]--> 8 下面这个ul，如何点击每一列的时候alert其index <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_9-定义一个log方法-让它可以代理console-log的方法" class="router-link-active router-link-exact-active sidebar-item" aria-label="9 定义一个log方法，让它可以代理console.log的方法"><!--[--><!--]--> 9 定义一个log方法，让它可以代理console.log的方法 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_10-输出今天的日期" class="router-link-active router-link-exact-active sidebar-item" aria-label="10 输出今天的日期"><!--[--><!--]--> 10 输出今天的日期 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_11-用js实现随机选取10-100之间的10个数字-存入一个数组-并排序" class="router-link-active router-link-exact-active sidebar-item" aria-label="11 用js实现随机选取10--100之间的10个数字，存入一个数组，并排序"><!--[--><!--]--> 11 用js实现随机选取10--100之间的10个数字，存入一个数组，并排序 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_12-写一段js程序提取url中的各个get参数" class="router-link-active router-link-exact-active sidebar-item" aria-label="12 写一段JS程序提取URL中的各个GET参数"><!--[--><!--]--> 12 写一段JS程序提取URL中的各个GET参数 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_13-写一个function-清除字符串前后的空格" class="router-link-active router-link-exact-active sidebar-item" aria-label="13 写一个function，清除字符串前后的空格"><!--[--><!--]--> 13 写一个function，清除字符串前后的空格 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_14-实现每隔一秒钟输出1-2-3-数字" class="router-link-active router-link-exact-active sidebar-item" aria-label="14 实现每隔一秒钟输出1,2,3...数字"><!--[--><!--]--> 14 实现每隔一秒钟输出1,2,3...数字 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_15-实现一个函数-判断输入是不是回文字符串" class="router-link-active router-link-exact-active sidebar-item" aria-label="15 实现一个函数，判断输入是不是回文字符串"><!--[--><!--]--> 15 实现一个函数，判断输入是不是回文字符串 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_16、数组扁平化处理" class="router-link-active router-link-exact-active sidebar-item" aria-label="16、数组扁平化处理"><!--[--><!--]--> 16、数组扁平化处理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html#_17、实现一个函数clone-可以对javascript中的5种主要的数据类型-包括number、string、object、array、boolean-进行值复制" class="router-link-active router-link-exact-active sidebar-item" aria-label="17、实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制"><!--[--><!--]--> 17、实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/basic/%E5%85%B6%E4%BB%96.html" class="sidebar-item" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E7%BB%BC%E5%90%88.html" class="sidebar-item" aria-label="综合"><!--[--><!--]--> 综合 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">进阶 Advanced <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/advanced/JS%E5%9F%BA%E7%A1%80.html" class="sidebar-item" aria-label="JS基础"><!--[--><!--]--> JS基础 <!--[--><!--]--></a><!----></li><li><a href="/advanced/HTML.html" class="sidebar-item" aria-label="HTML"><!--[--><!--]--> HTML <!--[--><!--]--></a><!----></li><li><a href="/advanced/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%B5%8F%E8%A7%88%E5%99%A8.html" class="sidebar-item" aria-label="浏览器"><!--[--><!--]--> 浏览器 <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a><!----></li><li><a href="/advanced/Vue.html" class="sidebar-item" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a><!----></li><li><a href="/advanced/React.html" class="sidebar-item" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%80%A7%E8%83%BD.html" class="sidebar-item" aria-label="性能"><!--[--><!--]--> 性能 <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E5%B7%A5%E7%A8%8B%E5%8C%96.html" class="sidebar-item" aria-label="工程化"><!--[--><!--]--> 工程化 <!--[--><!--]--></a><!----></li><li><a href="/advanced/HTTP.html" class="sidebar-item" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="sidebar-item" aria-label="设计模式"><!--[--><!--]--> 设计模式 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">精选 Selected <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/selected/HTML%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="HTML模块"><!--[--><!--]--> HTML模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/CSS%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="CSS模块"><!--[--><!--]--> CSS模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/JS%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="JS模块"><!--[--><!--]--> JS模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/ES6%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="ES6模块"><!--[--><!--]--> ES6模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="浏览器模块"><!--[--><!--]--> 浏览器模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/React%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="React模块"><!--[--><!--]--> React模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/Vue%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="Vue模块"><!--[--><!--]--> Vue模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/Node%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="Node模块"><!--[--><!--]--> Node模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E7%9B%B8%E5%85%B3.html" class="sidebar-item" aria-label="前端工程相关"><!--[--><!--]--> 前端工程相关 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E7%A7%BB%E5%8A%A8%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91.html" class="sidebar-item" aria-label="移动多端开发"><!--[--><!--]--> 移动多端开发 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="小程序模块"><!--[--><!--]--> 小程序模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="前端安全模块"><!--[--><!--]--> 前端安全模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9B%B8%E5%85%B3.html" class="sidebar-item" aria-label="性能优化相关"><!--[--><!--]--> 性能优化相关 <!--[--><!--]--></a><!----></li><li><a href="/selected/HTTP%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="HTTP模块"><!--[--><!--]--> HTTP模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="sidebar-item" aria-label="常用设计模式"><!--[--><!--]--> 常用设计模式 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html" class="sidebar-item" aria-label="排序算法"><!--[--><!--]--> 排序算法 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="计算机通识"><!--[--><!--]--> 计算机通识 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">高频 Frequency <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/frequency/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html" class="sidebar-item" aria-label="高频考点"><!--[--><!--]--> 高频考点 <!--[--><!--]--></a><!----></li><li><a href="/frequency/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="sidebar-item" aria-label="性能优化"><!--[--><!--]--> 性能优化 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">原理 Principle <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/principle/React.html" class="sidebar-item" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a><!----></li><li><a href="/principle/Vue.html" class="sidebar-item" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a><!----></li><li><a href="/principle/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/principle/Node.html" class="sidebar-item" aria-label="Node"><!--[--><!--]--> Node <!--[--><!--]--></a><!----></li><li><a href="/principle/JavaScript.html" class="sidebar-item" aria-label="JavaScript"><!--[--><!--]--> JavaScript <!--[--><!--]--></a><!----></li><li><a href="/principle/%E7%BB%BC%E5%90%88.html" class="sidebar-item" aria-label="综合"><!--[--><!--]--> 综合 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="编程题" tabindex="-1"><a class="header-anchor" href="#编程题" aria-hidden="true">#</a> 编程题</h1><hr><h3 id="_1-写一个通用的事件侦听器函数" tabindex="-1"><a class="header-anchor" href="#_1-写一个通用的事件侦听器函数" aria-hidden="true">#</a> 1 写一个通用的事件侦听器函数</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code> // event(事件)工具集，来源：github.com/markyun
+    markyun.Event = {
+
+        // 视能力分别使用dom0||dom2||IE方式 来绑定事件
+        // 参数： 操作的元素,事件名称 ,事件处理程序
+        addEvent : function(element, type, handler) {
+            if (element.addEventListener) {
+                //事件类型、需要执行的函数、是否捕捉
+                element.addEventListener(type, handler, false);
+            } else if (element.attachEvent) {
+                element.attachEvent(&#39;on&#39; + type, function() {
+                    handler.call(element);
+                });
+            } else {
+                element[&#39;on&#39; + type] = handler;
+            }
+        },
+        // 移除事件
+        removeEvent : function(element, type, handler) {
+            if (element.removeEventListener) {
+                element.removeEventListener(type, handler, false);
+            } else if (element.datachEvent) {
+                element.detachEvent(&#39;on&#39; + type, handler);
+            } else {
+                element[&#39;on&#39; + type] = null;
+            }
+        },
+        // 阻止事件 (主要是事件冒泡，因为IE不支持事件捕获)
+        stopPropagation : function(ev) {
+            if (ev.stopPropagation) {
+                ev.stopPropagation();
+            } else {
+                ev.cancelBubble = true;
+            }
+        },
+        // 取消事件的默认行为
+        preventDefault : function(event) {
+            if (event.preventDefault) {
+                event.preventDefault();
+            } else {
+                event.returnValue = false;
+            }
+        },
+        // 获取事件目标
+        getTarget : function(event) {
+            return event.target || event.srcElement;
+        }
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-如何判断一个对象是否为数组" tabindex="-1"><a class="header-anchor" href="#_2-如何判断一个对象是否为数组" aria-hidden="true">#</a> 2 如何判断一个对象是否为数组</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function isArray(arg) {
+    if (typeof arg === &#39;object&#39;) {
+        return Object.prototype.toString.call(arg) === &#39;[object Array]&#39;;
+    }
+    return false;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-冒泡排序" tabindex="-1"><a class="header-anchor" href="#_3-冒泡排序" aria-hidden="true">#</a> 3 冒泡排序</h3><ul><li>每次比较相邻的两个数，如果后一个比前一个小，换位置</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var arr = [3, 1, 4, 6, 5, 7, 2];
+
+function bubbleSort(arr) {
+for (var i = 0; i &lt; arr.length - 1; i++) {
+    for(var j = 0; j &lt; arr.length - i - 1; j++) {
+        if(arr[j + 1] &lt; arr[j]) {
+            var temp;
+            temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }
+    }
+}
+return arr;
+}
+
+console.log(bubbleSort(arr));
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-快速排序" tabindex="-1"><a class="header-anchor" href="#_4-快速排序" aria-hidden="true">#</a> 4 快速排序</h3><blockquote><p>采用二分法，取出中间数，数组每次和中间数比较，小的放到左边，大的放到右边</p></blockquote><p>快速排序的思想很简单，整个排序过程只需要三步：</p><ul><li>（1）在数据集之中，找一个基准点</li><li>（2）建立两个数组，分别存储左边和右边的数组</li><li>（3）利用递归进行下次比较</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var arr = [3, 1, 4, 6, 5, 7, 2];
+
+function quickSort(arr) {
+    if(arr.length == 0) {
+        return [];    // 返回空数组
+    }
+
+    var cIndex = Math.floor(arr.length / 2);
+    var c = arr.splice(cIndex, 1);
+    var l = [];
+    var r = [];
+
+    for (var i = 0; i &lt; arr.length; i++) {
+        if(arr[i] &lt; c) {
+            l.push(arr[i]);
+        } else {
+            r.push(arr[i]);
+        }
+    }
+
+    return quickSort(l).concat(c, quickSort(r));
+}
+
+console.log(quickSort(arr));
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-编写一个方法-求一个字符串的字节长度" tabindex="-1"><a class="header-anchor" href="#_5-编写一个方法-求一个字符串的字节长度" aria-hidden="true">#</a> 5 编写一个方法 求一个字符串的字节长度</h3><ul><li>假设：一个英文字符占用一个字节，一个中文字符占用两个字节</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function GetBytes(str){
+
+        var len = str.length;
+
+        var bytes = len;
+
+        for(var i=0; i&lt;len; i++){
+
+            if (str.charCodeAt(i) &gt; 255) bytes++;
+
+        }
+
+        return bytes;
+
+    }
+
+alert(GetBytes(&quot;你好,as&quot;));
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6-bind的用法-以及如何实现bind的函数和需要注意的点" tabindex="-1"><a class="header-anchor" href="#_6-bind的用法-以及如何实现bind的函数和需要注意的点" aria-hidden="true">#</a> 6 bind的用法，以及如何实现bind的函数和需要注意的点</h3><ul><li><code>bind</code>的作用与<code>call</code>和<code>apply</code>相同，区别是<code>call</code>和<code>apply</code>是立即调用函数，而<code>bind</code>是返回了一个函数，需要调用的时候再执行。 一个简单的<code>bind</code>函数实现如下</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Function.prototype.bind = function(ctx) {
+    var fn = this;
+    return function() {
+        fn.apply(ctx, arguments);
+    };
+};
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-实现一个函数clone" tabindex="-1"><a class="header-anchor" href="#_7-实现一个函数clone" aria-hidden="true">#</a> 7 实现一个函数clone</h3><blockquote><p>可以对<code>JavaScript</code>中的5种主要的数据类型,包括<code>Number</code>、<code>String</code>、<code>Object</code>、<code>Array</code>、<code>Boolean</code>）进行值复</p></blockquote><ul><li>考察点1：对于基本数据类型和引用数据类型在内存中存放的是值还是指针这一区别是否清楚</li><li>考察点2：是否知道如何判断一个变量是什么类型的</li><li>考察点3：递归算法的设计</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 方法一：
+  Object.prototype.clone = function(){
+          var o = this.constructor === Array ? [] : {};
+          for(var e in this){
+                  o[e] = typeof this[e] === &quot;object&quot; ? this[e].clone() : this[e];
+          }
+          return o;
+  }
+
+ //方法二：
+   /**
+      * 克隆一个对象
+      * @param Obj
+      * @returns
+      */
+     function clone(Obj) {
+         var buf;
+         if (Obj instanceof Array) {
+             buf = [];                    //创建一个空的数组
+             var i = Obj.length;
+             while (i--) {
+                 buf[i] = clone(Obj[i]);
+             }
+             return buf;
+         }else if (Obj instanceof Object){
+             buf = {};                   //创建一个空对象
+             for (var k in Obj) {           //为这个对象添加新的属性
+                 buf[k] = clone(Obj[k]);
+             }
+             return buf;
+         }else{                         //普通变量直接赋值
+             return Obj;
+         }
+     }
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_8-下面这个ul-如何点击每一列的时候alert其index" tabindex="-1"><a class="header-anchor" href="#_8-下面这个ul-如何点击每一列的时候alert其index" aria-hidden="true">#</a> 8 下面这个ul，如何点击每一列的时候alert其index</h3><blockquote><p>考察闭包</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code> &lt;ul id=&quot;test&quot;&gt;
+     &lt;li&gt;这是第一条&lt;/li&gt;
+     &lt;li&gt;这是第二条&lt;/li&gt;
+     &lt;li&gt;这是第三条&lt;/li&gt;
+ &lt;/ul&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>  // 方法一：
+  var lis=document.getElementById(&#39;2223&#39;).getElementsByTagName(&#39;li&#39;);
+  for(var i=0;i&lt;3;i++)
+  {
+      lis[i].index=i;
+      lis[i].onclick=function(){
+          alert(this.index);
+  }
+
+ //方法二：
+ var lis=document.getElementById(&#39;2223&#39;).getElementsByTagName(&#39;li&#39;);
+ for(var i=0;i&lt;3;i++)
+ {
+     lis[i].index=i;
+     lis[i].onclick=(function(a){
+         return function() {
+             alert(a);
+         }
+     })(i);
+ }
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_9-定义一个log方法-让它可以代理console-log的方法" tabindex="-1"><a class="header-anchor" href="#_9-定义一个log方法-让它可以代理console-log的方法" aria-hidden="true">#</a> 9 定义一个log方法，让它可以代理console.log的方法</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>可行的方法一：
+
+ function log(msg)　{
+     console.log(msg);
+ }
+
+ log(&quot;hello world!&quot;) // hello world!
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>如果要传入多个参数呢？显然上面的方法不能满足要求，所以更好的方法是：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code> function log(){
+     console.log.apply(console, arguments);
+ };
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_10-输出今天的日期" tabindex="-1"><a class="header-anchor" href="#_10-输出今天的日期" aria-hidden="true">#</a> 10 输出今天的日期</h3><blockquote><p>以<code>YYYY-MM-DD</code>的方式，比如今天是2014年9月26日，则输出2014-09-26</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var d = new Date();
+  // 获取年，getFullYear()返回4位的数字
+  var year = d.getFullYear();
+  // 获取月，月份比较特殊，0是1月，11是12月
+  var month = d.getMonth() + 1;
+  // 变成两位
+  month = month &lt; 10 ? &#39;0&#39; + month : month;
+  // 获取日
+  var day = d.getDate();
+ day = day &lt; 10 ? &#39;0&#39; + day : day;
+ alert(year + &#39;-&#39; + month + &#39;-&#39; + day);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_11-用js实现随机选取10-100之间的10个数字-存入一个数组-并排序" tabindex="-1"><a class="header-anchor" href="#_11-用js实现随机选取10-100之间的10个数字-存入一个数组-并排序" aria-hidden="true">#</a> 11 用js实现随机选取10--100之间的10个数字，存入一个数组，并排序</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var iArray = [];
+ funtion getRandom(istart, iend){
+         var iChoice = istart - iend +1;
+         return Math.floor(Math.random() * iChoice + istart;
+ }
+ for(var i=0; i&lt;10; i++){
+         iArray.push(getRandom(10,100));
+ }
+ iArray.sort();
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_12-写一段js程序提取url中的各个get参数" tabindex="-1"><a class="header-anchor" href="#_12-写一段js程序提取url中的各个get参数" aria-hidden="true">#</a> 12 写一段JS程序提取URL中的各个GET参数</h3><blockquote><p>有这样一个<code>URL</code>：<code>http://item.taobao.com/item.htm?a=1&amp;b=2&amp;c=&amp;d=xxx&amp;e</code>，请写一段JS程序提取URL中的各个GET参数(参数名和参数个数不确定)，将其按<code>key-value</code>形式返回到一个<code>json</code>结构中，如<code>{a:&#39;1&#39;, b:&#39;2&#39;, c:&#39;&#39;, d:&#39;xxx&#39;, e:undefined}</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function serilizeUrl(url) {
+     var result = {};
+     url = url.split(&quot;?&quot;)[1];
+     var map = url.split(&quot;&amp;&quot;);
+     for(var i = 0, len = map.length; i &lt; len; i++) {
+         result[map[i].split(&quot;=&quot;)[0]] = map[i].split(&quot;=&quot;)[1];
+     }
+     return result;
+ }
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_13-写一个function-清除字符串前后的空格" tabindex="-1"><a class="header-anchor" href="#_13-写一个function-清除字符串前后的空格" aria-hidden="true">#</a> 13 写一个<code>function</code>，清除字符串前后的空格</h3><blockquote><p>使用自带接口<code>trim()</code>，考虑兼容性：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>if (!String.prototype.trim) {
+    String.prototype.trim = function() {
+        return this.replace(/^\s+/, &quot;&quot;).replace(/\s+$/,&quot;&quot;);
+    }
+}
+
+ // test the function
+ var str = &quot; \t\n test string &quot;.trim();
+ alert(str == &quot;test string&quot;); // alerts &quot;true&quot;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_14-实现每隔一秒钟输出1-2-3-数字" tabindex="-1"><a class="header-anchor" href="#_14-实现每隔一秒钟输出1-2-3-数字" aria-hidden="true">#</a> 14 实现每隔一秒钟输出1,2,3...数字</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>for(var i=0;i&lt;10;i++){
+  (function(j){
+     setTimeout(function(){
+       console.log(j+1)
+     },j*1000)
+   })(i)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_15-实现一个函数-判断输入是不是回文字符串" tabindex="-1"><a class="header-anchor" href="#_15-实现一个函数-判断输入是不是回文字符串" aria-hidden="true">#</a> 15 实现一个函数，判断输入是不是回文字符串</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function run(input) {
+  if (typeof input !== &#39;string&#39;) return false;
+  return input.split(&#39;&#39;).reverse().join(&#39;&#39;) === input;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_16、数组扁平化处理" tabindex="-1"><a class="header-anchor" href="#_16、数组扁平化处理" aria-hidden="true">#</a> 16、数组扁平化处理</h3><blockquote><p>实现一个<code>flatten</code>方法，使得输入一个数组，该数组里面的元素也可以是数组，该方法会输出一个扁平化的数组</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function flatten(arr){
+    return arr.reduce(function(prev,item){
+        return prev.concat(Array.isArray(item)?flatten(item):item);
+    },[]);
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_17、实现一个函数clone-可以对javascript中的5种主要的数据类型-包括number、string、object、array、boolean-进行值复制" tabindex="-1"><a class="header-anchor" href="#_17、实现一个函数clone-可以对javascript中的5种主要的数据类型-包括number、string、object、array、boolean-进行值复制" aria-hidden="true">#</a> 17、实现一个函数clone，可以对JavaScript中的5种主要的数据类型（包括Number、String、Object、Array、Boolean）进行值复制</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Object.prototype.clone = function(){
+    var o = this.constructor === Array ? [] : {};
+    for(var e in this){
+      o[e] = typeof this[e] === &quot;object&quot; ? this[e].clone() : this[e];
+    }
+    return o;
+  }
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/basic/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html" class="" aria-label="微信小程序"><!--[--><!--]--> 微信小程序 <!--[--><!--]--></a></span><span class="next"><a href="/basic/%E5%85%B6%E4%BB%96.html" class="" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.12353158.js" defer></script>
+  </body>
+</html>

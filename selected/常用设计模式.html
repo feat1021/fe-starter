@@ -1,0 +1,2019 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>常用设计模式 | Frontend Starter</title><meta name="description" content="">
+    <link rel="modulepreload" href="/assets/app.12353158.js"><link rel="modulepreload" href="/assets/常用设计模式.html.a600f326.js"><link rel="modulepreload" href="/assets/常用设计模式.html.03f9722f.js"><link rel="prefetch" href="/assets/index.html.ee998a26.js"><link rel="prefetch" href="/assets/CSS.html.c64e9431.js"><link rel="prefetch" href="/assets/HTML.html.a70e4433.js"><link rel="prefetch" href="/assets/HTTP.html.6dbdd949.js"><link rel="prefetch" href="/assets/JS基础.html.0a913d15.js"><link rel="prefetch" href="/assets/React.html.6802a56c.js"><link rel="prefetch" href="/assets/Vue.html.a81339b7.js"><link rel="prefetch" href="/assets/工程化.html.0c152696.js"><link rel="prefetch" href="/assets/性能.html.090fde92.js"><link rel="prefetch" href="/assets/框架通识.html.1a3f58ab.js"><link rel="prefetch" href="/assets/浏览器.html.2ec19a51.js"><link rel="prefetch" href="/assets/设计模式.html.5761cd54.js"><link rel="prefetch" href="/assets/Bootstrap.html.86ad9734.js"><link rel="prefetch" href="/assets/CSS.html.e3ee6176.js"><link rel="prefetch" href="/assets/HTTP _ HTML.html.6603dd61.js"><link rel="prefetch" href="/assets/JavaScript.html.14aca0a4.js"><link rel="prefetch" href="/assets/Webpack.html.f773c5e1.js"><link rel="prefetch" href="/assets/jQuery.html.c3b9972e.js"><link rel="prefetch" href="/assets/其他.html.c716f6ee.js"><link rel="prefetch" href="/assets/微信小程序.html.0335a142.js"><link rel="prefetch" href="/assets/综合.html.5dfe757e.js"><link rel="prefetch" href="/assets/编程题.html.cbfc1c8c.js"><link rel="prefetch" href="/assets/性能优化.html.30c3f1c5.js"><link rel="prefetch" href="/assets/高频考点.html.2ee4efd2.js"><link rel="prefetch" href="/assets/handwritten.html.879fcb5e.js"><link rel="prefetch" href="/assets/JavaScript.html.bcb5a0d9.js"><link rel="prefetch" href="/assets/Node.html.be9ed4e1.js"><link rel="prefetch" href="/assets/React.html.36beeb6b.js"><link rel="prefetch" href="/assets/Vue.html.b739e835.js"><link rel="prefetch" href="/assets/Webpack.html.b34fb870.js"><link rel="prefetch" href="/assets/综合.html.30e0bc70.js"><link rel="prefetch" href="/assets/CSS模块.html.99bd45d7.js"><link rel="prefetch" href="/assets/ES6模块.html.0f2bfddb.js"><link rel="prefetch" href="/assets/HTML模块.html.4fb65265.js"><link rel="prefetch" href="/assets/HTTP模块.html.b4ce19f7.js"><link rel="prefetch" href="/assets/JS模块.html.015ff251.js"><link rel="prefetch" href="/assets/Node模块.html.b1985276.js"><link rel="prefetch" href="/assets/React模块.html.f53e1f03.js"><link rel="prefetch" href="/assets/Vue模块.html.785747a6.js"><link rel="prefetch" href="/assets/前端安全模块.html.f0f98ff3.js"><link rel="prefetch" href="/assets/前端工程相关.html.183e2c9f.js"><link rel="prefetch" href="/assets/小程序模块.html.f7ab4d91.js"><link rel="prefetch" href="/assets/性能优化相关.html.12e8a2e3.js"><link rel="prefetch" href="/assets/排序算法.html.40481e91.js"><link rel="prefetch" href="/assets/框架通识.html.c3c3096b.js"><link rel="prefetch" href="/assets/浏览器模块.html.24652566.js"><link rel="prefetch" href="/assets/移动多端开发.html.8636371c.js"><link rel="prefetch" href="/assets/计算机通识.html.728b7ceb.js"><link rel="prefetch" href="/assets/404.html.93c18560.js"><link rel="prefetch" href="/assets/index.html.60500264.js"><link rel="prefetch" href="/assets/CSS.html.02fa634c.js"><link rel="prefetch" href="/assets/HTML.html.3a31cd64.js"><link rel="prefetch" href="/assets/HTTP.html.a1df6d3a.js"><link rel="prefetch" href="/assets/JS基础.html.b88ab559.js"><link rel="prefetch" href="/assets/React.html.4ec983c7.js"><link rel="prefetch" href="/assets/Vue.html.5c58cab9.js"><link rel="prefetch" href="/assets/工程化.html.863e35db.js"><link rel="prefetch" href="/assets/性能.html.470e0a6f.js"><link rel="prefetch" href="/assets/框架通识.html.32d2fbab.js"><link rel="prefetch" href="/assets/浏览器.html.8279ebd9.js"><link rel="prefetch" href="/assets/设计模式.html.6afe6cf3.js"><link rel="prefetch" href="/assets/Bootstrap.html.2cc414a0.js"><link rel="prefetch" href="/assets/CSS.html.5d66e791.js"><link rel="prefetch" href="/assets/HTTP _ HTML.html.bbea8927.js"><link rel="prefetch" href="/assets/JavaScript.html.07acfd24.js"><link rel="prefetch" href="/assets/Webpack.html.a1c5dce1.js"><link rel="prefetch" href="/assets/jQuery.html.4e2f3899.js"><link rel="prefetch" href="/assets/其他.html.929587e1.js"><link rel="prefetch" href="/assets/微信小程序.html.69cc86fd.js"><link rel="prefetch" href="/assets/综合.html.1c892aa5.js"><link rel="prefetch" href="/assets/编程题.html.5478af99.js"><link rel="prefetch" href="/assets/性能优化.html.337c4654.js"><link rel="prefetch" href="/assets/高频考点.html.8772c401.js"><link rel="prefetch" href="/assets/handwritten.html.0f0ee7e3.js"><link rel="prefetch" href="/assets/JavaScript.html.5dd72bd0.js"><link rel="prefetch" href="/assets/Node.html.7eac5124.js"><link rel="prefetch" href="/assets/React.html.d8ccb952.js"><link rel="prefetch" href="/assets/Vue.html.47efbab1.js"><link rel="prefetch" href="/assets/Webpack.html.793df544.js"><link rel="prefetch" href="/assets/综合.html.ff78888d.js"><link rel="prefetch" href="/assets/CSS模块.html.bcc3cfc7.js"><link rel="prefetch" href="/assets/ES6模块.html.2ea3507a.js"><link rel="prefetch" href="/assets/HTML模块.html.6b729342.js"><link rel="prefetch" href="/assets/HTTP模块.html.2c6adffa.js"><link rel="prefetch" href="/assets/JS模块.html.28259fe6.js"><link rel="prefetch" href="/assets/Node模块.html.c36cd1fb.js"><link rel="prefetch" href="/assets/React模块.html.b09a5954.js"><link rel="prefetch" href="/assets/Vue模块.html.a27ab950.js"><link rel="prefetch" href="/assets/前端安全模块.html.e3aebe2f.js"><link rel="prefetch" href="/assets/前端工程相关.html.281b6ffe.js"><link rel="prefetch" href="/assets/小程序模块.html.493268db.js"><link rel="prefetch" href="/assets/性能优化相关.html.aff23982.js"><link rel="prefetch" href="/assets/排序算法.html.361967d5.js"><link rel="prefetch" href="/assets/框架通识.html.7719e539.js"><link rel="prefetch" href="/assets/浏览器模块.html.ac4e495d.js"><link rel="prefetch" href="/assets/移动多端开发.html.d8fc5993.js"><link rel="prefetch" href="/assets/计算机通识.html.0e8ab127.js"><link rel="prefetch" href="/assets/404.html.232c3875.js"><link rel="prefetch" href="/assets/404.176778df.js"><link rel="prefetch" href="/assets/Layout.ac3a6e88.js">
+    <link rel="stylesheet" href="/assets/style.20e644be.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Frontend Starter</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">基础 Basic <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/basic/HTTP%20&amp;%20HTML.html" class="sidebar-item" aria-label="HTML、HTTP、Web"><!--[--><!--]--> HTML、HTTP、Web <!--[--><!--]--></a><!----></li><li><a href="/basic/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/basic/JavaScript.html" class="sidebar-item" aria-label="JavaScript"><!--[--><!--]--> JavaScript <!--[--><!--]--></a><!----></li><li><a href="/basic/jQuery.html" class="sidebar-item" aria-label="jQuery"><!--[--><!--]--> jQuery <!--[--><!--]--></a><!----></li><li><a href="/basic/Bootstrap.html" class="sidebar-item" aria-label="Bootstrap"><!--[--><!--]--> Bootstrap <!--[--><!--]--></a><!----></li><li><a href="/basic/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/basic/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html" class="sidebar-item" aria-label="微信小程序"><!--[--><!--]--> 微信小程序 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html" class="sidebar-item" aria-label="编程题"><!--[--><!--]--> 编程题 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E5%85%B6%E4%BB%96.html" class="sidebar-item" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E7%BB%BC%E5%90%88.html" class="sidebar-item" aria-label="综合"><!--[--><!--]--> 综合 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">进阶 Advanced <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/advanced/JS%E5%9F%BA%E7%A1%80.html" class="sidebar-item" aria-label="JS基础"><!--[--><!--]--> JS基础 <!--[--><!--]--></a><!----></li><li><a href="/advanced/HTML.html" class="sidebar-item" aria-label="HTML"><!--[--><!--]--> HTML <!--[--><!--]--></a><!----></li><li><a href="/advanced/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%B5%8F%E8%A7%88%E5%99%A8.html" class="sidebar-item" aria-label="浏览器"><!--[--><!--]--> 浏览器 <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a><!----></li><li><a href="/advanced/Vue.html" class="sidebar-item" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a><!----></li><li><a href="/advanced/React.html" class="sidebar-item" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%80%A7%E8%83%BD.html" class="sidebar-item" aria-label="性能"><!--[--><!--]--> 性能 <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E5%B7%A5%E7%A8%8B%E5%8C%96.html" class="sidebar-item" aria-label="工程化"><!--[--><!--]--> 工程化 <!--[--><!--]--></a><!----></li><li><a href="/advanced/HTTP.html" class="sidebar-item" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="sidebar-item" aria-label="设计模式"><!--[--><!--]--> 设计模式 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading active collapsible">精选 Selected <span class="down arrow"></span></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/selected/HTML%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="HTML模块"><!--[--><!--]--> HTML模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/CSS%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="CSS模块"><!--[--><!--]--> CSS模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/JS%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="JS模块"><!--[--><!--]--> JS模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/ES6%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="ES6模块"><!--[--><!--]--> ES6模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="浏览器模块"><!--[--><!--]--> 浏览器模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/React%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="React模块"><!--[--><!--]--> React模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/Vue%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="Vue模块"><!--[--><!--]--> Vue模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/Node%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="Node模块"><!--[--><!--]--> Node模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E7%9B%B8%E5%85%B3.html" class="sidebar-item" aria-label="前端工程相关"><!--[--><!--]--> 前端工程相关 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E7%A7%BB%E5%8A%A8%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91.html" class="sidebar-item" aria-label="移动多端开发"><!--[--><!--]--> 移动多端开发 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="小程序模块"><!--[--><!--]--> 小程序模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="前端安全模块"><!--[--><!--]--> 前端安全模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9B%B8%E5%85%B3.html" class="sidebar-item" aria-label="性能优化相关"><!--[--><!--]--> 性能优化相关 <!--[--><!--]--></a><!----></li><li><a href="/selected/HTTP%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="HTTP模块"><!--[--><!--]--> HTTP模块 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="常用设计模式"><!--[--><!--]--> 常用设计模式 <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_1-创建型-工厂模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="1 创建型-工厂模式"><!--[--><!--]--> 1 创建型-工厂模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_1-1-简单工厂模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.1 简单工厂模式"><!--[--><!--]--> 1.1 简单工厂模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_1-2-抽象工厂模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.2 抽象工厂模式"><!--[--><!--]--> 1.2 抽象工厂模式 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_2-创建型-单例模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="2 创建型-单例模式"><!--[--><!--]--> 2 创建型-单例模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_2-1-单例模式的实现思路" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.1 单例模式的实现思路"><!--[--><!--]--> 2.1 单例模式的实现思路 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_2-2-生产实践-vuex中的单例模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.2 生产实践：Vuex中的单例模式"><!--[--><!--]--> 2.2 生产实践：Vuex中的单例模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_2-3-单例模式-面试真题" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.3 单例模式------面试真题"><!--[--><!--]--> 2.3 单例模式------面试真题 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_2-4-实现一个全局的模态框" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.4 实现一个全局的模态框"><!--[--><!--]--> 2.4 实现一个全局的模态框 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_3-结构型-装饰器模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="3 结构型-装饰器模式"><!--[--><!--]--> 3 结构型-装饰器模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_3-1-装饰器模式初相见" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.1 装饰器模式初相见"><!--[--><!--]--> 3.1 装饰器模式初相见 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_3-2-深入装饰器原理" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.2 深入装饰器原理"><!--[--><!--]--> 3.2 深入装饰器原理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_3-3-装饰器语法糖背后的故事" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.3 装饰器语法糖背后的故事"><!--[--><!--]--> 3.3 装饰器语法糖背后的故事 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_3-4-将-属性描述对象-交到你手里" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.4 将&quot;属性描述对象&quot;交到你手里"><!--[--><!--]--> 3.4 将&quot;属性描述对象&quot;交到你手里 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_3-5-react中的装饰器-hoc" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.5 React中的装饰器：HOC"><!--[--><!--]--> 3.5 React中的装饰器：HOC <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_3-6-使用装饰器改写-redux-connect" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.6 使用装饰器改写 Redux connect"><!--[--><!--]--> 3.6 使用装饰器改写 Redux connect <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_4-结构型-适配器模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="4 结构型-适配器模式"><!--[--><!--]--> 4 结构型-适配器模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_4-1-兼容接口" class="router-link-active router-link-exact-active sidebar-item" aria-label="4.1 兼容接口"><!--[--><!--]--> 4.1 兼容接口 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_4-2-生产实践-axios中的适配器" class="router-link-active router-link-exact-active sidebar-item" aria-label="4.2 生产实践：axios中的适配器"><!--[--><!--]--> 4.2 生产实践：axios中的适配器 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_5-结构型-代理模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="5 结构型-代理模式"><!--[--><!--]--> 5 结构型-代理模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_5-1-es6中的proxy" class="router-link-active router-link-exact-active sidebar-item" aria-label="5.1 ES6中的Proxy"><!--[--><!--]--> 5.1 ES6中的Proxy <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_5-2-婚介所-的实现" class="router-link-active router-link-exact-active sidebar-item" aria-label="5.2 &quot;婚介所&quot;的实现"><!--[--><!--]--> 5.2 &quot;婚介所&quot;的实现 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_5-3-事件代理" class="router-link-active router-link-exact-active sidebar-item" aria-label="5.3 事件代理"><!--[--><!--]--> 5.3 事件代理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_5-4-虚拟代理" class="router-link-active router-link-exact-active sidebar-item" aria-label="5.4 虚拟代理"><!--[--><!--]--> 5.4 虚拟代理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_5-5-缓存代理" class="router-link-active router-link-exact-active sidebar-item" aria-label="5.5 缓存代理"><!--[--><!--]--> 5.5 缓存代理 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_6-行为型-策略模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="6 行为型-策略模式"><!--[--><!--]--> 6 行为型-策略模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_6-1-先来看一个真实场景" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.1 先来看一个真实场景"><!--[--><!--]--> 6.1 先来看一个真实场景 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_6-2-if-else-侠-人人喊打" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.2 if-else 侠，人人喊打"><!--[--><!--]--> 6.2 if-else 侠，人人喊打 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_6-3-重构询价逻辑" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.3 重构询价逻辑"><!--[--><!--]--> 6.3 重构询价逻辑 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_6-4-总结" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.4 总结"><!--[--><!--]--> 6.4 总结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_7-行为型-状态模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="7 行为型-状态模式"><!--[--><!--]--> 7 行为型-状态模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_7-1-一台咖啡机的诞生" class="router-link-active router-link-exact-active sidebar-item" aria-label="7.1 一台咖啡机的诞生"><!--[--><!--]--> 7.1 一台咖啡机的诞生 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_7-2-改造咖啡机的状态切换机制" class="router-link-active router-link-exact-active sidebar-item" aria-label="7.2 改造咖啡机的状态切换机制"><!--[--><!--]--> 7.2 改造咖啡机的状态切换机制 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_7-3-开放封闭" class="router-link-active router-link-exact-active sidebar-item" aria-label="7.3 开放封闭"><!--[--><!--]--> 7.3 开放封闭 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_7-4-进一步改造" class="router-link-active router-link-exact-active sidebar-item" aria-label="7.4 进一步改造"><!--[--><!--]--> 7.4 进一步改造 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_7-5-状态模式复盘" class="router-link-active router-link-exact-active sidebar-item" aria-label="7.5 状态模式复盘"><!--[--><!--]--> 7.5 状态模式复盘 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_8-行为型-观察者模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="8 行为型-观察者模式"><!--[--><!--]--> 8 行为型-观察者模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_8-1-生活中的观察者模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="8.1 生活中的观察者模式"><!--[--><!--]--> 8.1 生活中的观察者模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_8-2-在实践中理解定义" class="router-link-active router-link-exact-active sidebar-item" aria-label="8.2 在实践中理解定义"><!--[--><!--]--> 8.2 在实践中理解定义 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_8-3-vue数据双向绑定-响应式系统-的实现原理" class="router-link-active router-link-exact-active sidebar-item" aria-label="8.3 Vue数据双向绑定（响应式系统）的实现原理"><!--[--><!--]--> 8.3 Vue数据双向绑定（响应式系统）的实现原理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_8-4-实现一个event-bus-event-emitter" class="router-link-active router-link-exact-active sidebar-item" aria-label="8.4 实现一个Event Bus / Event Emitter"><!--[--><!--]--> 8.4 实现一个Event Bus / Event Emitter <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_8-5-观察者模式与发布-订阅模式的区别是什么" class="router-link-active router-link-exact-active sidebar-item" aria-label="8.5 观察者模式与发布-订阅模式的区别是什么？"><!--[--><!--]--> 8.5 观察者模式与发布-订阅模式的区别是什么？ <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_9-行为型-迭代器模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="9 行为型-迭代器模式"><!--[--><!--]--> 9 行为型-迭代器模式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_9-1-公元前-的迭代器模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="9.1 &quot;公元前&quot;的迭代器模式"><!--[--><!--]--> 9.1 &quot;公元前&quot;的迭代器模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_9-2-es6对迭代器的实现" class="router-link-active router-link-exact-active sidebar-item" aria-label="9.2 ES6对迭代器的实现"><!--[--><!--]--> 9.2 ES6对迭代器的实现 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_9-3-实现一个迭代器生成函数" class="router-link-active router-link-exact-active sidebar-item" aria-label="9.3 实现一个迭代器生成函数"><!--[--><!--]--> 9.3 实现一个迭代器生成函数 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_10-中介者模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="10 中介者模式"><!--[--><!--]--> 10 中介者模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html#_11-享元模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="11 享元模式"><!--[--><!--]--> 11 享元模式 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/selected/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html" class="sidebar-item" aria-label="排序算法"><!--[--><!--]--> 排序算法 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="计算机通识"><!--[--><!--]--> 计算机通识 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">高频 Frequency <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/frequency/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html" class="sidebar-item" aria-label="高频考点"><!--[--><!--]--> 高频考点 <!--[--><!--]--></a><!----></li><li><a href="/frequency/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="sidebar-item" aria-label="性能优化"><!--[--><!--]--> 性能优化 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">原理 Principle <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/principle/React.html" class="sidebar-item" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a><!----></li><li><a href="/principle/Vue.html" class="sidebar-item" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a><!----></li><li><a href="/principle/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/principle/Node.html" class="sidebar-item" aria-label="Node"><!--[--><!--]--> Node <!--[--><!--]--></a><!----></li><li><a href="/principle/JavaScript.html" class="sidebar-item" aria-label="JavaScript"><!--[--><!--]--> JavaScript <!--[--><!--]--></a><!----></li><li><a href="/principle/%E7%BB%BC%E5%90%88.html" class="sidebar-item" aria-label="综合"><!--[--><!--]--> 综合 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="常用设计模式" tabindex="-1"><a class="header-anchor" href="#常用设计模式" aria-hidden="true">#</a> 常用设计模式</h1><hr><h2 id="_1-创建型-工厂模式" tabindex="-1"><a class="header-anchor" href="#_1-创建型-工厂模式" aria-hidden="true">#</a> 1 创建型-工厂模式</h2><h3 id="_1-1-简单工厂模式" tabindex="-1"><a class="header-anchor" href="#_1-1-简单工厂模式" aria-hidden="true">#</a> 1.1 简单工厂模式</h3><blockquote><p>其实就是将创建对象的过程单独封装，同时它的应用场景也非常容易识别：有构造函数的地方，我们就应该想到简单工厂；在写了大量构造函数、调用了大量的 new、自觉非常不爽的情况下，我们就应该思考是不是可以掏出工厂模式重构我们的代码了</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 给不同工种分配职责说明
+function User(name, age, career, work) {
+    this.name = name;
+    this.age = age;
+    this.career = career;
+    this.work = work;
+}
+
+function Factory(name, age, career) {
+    let work;
+    switch (career) {
+        case &#39;coder&#39;: {
+            work = [&#39;写代码&#39;, &#39;写系分&#39;, &#39;修bug&#39;]
+            break;
+        }
+        case &#39;product-manager&#39;: {
+            work = [&#39;订会议室&#39;, &#39;写PRD&#39;, &#39;催更&#39;]
+            break;
+        }
+        case &#39;boss&#39;: {
+            work = [&#39;喝茶&#39;, &#39;看报&#39;, &#39;见客户&#39;]
+            break;
+        }
+    }
+    return new User(name, age, career, work)
+}
+
+const wang = new Factory(&#39;wang&#39;, 50, &#39;boss&#39;);
+const sun = new Factory(&#39;sun&#39;, 25, &#39;coder&#39;);
+const li = new Factory(&#39;li&#39;, 30, &#39;product-manager&#39;);
+
+console.log(wang)
+console.log(sun)
+console.log(li)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_1-2-抽象工厂模式" tabindex="-1"><a class="header-anchor" href="#_1-2-抽象工厂模式" aria-hidden="true">#</a> 1.2 抽象工厂模式</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义操作系统这类产品的抽象产品类
+class OS {
+    constructor() {
+        if (new.target === OS) {
+            throw new Error(&#39;不能实例化抽象类&#39;);
+        }
+    }
+}
+
+// 定义具体操作系统的具体产品类
+class AndroidOS extends OS {
+    constructor() {
+        super();
+    }
+
+    controlHardware() {
+        console.log(&#39;我会用安卓的方式去操作硬件&#39;);
+    }
+}
+
+class AppleOS extends OS {
+    constructor() {
+        super();
+    }
+
+    controlHardware() {
+        console.log(&#39;我会用苹果的方式去操作硬件&#39;);
+    }
+}
+
+// 定义手机硬件这类产品的抽象产品类
+class Hardware {
+    constructor() {
+        if (new.target === Hardware) {
+            throw new Error(&#39;不能实例化抽象类&#39;);
+        }
+    }
+
+    // 手机硬件的共性方法，这里提取了&quot;根据命令运转&quot;这个共性
+    operateByOrder() {
+        throw new Error(&#39;抽象产品方法不允许直接调用，你需要将我重写！&#39;);
+    }
+}
+
+// 定义具体硬件的具体产品类
+class QualcommHardware extends Hardware {
+    constructor() {
+        super();
+    }
+
+    operateByOrder() {
+        console.log(&#39;我会用高通的方式去运转&#39;)
+    }
+}
+
+class MiWare extends Hardware {
+    constructor() {
+        super();
+    }
+
+    operateByOrder() {
+        console.log(&#39;我会用小米的方式去运转&#39;)
+    }
+}
+
+class MobilePhoneFactory {
+    // 提供操作系统的接口
+    createOS() {
+        throw new Error(&quot;抽象工厂方法不允许直接调用，你需要将我重写！&quot;);
+    }
+
+    // 提供硬件的接口
+    createHardware() {
+        throw new Error(&quot;抽象工厂方法不允许直接调用，你需要将我重写！&quot;);
+    }
+}
+
+// 具体工厂继承自抽象工厂
+class FakeStarFactory extends MobilePhoneFactory {
+    constructor() {
+        super()
+    }
+
+    createOS() {
+        // 提供安卓系统实例
+        return new AndroidOS()
+    }
+
+    createHardware() {
+        // 提供高通硬件实例
+        return new QualcommHardware()
+    }
+}
+
+// 这是我的手机
+const myPhone = new FakeStarFactory()
+// 让它拥有操作系统
+const myOS = myPhone.createOS()
+// 让它拥有硬件
+const myHardWare = myPhone.createHardware()
+// 启动操作系统(输出&#39;我会用安卓的方式去操作硬件&#39;)
+myOS.controlHardware()
+// 唤醒硬件(输出&#39;我会用高通的方式去运转&#39;)
+myHardWare.operateByOrder()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>抽象工厂和简单工厂的思路，思考一下：它们之间有哪些异同？</p><ul><li>它们的共同点，在于都尝试去分离一个系统中变与不变的部分。</li><li>它们的不同在于场景的复杂度。</li></ul><blockquote><p>在简单工厂的使用场景里，处理的对象是类，并且是一些非常好对付的类------它们的共性容易抽离，同时因为逻辑本身比较简单，故而不苛求代码可扩展性。抽象工厂本质上处理的其实也是类，但是是一帮非常棘手、繁杂的类，这些类中不仅能划分出门派，还能划分出等级，同时存在着千变万化的扩展可能性------这使得我们必须对共性作更特别的处理、使用抽象类去降低扩展的成本，同时需要对类的性质作划分</p></blockquote><h2 id="_2-创建型-单例模式" tabindex="-1"><a class="header-anchor" href="#_2-创建型-单例模式" aria-hidden="true">#</a> 2 创建型-单例模式</h2><blockquote><p>保证一个类仅有一个实例，并提供一个访问它的全局访问点，这样的模式就叫做单例模式。</p></blockquote><h3 id="_2-1-单例模式的实现思路" tabindex="-1"><a class="header-anchor" href="#_2-1-单例模式的实现思路" aria-hidden="true">#</a> 2.1 单例模式的实现思路</h3><ul><li>单例模式想要做到的是，不管我们尝试去创建多少次，它都只给你返回第一次所创建的那唯一的一个实例。</li><li>要做到这一点，就需要构造函数具备判断自己是否已经创建过一个实例的能力。我们现在把这段判断逻辑写成一个静态方法(其实也可以直接写入构造函数的函数体里）：</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义：保证一个类仅有一个实例，并提供一个访问它的全局访问点。
+class Singleton {
+    constructor(name) {
+        this.name = name;
+        this.instance = null;
+    }
+
+    getName(){
+        console.log(this.name);
+    }
+
+    getInstance(name){
+        if(!this.instance){
+            this.instance = new Singleton(name);
+        }
+
+        return this.instance;
+    }
+}
+
+const singleton = new Singleton();
+
+const a = singleton.getInstance(&#39;a&#39;);
+const b = singleton.getInstance(&#39;b&#39;);
+
+console.log(a);
+console.log(b);
+console.log(a === b);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class SingleDog {
+    show() {
+        console.log(&#39;我是一个单例对象&#39;)
+    }
+    static getInstance() {
+        // 判断是否已经new过1个实例
+        if (!SingleDog.instance) {
+            // 若这个唯一的实例不存在，那么先创建它
+            SingleDog.instance = new SingleDog()
+        }
+        // 如果这个唯一的实例已经存在，则直接返回
+        return SingleDog.instance
+    }
+}
+
+const s1 = SingleDog.getInstance()
+const s2 = SingleDog.getInstance()
+
+// true
+s1 === s2
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>除了楼上这种实现方式之外，<code>getInstance</code>的逻辑还可以用闭包来实现：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>SingleDog.getInstance = (function() {
+    // 定义自由变量instance，模拟私有变量
+    let instance = null
+    return function() {
+        // 判断自由变量是否为null
+        if(!instance) {
+            // 如果为null则new出唯一实例
+            instance = new SingleDog()
+        }
+        return instance
+    }
+})()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>可以看出，在<code>getInstance</code>方法的判断和拦截下，我们不管调用多少次，<code>SingleDog</code>都只会给我们返回一个实例，<code>s1</code>和<code>s2</code>现在都指向这个唯一的实例</p></blockquote><h3 id="_2-2-生产实践-vuex中的单例模式" tabindex="-1"><a class="header-anchor" href="#_2-2-生产实践-vuex中的单例模式" aria-hidden="true">#</a> 2.2 生产实践：Vuex中的单例模式</h3><blockquote><p><code>Redux</code> 和 <code>Vuex</code>，它们都实现了一个全局的 <code>Store</code> 用于存储应用的所有状态。这个 <code>Store</code> 的实现，正是单例模式的典型应用</p></blockquote><p>1. 理解 Vuex 中的 Store</p><blockquote><p><code>Vuex</code> 使用单一状态树，用一个对象就包含了全部的应用层级状态。至此它便作为一个&quot;唯一数据源 (SSOT)&quot;而存在。这也意味着，每个应用将仅仅包含一个 store 实例。单一状态树让我们能够直接地定位任一特定的状态片段，在调试的过程中也能轻易地取得整个当前应用状态的快照。 ------Vuex官方文档</p></blockquote><p>当组件非常多、组件间关系复杂、且嵌套层级很深的时候，这种原始的通信方式会使我们的逻辑变得复杂难以维护。这时最好的做法是将共享的数据抽出来、放在全局，供组件们按照一定的的规则去存取数据，保证状态以一种可预测的方式发生变化。于是便有了 Vuex，这个用来存放共享数据的唯一数据源，就是 Store。</p><p>2. Vuex如何确保Store的唯一性</p><p>我们先来看看如何在项目中引入 <code>Vuex</code>：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 安装vuex插件
+Vue.use(Vuex)
+
+// 将store注入到Vue实例中
+new Vue({
+    el: &#39;#app&#39;,
+    store
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>通过调用<code>Vue.use()</code>方法，我们安装了 <code>Vuex</code> 插件。<code>Vuex</code> 插件是一个对象，它在内部实现了一个 <code>install</code> 方法，这个方法会在插件安装时被调用，从而把 <code>Store</code> 注入到<code>Vue</code>实例里去。也就是说每 <code>install</code> 一次，都会尝试给 <code>Vue</code> 实例注入一个 <code>Store</code></p></blockquote><p>在<code>install</code>方法里，有一段逻辑和我们楼上的 <code>getInstance</code> 非常相似的逻辑：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let Vue // 这个Vue的作用和楼上的instance作用一样
+...
+
+export function install (_Vue) {
+  // 判断传入的Vue实例对象是否已经被install过Vuex插件（是否有了唯一的state）
+  if (Vue &amp;&amp; _Vue === Vue) {
+    if (p<wbr>rocess.env.NODE_ENV !== &#39;production&#39;) {
+      console.error(
+        &#39;[vuex] already installed. Vue.use(Vuex) should be called only once.&#39;
+      )
+    }
+    return
+  }
+  // 若没有，则为这个Vue实例对象install一个唯一的Vuex
+  Vue = _Vue
+  // 将Vuex的初始化逻辑写进Vue的钩子函数里
+  applyMixin(Vue)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>楼上便是 <code>Vuex</code> 源码中单例模式的实现办法了，套路可以说和我们的<code>getInstance</code>如出一辙。通过这种方式，可以保证一个 <code>Vue</code> 实例（即一个 Vue 应用）只会被 <code>install</code> 一次 <code>Vuex</code> 插件，所以每个 Vue 实例只会拥有一个全局的 <code>Store</code></p></blockquote><p>3. 思考时间</p><blockquote><p>思考一下：如果我在 <code>install</code> 里没有实现单例模式，会带来什么样的麻烦？</p></blockquote><p>我们通过上面的源码解析可以看出，每次 <code>install</code> 都会为Vue实例初始化一个 <code>Store</code>。假如 <code>install</code> 里没有单例模式的逻辑，那我们如果在一个应用里不小心多次安装了插件：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 在主文件里安装Vuex
+Vue.use(Vuex)
+
+...(中间添加/修改了一些store的数据)
+
+// 在后续的逻辑里不小心又安装了一次
+Vue.use(Vuex)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>失去了单例判断能力的 <code>install</code> 方法，会为当前的Vue实例重新注入一个新的 <code>Store</code>，也就是说你中间的那些数据操作全都没了，一切归 0。因此，单例模式在此处是非常必要的。</p><p>除了说在 <code>Vuex</code> 中大展身手，我们在 <code>Redux</code>、<code>jQuery</code> 等许多优秀的前端库里也都能看到单例模式的身影</p><h3 id="_2-3-单例模式-面试真题" tabindex="-1"><a class="header-anchor" href="#_2-3-单例模式-面试真题" aria-hidden="true">#</a> 2.3 单例模式------面试真题</h3><blockquote><p>实现一个 <code>Storage</code></p></blockquote><p>1. 描述</p><blockquote><p>实现<code>Storage</code>，使得该对象为单例，基于 <code>localStorage</code> 进行封装。实现方法 <code>setItem(key,value)</code> 和 <code>getItem(key)</code></p></blockquote><p>2. 思路</p><blockquote><p>具体实现上，把判断逻辑写入静态方法或者构造函数里都没关系，最好能把闭包的版本也写出来</p></blockquote><p>3. 实现：静态方法版</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义Storage
+class Storage {
+    static getInstance() {
+        // 判断是否已经new过1个实例
+        if (!Storage.instance) {
+            // 若这个唯一的实例不存在，那么先创建它
+            Storage.instance = new Storage()
+        }
+        // 如果这个唯一的实例已经存在，则直接返回
+        return Storage.instance
+    }
+    getItem (key) {
+        return localStorage.getItem(key)
+    }
+    setItem (key, value) {
+        return localStorage.setItem(key, value)
+    }
+}
+
+const storage1 = Storage.getInstance()
+const storage2 = Storage.getInstance()
+
+storage1.setItem(&#39;name&#39;, &#39;李雷&#39;)
+// 李雷
+storage1.getItem(&#39;name&#39;)
+// 也是李雷
+storage2.getItem(&#39;name&#39;)
+
+// 返回true
+storage1 === storage2
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>4. 实现： 闭包版</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 先实现一个基础的StorageBase类，把getItem和setItem方法放在它的原型链上
+function StorageBase () {}
+StorageBase.prototype.getItem = function (key){
+    return localStorage.getItem(key)
+}
+StorageBase.prototype.setItem = function (key, value) {
+    return localStorage.setItem(key, value)
+}
+
+// 以闭包的形式创建一个引用自由变量的构造函数
+const Storage = (function(){
+    let instance = null
+    return function(){
+        // 判断自由变量是否为null
+        if(!instance) {
+            // 如果为null则new出唯一实例
+            instance = new StorageBase()
+        }
+        return instance
+    }
+})()
+
+// 这里其实不用 new Storage 的形式调用，直接 Storage() 也会有一样的效果
+const storage1 = new Storage()
+const storage2 = new Storage()
+
+storage1.setItem(&#39;name&#39;, &#39;李雷&#39;)
+// 李雷
+storage1.getItem(&#39;name&#39;)
+// 也是李雷
+storage2.getItem(&#39;name&#39;)
+
+// 返回true
+storage1 === storage2
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-4-实现一个全局的模态框" tabindex="-1"><a class="header-anchor" href="#_2-4-实现一个全局的模态框" aria-hidden="true">#</a> 2.4 实现一个全局的模态框</h3><blockquote><p>实现一个全局唯一的Modal弹框</p></blockquote><p>思路</p><p>这道题比较经典，基本上所有讲单例模式的文章都会以此为例，同时它也是早期单例模式在前端领域的最集中体现。</p><blockquote><p>万变不离其踪，记住<code>getInstance</code>方法、记住<code>instance</code>变量、记住闭包和静态方法，这个题除了要多写点 HTML 和 <code>CSS</code> 之外，对大家来说完全不成问题。</p></blockquote><p>实现</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+    &lt;meta charset=&quot;UTF-8&quot;&gt;
+    &lt;title&gt;单例模式弹框&lt;/title&gt;
+&lt;/head&gt;
+&lt;style&gt;
+    #modal {
+        height: 200px;
+        width: 200px;
+        line-height: 200px;
+        position: fixed;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+        border: 1px solid black;
+        text-align: center;
+    }
+&lt;/style&gt;
+&lt;body&gt;
+	&lt;button id=&#39;open&#39;&gt;打开弹框&lt;/button&gt;
+	&lt;button id=&#39;close&#39;&gt;关闭弹框&lt;/button&gt;
+&lt;/body&gt;
+&lt;script&gt;
+    // 核心逻辑，这里采用了闭包思路来实现单例模式
+    const Modal = (function() {
+    	let modal = null
+    	return function() {
+            if(!modal) {
+            	modal = document.createElement(&#39;div&#39;)
+            	modal.innerHTML = &#39;我是一个全局唯一的Modal&#39;
+            	modal.id = &#39;modal&#39;
+            	modal.style.display = &#39;none&#39;
+            	document.body.appendChild(modal)
+            }
+            return modal
+    	}
+    })()
+
+    // 点击打开按钮展示模态框
+    document.getElementById(&#39;open&#39;).addEventListener(&#39;click&#39;, function() {
+        // 未点击则不创建modal实例，避免不必要的内存占用;此处不用 new Modal 的形式调用也可以，和 Storage 同理
+    	const modal = new Modal()
+    	modal.style.display = &#39;block&#39;
+    })
+
+    // 点击关闭按钮隐藏模态框
+    document.getElementById(&#39;close&#39;).addEventListener(&#39;click&#39;, function() {
+    	const modal = new Modal()
+    	if(modal) {
+    	    modal.style.display = &#39;none&#39;
+    	}
+    })
+&lt;/script&gt;
+&lt;/html&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>是不是发现又是熟悉的套路？又可以默写了？（ES6 版本的实现大家自己尝试默写一下，相信对现在的你来说已经非常简单了）。</p><p>这就是单例模式面试题的特点，准确地说，是所有设计模式相关面试题的特点------牢记核心思路，就能举一反三。所以说设计模式的学习是典型的一分耕耘一分收获，性价比极高。</p><h2 id="_3-结构型-装饰器模式" tabindex="-1"><a class="header-anchor" href="#_3-结构型-装饰器模式" aria-hidden="true">#</a> 3 结构型-装饰器模式</h2><blockquote><p>装饰器模式，又名装饰者模式。它的定义是&quot;在不改变原对象的基础上，通过对其进行包装拓展，使原有对象可以满足用户的更复杂需求&quot;。</p></blockquote><h3 id="_3-1-装饰器模式初相见" tabindex="-1"><a class="header-anchor" href="#_3-1-装饰器模式初相见" aria-hidden="true">#</a> 3.1 装饰器模式初相见</h3><blockquote><p>为了不被已有的业务逻辑干扰，当务之急就是将旧逻辑与新逻辑分离，把旧逻辑抽出去：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 将展示Modal的逻辑单独封装
+function openModal() {
+    const modal = new Modal()
+    modal.style.display = &#39;block&#39;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>编写新逻辑：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 按钮文案修改逻辑
+function changeButtonText() {
+    const btn = document.getElementById(&#39;open&#39;)
+    btn.innerText = &#39;快去登录&#39;
+}
+
+// 按钮置灰逻辑
+function disableButton() {
+    const btn =  document.getElementById(&#39;open&#39;)
+    btn.setAttribute(&quot;disabled&quot;, true)
+}
+
+// 新版本功能逻辑整合
+function changeButtonStatus() {
+    changeButtonText()
+    disableButton()
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>然后把三个操作逐个添加open按钮的监听函数里：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>document.getElementById(&#39;open&#39;).addEventListener(&#39;click&#39;, function() {
+    openModal()
+    changeButtonStatus()
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如此一来，我们就实现了&quot;只添加，不修改&quot;的装饰器模式，使用changeButtonStatus的逻辑装饰了旧的按钮点击逻辑。以上是ES5中的实现，ES6中，我们可以以一种更加面向对象化的方式去写：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义打开按钮
+class OpenButton {
+    // 点击后展示弹框（旧逻辑）
+    onClick() {
+        const modal = new Modal()
+    	modal.style.display = &#39;block&#39;
+    }
+}
+
+// 定义按钮对应的装饰器
+class Decorator {
+    // 将按钮实例传入
+    constructor(open_button) {
+        this.open_button = open_button
+    }
+
+    onClick() {
+        this.open_button.onClick()
+        // &quot;包装&quot;了一层新逻辑
+        this.changeButtonStatus()
+    }
+
+    changeButtonStatus() {
+        this.changeButtonText()
+        this.disableButton()
+    }
+
+    disableButton() {
+        const btn =  document.getElementById(&#39;open&#39;)
+        btn.setAttribute(&quot;disabled&quot;, true)
+    }
+
+    changeButtonText() {
+        const btn = document.getElementById(&#39;open&#39;)
+        btn.innerText = &#39;快去登录&#39;
+    }
+}
+
+const openButton = new OpenButton()
+const decorator = new Decorator(openButton)
+
+document.getElementById(&#39;open&#39;).addEventListener(&#39;click&#39;, function() {
+    // openButton.onClick()
+    // 此处可以分别尝试两个实例的onClick方法，验证装饰器是否生效
+    decorator.onClick()
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>大家这里需要特别关注一下 ES6 这个版本的实现，这里我们把按钮实例传给了 Decorator，以便于后续 Decorator 可以对它为所欲为进行逻辑的拓展。在 ES7 中，<code>Decorator</code> 作为一种语法被直接支持了，它的书写会变得更加简单，但背后的原理其实与此大同小异</p></blockquote><h3 id="_3-2-深入装饰器原理" tabindex="-1"><a class="header-anchor" href="#_3-2-深入装饰器原理" aria-hidden="true">#</a> 3.2 深入装饰器原理</h3><p>在 ES7 中，我们可以像写 python 一样通过一个<code>@</code>语法糖轻松地给一个类装上装饰器：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 装饰器函数，它的第一个参数是目标类
+function classDecorator(target) {
+    target.hasDecorator = true
+  	return target
+}
+
+// 将装饰器&quot;安装&quot;到Button类上
+@classDecorator
+class Button {
+    // Button类的相关逻辑
+}
+
+// 验证装饰器是否生效
+console.log(&#39;Button 是否被装饰了：&#39;, Button.hasDecorator)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>也可以用同样的语法糖去装饰类里面的方法：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 具体的参数意义，在下个小节，这里大家先感知一下操作
+function funcDecorator(target, name, descriptor) {
+  let originalMethod = descriptor.value
+  descriptor.value = function() {
+    console.log(&#39;我是Func的装饰器逻辑&#39;)
+    return originalMethod.apply(this, arguments)
+  }
+  return descriptor
+}
+
+class Button {
+    @funcDecorator
+    onClick() {
+        console.log(&#39;我是Func的原有逻辑&#39;)
+    }
+}
+
+// 验证装饰器是否生效
+const button = new Button()
+button.onClick()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-3-装饰器语法糖背后的故事" tabindex="-1"><a class="header-anchor" href="#_3-3-装饰器语法糖背后的故事" aria-hidden="true">#</a> 3.3 装饰器语法糖背后的故事</h3><blockquote><p>所谓语法糖，往往意味着&quot;美好的表象&quot;。正如 <code>class</code> 语法糖背后是大家早已十分熟悉的 ES5 构造函数一样，装饰器语法糖背后也是我们的老朋友，不信我们一起来看看<code>@decorator</code>都帮我们做了些什么：</p></blockquote><blockquote><p>上一节我们使用 <code>ES6</code> 实现装饰器模式时曾经将按钮实例传给了 <code>Decorator</code>，以便于后续 <code>Decorator</code> 可以对它进行逻辑的拓展。这也正是装饰器的最最基本操作------定义装饰器函数，将被装饰者&quot;交给&quot;装饰器。这也正是装饰器语法糖首先帮我们做掉的工作 ------ 函数传参&amp;调用。</p></blockquote><p>1. 类装饰器的参数</p><p>当我们给一个类添加装饰器时：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function classDecorator(target) {
+    target.hasDecorator = true
+  	return target
+}
+
+// 将装饰器&quot;安装&quot;到Button类上
+@classDecorator
+class Button {
+    // Button类的相关逻辑
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>此处的 <code>target</code> 就是被装饰的类本身。</p><p>2. 方法装饰器的参数</p><p>而当我们给一个方法添加装饰器时：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function funcDecorator(target, name, descriptor) {
+    let originalMethod = descriptor.value
+    descriptor.value = function() {
+    console.log(&#39;我是Func的装饰器逻辑&#39;)
+    return originalMethod.apply(this, arguments)
+  }
+  return descriptor
+}
+
+class Button {
+    @funcDecorator
+    onClick() {
+        console.log(&#39;我是Func的原有逻辑&#39;)
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>此处的 <code>target</code> 变成了<code>Button.prototype</code>，即类的原型对象。这是因为 <code>onClick</code> 方法总是要依附其实例存在的，修饰 <code>onClik</code> 其实是修饰它的实例。但我们的装饰器函数执行的时候，<code>Button</code> 实例还并不存在。为了确保实例生成后可以顺利调用被装饰好的方法，装饰器只能去修饰 <code>Button</code> 类的原型对象。</p><p>3. 装饰器函数调用的时机</p><blockquote><p>装饰器函数执行的时候，<code>Button</code> 实例还并不存在。这是因为实例是在我们的代码运行时动态生成的，而装饰器函数则是在编译阶段就执行了。所以说装饰器函数真正能触及到的，就只有类这个层面上的对象</p></blockquote><h3 id="_3-4-将-属性描述对象-交到你手里" tabindex="-1"><a class="header-anchor" href="#_3-4-将-属性描述对象-交到你手里" aria-hidden="true">#</a> 3.4 将&quot;属性描述对象&quot;交到你手里</h3><blockquote><p>在编写类装饰器时，我们一般获取一个<code>target</code>参数就足够了。但在编写方法装饰器时，我们往往需要至少三个参数：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function funcDecorator(target, name, descriptor) {
+  let originalMethod = descriptor.value
+  descriptor.value = function() {
+    console.log(&#39;我是Func的装饰器逻辑&#39;)
+    return originalMethod.apply(this, arguments)
+  }
+  return descriptor
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>第一个参数的意义，前文已经解释过。第二个参 数name，是我们修饰的目标属性属性名，也没啥好讲的。关键就在这个 d<code>escriptor</code> 身上，它也是我们使用频率最高的一个参数，它的真面目就是&quot;属性描述对象&quot;（<code>attributes object</code>）。这个名字大家可能不熟悉，但<code>Object.defineProperty</code>方法我想大家多少都用过，它的调用方式是这样的：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Object.defineProperty(obj, prop, descriptor)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>此处的<code>descriptor</code>和装饰器函数里的 <code>descriptor</code> 是一个东西，它是 <code>JavaScript</code> 提供的一个内部数据结构、一个对象，专门用来描述对象的属性。它由各种各样的属性描述符组成，这些描述符又分为数据描述符和存取描述符：</p></blockquote><ul><li>数据描述符： <ul><li>包括 <code>value</code>（存放属性值，默认为默认为 <code>undefined</code>）</li><li><code>writable</code>（表示属性值是否可改变，默认为true）</li><li><code>enumerable</code>（表示属性是否可枚举，默认为 <code>true</code>）</li><li><code>configurable</code>（属性是否可配置，默认为<code>true</code>）。</li></ul></li><li>存取描述符： <ul><li>包括 <code>get</code> 方法（访问属性时调用的方法，默认为 <code>undefined</code>）</li><li><code>set</code>（设置属性时调用的方法，默认为 <code>undefined</code> ）</li></ul></li></ul><blockquote><p>很明显，拿到了 <code>descriptor</code>，就相当于拿到了目标方法的控制权。通过修改 <code>descriptor</code>，我们就可以对目标方法为所欲为的逻辑进行拓展了~</p></blockquote><blockquote><p>在上文的示例中，我们通过 <code>descriptor</code> 获取到了原函数的函数体（<code>originalMethod</code>），把原函数推迟到了新逻辑（console）的后面去执行。这种做法和我们上一节在ES5中实现装饰器模式时做的事情一模一样，所以说装饰器就是这么回事儿，换汤不换药~</p></blockquote><h3 id="_3-5-react中的装饰器-hoc" tabindex="-1"><a class="header-anchor" href="#_3-5-react中的装饰器-hoc" aria-hidden="true">#</a> 3.5 React中的装饰器：HOC</h3><blockquote><p>高阶组件就是一个函数，且该函数接受一个组件作为参数，并返回一个新的组件。</p></blockquote><p>HOC (Higher Order Component) 即高阶组件。它是装饰器模式在 React 中的实践，同时也是 React 应用中非常重要的一部分。通过编写高阶组件，我们可以充分复用现有逻辑，提高编码效率和代码的健壮性。</p><p>我们现在编写一个高阶组件，它的作用是把传入的组件丢进一个有红色边框的容器里（拓展其样式）。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>import React, { Component } from &#39;react&#39;
+
+const BorderHoc = WrappedComponent =&gt; class extends Component {
+  render() {
+    return &lt;div style={{ border: &#39;solid 1px red&#39; }}&gt;
+      &lt;WrappedComponent /&gt;
+    &lt;/div&gt;
+  }
+}
+export default borderHoc
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>用它来装饰目标组件</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>import React, { Component } from &#39;react&#39;
+import BorderHoc from &#39;./BorderHoc&#39;
+
+// 用BorderHoc装饰目标组件
+@BorderHoc
+class TargetComponent extends React.Component {
+  render() {
+    // 目标组件具体的业务逻辑
+  }
+}
+
+// export出去的其实是一个被包裹后的组件
+export default TargetComponent
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>可以看出，高阶组件从实现层面来看其实就是上文我们提到的类装饰器。在高阶组件的辅助下，我们不必因为一个小小的拓展而大费周折地编写新组件或者把一个新逻辑重写 <code>N</code> 多次，只需要轻轻 <code>@</code> 一下装饰器即可。</p></blockquote><h3 id="_3-6-使用装饰器改写-redux-connect" tabindex="-1"><a class="header-anchor" href="#_3-6-使用装饰器改写-redux-connect" aria-hidden="true">#</a> 3.6 使用装饰器改写 Redux connect</h3><blockquote><p>Redux 是热门的状态管理工具。在 React 中，当我们想要引入 Redux 时，通常需要调用 connect 方法来把状态和组件绑在一起：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>import React, { Component } from &#39;react&#39;
+import { connect } from &#39;react-redux&#39;
+import { bindActionCreators } from &#39;redux&#39;
+import action from &#39;./action.js&#39;
+
+class App extends Component {
+  render() {
+    // App的业务逻辑
+  }
+}
+
+function mapStateToProps(state) {
+  // 假设App的状态对应状态树上的app节点
+  return state.app
+}
+
+function mapDispatchToProps(dispatch) {
+  // 这段看不懂也没关系，下面会有解释。重点理解connect的调用即可
+  return bindActionCreators(action, dispatch)
+}
+
+// 把App组件与Redux绑在一起
+export default connect(mapStateToProps, mapDispatchToProps)(App)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里给没用过 redux 的同学解释一下 connect 的两个入参：<code>mapStateToProps</code> 是一个函数，它可以建立组件和状态之间的映射关系；<code>mapDispatchToProps</code>也是一个函数，它用于建立组件和<code>store.dispatch</code>的关系，使组件具备通过 dispatch 来派发状态的能力。</p><blockquote><p>总而言之，我们调用 connect 可以返回一个具有装饰作用的函数，这个函数可以接收一 个React 组件作为参数，使这个目标组件和 Redux 结合、具备 Redux 提供的数据和能力。既然有装饰作用，既然是能力的拓展，那么就一定能用装饰器来改写：</p></blockquote><p>把 <code>connect</code> 抽出来：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>import { connect } from &#39;react-redux&#39;
+import { bindActionCreators } from &#39;redux&#39;
+import action from &#39;./action.js&#39;
+
+function mapStateToProps(state) {
+  return state.app
+}
+
+function mapDispatchToProps(dispatch) {
+  return bindActionCreators(action, dispatch)
+}
+
+// 将connect调用后的结果作为一个装饰器导出
+export default connect(mapStateToProps, mapDispatchToProps)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在组件文件里引入<code>connect</code>：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>import React, { Component } from &#39;react&#39;
+import connect from &#39;./connect.js&#39;
+
+@connect
+export default class App extends Component {
+  render() {
+    // App的业务逻辑
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这样一来，我们的代码结构是不是清晰了很多</p><blockquote><p>推荐一个非常赞的装饰模式库 ------ <a href="https://github.com/jayphelps/core-decorators" target="_blank" rel="noopener noreferrer">core-decorators (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>。core-decorators 帮我们实现好了一些使用频率较高的装饰器，比如<code>@readonly</code>(使目标属性只读)、<code>@deprecate</code>(在控制台输出警告，提示用户某个指定的方法已被废除)等</p></blockquote><h2 id="_4-结构型-适配器模式" tabindex="-1"><a class="header-anchor" href="#_4-结构型-适配器模式" aria-hidden="true">#</a> 4 结构型-适配器模式</h2><h3 id="_4-1-兼容接口" tabindex="-1"><a class="header-anchor" href="#_4-1-兼容接口" aria-hidden="true">#</a> 4.1 兼容接口</h3><blockquote><p>大家知道我们现在有一个非常好用异步方案叫<code>fetch</code>，它的写法比<code>ajax</code>优雅很多。因此在不考虑兼容性的情况下，我们更愿意使用<code>fetch</code>、而不是使用ajax来发起异步请求。李雷是拜<code>fetch</code>教的忠实信徒，为了能更好地使用<code>fetch</code>，他封装了一个基于<code>fetch</code>的<code>http</code>方法库：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>export default class HttpUtils {
+  // get方法
+  static get(url) {
+    return new Promise((resolve, reject) =&gt; {
+      // 调用fetch
+      fetch(url)
+        .then(response =&gt; response.json())
+        .then(result =&gt; {
+          resolve(result)
+        })
+        .catch(error =&gt; {
+          reject(error)
+        })
+    })
+  }
+
+  // post方法，data以object形式传入
+  static post(url, data) {
+    return new Promise((resolve, reject) =&gt; {
+      // 调用fetch
+      fetch(url, {
+        method: &#39;POST&#39;,
+        headers: {
+          Accept: &#39;application/json&#39;,
+          &#39;Content-Type&#39;: &#39;application/x-www-form-urlencoded&#39;
+        },
+        // 将object类型的数据格式化为合法的body参数
+        body: this.changeData(data)
+      })
+        .then(response =&gt; response.json())
+        .then(result =&gt; {
+          resolve(result)
+        })
+        .catch(error =&gt; {
+          reject(error)
+        })
+    })
+  }
+
+  // body请求体的格式化方法
+  static changeData(obj) {
+    var prop,
+      str = &#39;&#39;
+    var i = 0
+    for (prop in obj) {
+      if (!prop) {
+        return
+      }
+      if (i == 0) {
+        str += prop + &#39;=&#39; + obj[prop]
+      } else {
+        str += &#39;&amp;&#39; + prop + &#39;=&#39; + obj[prop]
+      }
+      i++
+    }
+    return str
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当我想使用 <code>fetch</code> 发起请求时，只需要这样轻松地调用，而不必再操心繁琐的数据配置和数据格式化：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义目标url地址
+const URL = &quot;xxxxx&quot;
+// 定义post入参
+const params = {
+    ...
+}
+
+// 发起post请求
+ const postResponse = await HttpUtils.post(URL,params) || {}
+
+ // 发起get请求
+ const getResponse = await HttpUtils.get(URL)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>真是个好用的方法库！老板看了李雷的 <code>HttpUtils</code> 库，喜上眉梢------原来老板也是个拜 fetch 教。老板说李雷，咱们公司以后要做潮流公司了，写代码不再考虑兼容性，我希望你能把公司所有的业务的网络请求都迁移到你这个 HttpUtils 上来，这样以后你只用维护这一个库了，也方便。李雷一听，悲从中来------他是该公司的第 99 代员工，对远古时期的业务一无所知。而该公司第1代员工封装的网络请求库，是基于 <code>XMLHttpRequest</code> 的，差不多长这样：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function Ajax(type, url, data, success, failed){
+    // 创建ajax对象
+    var xhr = null;
+    if(window.XMLHttpRequest){
+        xhr = new XMLHttpRequest();
+    } else {
+        xhr = new ActiveXObject(&#39;Microsoft.XMLHTTP&#39;)
+    }
+
+   ...(此处省略一系列的业务逻辑细节)
+
+   var type = type.toUpperCase();
+
+    // 识别请求类型
+    if(type == &#39;GET&#39;){
+        if(data){
+          xhr.open(&#39;GET&#39;, url + &#39;?&#39; + data, true); //如果有数据就拼接
+        }
+        // 发送get请求
+        xhr.send();
+
+    } else if(type == &#39;POST&#39;){
+        xhr.open(&#39;POST&#39;, url, true);
+        // 如果需要像 html 表单那样 POST 数据，使用 setRequestHeader() 来添加 http 头。
+        xhr.setRequestHeader(&quot;Content-type&quot;, &quot;application/x-www-form-urlencoded&quot;);
+        // 发送post请求
+        xhr.send(data);
+    }
+
+    // 处理返回数据
+    xhr.onreadystatechange = function(){
+        if(xhr.readyState == 4){
+            if(xhr.status == 200){
+                success(xhr.responseText);
+            } else {
+                if(failed){
+                    failed(xhr.status);
+                }
+            }
+        }
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>实现逻辑我们简单描述了一下，这个不是重点，重点是它是这样调用的：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 发送get请求
+Ajax(&#39;get&#39;, url地址, post入参, function(data){
+    // 成功的回调逻辑
+}, function(error){
+    // 失败的回调逻辑
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>李雷佛了 ------ 不仅接口名不同，入参方式也不一样，这手动改要改到何年何日呢？</p><blockquote><p>还好李雷学过设计模式，他立刻联想到了专门为我们抹平差异的适配器模式。要把老代码迁移到新接口，不一定要挨个儿去修改每一次的接口调用------正如我们想用 iPhoneX + 旧耳机听歌，不必挨个儿去改造耳机一样，我们只需要在引入接口时进行一次适配，便可轻松地 cover 掉业务里可能会有的多次调用（具体的解析在注释里）：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Ajax适配器函数，入参与旧接口保持一致
+async function AjaxAdapter(type, url, data, success, failed) {
+    const type = type.toUpperCase()
+    let result
+    try {
+         // 实际的请求全部由新接口发起
+         if(type === &#39;GET&#39;) {
+            result = await HttpUtils.get(url) || {}
+        } else if(type === &#39;POST&#39;) {
+            result = await HttpUtils.post(url, data) || {}
+        }
+        // 假设请求成功对应的状态码是1
+        result.statusCode === 1 &amp;&amp; success ? success(result) : failed(result.statusCode)
+    } catch(error) {
+        // 捕捉网络错误
+        if(failed){
+            failed(error.statusCode);
+        }
+    }
+}
+
+// 用适配器适配旧的Ajax方法
+async function Ajax(type, url, data, success, failed) {
+    await AjaxAdapter(type, url, data, success, failed)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>如此一来，我们只需要编写一个适配器函数<code>AjaxAdapter</code>，并用适配器去承接旧接口的参数，就可以实现新旧接口的无缝衔接了~</p></blockquote><h3 id="_4-2-生产实践-axios中的适配器" tabindex="-1"><a class="header-anchor" href="#_4-2-生产实践-axios中的适配器" aria-hidden="true">#</a> 4.2 生产实践：axios中的适配器</h3><blockquote><p>数月之后，李雷的老板发现了网络请求神库axios，于是团队的方案又整个迁移到了<code>axios</code>------对于心中有适配器的李雷来说，这现在已经根本不是个事儿。不过本小节我们要聊的可不再是&quot;如何使现有接口兼容axios&quot;了。此处引出axios，一是因为大家对它足够熟悉（不熟悉的同学，点<a href="https://github.com/axios/axios" target="_blank" rel="noopener noreferrer">这里 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>可以快速熟悉一下~），二是因为axios本身就用到了我们的适配器模式，它的兼容方案值得我们学习和借鉴。</p></blockquote><p>在使用<code>axios</code>时，作为用户我们只需要掌握以下面三个最常用的接口为代表的一套<code>api</code>：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// Make a request for a user with a given ID
+axios.get(&#39;/user?ID=12345&#39;)
+  .then(function (response) {
+    // handle success
+    console.log(response);
+  })
+  .catch(function (error) {
+    // handle error
+    console.log(error);
+  })
+  .then(function () {
+    // always executed
+  })
+
+axios.post(&#39;/user&#39;, {
+    firstName: &#39;Fred&#39;,
+    lastName: &#39;Flintstone&#39;
+  })
+  .then(function (response) {
+    console.log(response);
+  })
+  .catch(function (error) {
+    console.log(error);
+  });
+
+axios({
+  method: &#39;post&#39;,
+  url: &#39;/user/12345&#39;,
+  data: {
+    firstName: &#39;Fred&#39;,
+    lastName: &#39;Flintstone&#39;
+  }
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>便可轻松地发起各种姿势的网络请求，而不用去关心底层的实现细节。</li><li>除了简明优雅的api之外，axios 强大的地方还在于，它不仅仅是一个局限于浏览器端的库。在Node环境下，我们尝试调用上面的 api，会发现它照样好使 ------ axios 完美地抹平了两种环境下api的调用差异，靠的正是对适配器模式的灵活运用。</li></ul><blockquote><p>在 <a href="https://github.com/axios/axios/blob/master/lib/core/Axios.js" target="_blank" rel="noopener noreferrer">axios 的核心逻辑 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>中，我们可以注意到实际上派发请求的是 <a href="https://github.com/axios/axios/blob/master/lib/core/dispatchRequest.js" target="_blank" rel="noopener noreferrer">dispatchRequest 方法 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>。该方法内部其实主要做了两件事：</p></blockquote><ol><li>数据转换，转换请求体/响应体，可以理解为数据层面的适配；</li><li>调用适配器。</li></ol><blockquote><p>调用适配器的逻辑如下：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 若用户未手动配置适配器，则使用默认的适配器
+var adapter = config.adapter || defaults.adapter;
+
+  // dispatchRequest方法的末尾调用的是适配器方法
+  return adapter(config).then(function onAdapterResolution(response) {
+    // 请求成功的回调
+    throwIfCancellationRequested(config);
+
+    // 转换响应体
+    response.data = transformData(
+      response.data,
+      response.headers,
+      config.transformResponse
+    );
+
+    return response;
+  }, function onAdapterRejection(reason) {
+    // 请求失败的回调
+    if (!isCancel(reason)) {
+      throwIfCancellationRequested(config);
+
+      // 转换响应体
+      if (reason &amp;&amp; reason.response) {
+        reason.response.data = transformData(
+          reason.response.data,
+          reason.response.headers,
+          config.transformResponse
+        );
+      }
+    }
+
+    return Promise.reject(reason);
+  });
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>大家注意注释的第一行，&quot;若用户未手动配置适配器，则使用默认的适配器&quot;。手动配置适配器允许我们自定义处理请求，主要目的是为了使测试更轻松。</p><blockquote><p>实际开发中，我们使用默认适配器的频率更高。默认适配器在<a href="https://github.com/axios/axios/blob/master/lib/defaults.js" target="_blank" rel="noopener noreferrer"><code>axios/lib/default.js</code> (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>里是通过<code>getDefaultAdapter</code>方法来获取的：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function getDefaultAdapter() {
+  var adapter;
+  // 判断当前是否是node环境
+  if (typeof process !== &#39;undefined&#39; &amp;&amp; Object.prototype.toString.call(process) === &#39;[object process]&#39;) {
+    // 如果是node环境，调用node专属的http适配器
+    adapter = require(&#39;./adapters/http&#39;);
+  } else if (typeof XMLHttpRequest !== &#39;undefined&#39;) {
+    // 如果是浏览器环境，调用基于xhr的适配器
+    adapter = require(&#39;./adapters/xhr&#39;);
+  }
+  return adapter;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我们再来看看 <code>Node</code> 的 <code>http</code> 适配器和 <code>xhr</code> 适配器大概长啥样：</p><blockquote><p><code>http</code> 适配器：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>module.exports = function httpAdapter(config) {
+  return new Promise(function dispatchHttpRequest(resolvePromise, rejectPromise) {
+    // 具体逻辑
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>xhr 适配器：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>module.exports = function xhrAdapter(config) {
+  return new Promise(function dispatchXhrRequest(resolve, reject) {
+    // 具体逻辑
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>具体逻辑啥样，咱们目前先不关心，有兴趣的同学，可以狠狠地点<a href="https://github.com/axios/axios/tree/master/lib/adapters" target="_blank" rel="noopener noreferrer">这里 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>阅读源码。咱们现在就注意两个事儿：</p></blockquote><ul><li>两个适配器的入参都是 <code>config</code>；</li><li>两个适配器的出参都是一个 <code>Promise</code>。</li></ul><blockquote><p>Tips：要是仔细读了源码，会发现两个适配器中的 P<code>romise</code> 的内部结构也是如出一辙。</p></blockquote><p>这么一来，通过 <code>axios</code> 发起跨平台的网络请求，不仅调用的接口名是同一个，连入参、出参的格式都只需要掌握同一套。这导致它的学习成本非常低，开发者看了文档就能上手；同时因为足够简单，在使用的过程中也不容易出错，带来了极佳的用户体验，<code>axios</code> 也因此越来越流行。</p><p>这正是一个好的适配器的自我修养------把变化留给自己，把统一留给用户。在此处，所有关于 <code>http</code> 模块、关于 <code>xhr</code> 的实现细节，全部被 <code>Adapter</code> 封装进了自己复杂的底层逻辑里，暴露给用户的都是十分简单的统一的东西------统一的接口，统一的入参，统一的出参，统一的规则。用起来就是一个字 ------ 爽！</p><h2 id="_5-结构型-代理模式" tabindex="-1"><a class="header-anchor" href="#_5-结构型-代理模式" aria-hidden="true">#</a> 5 结构型-代理模式</h2><blockquote><p>代理模式，式如其名------在某些情况下，出于种种考虑/限制，一个对象不能直接访问另一个对象，需要一个第三者（代理）牵线搭桥从而间接达到访问目的，这样的模式就是代理模式。</p></blockquote><p>代理模式非常好理解，因为你可能天天都在用，只是没有刻意挖掘过它背后的玄机------比如大家耳熟能详的科学上网，就是代理模式的典型案例。</p><h3 id="_5-1-es6中的proxy" tabindex="-1"><a class="header-anchor" href="#_5-1-es6中的proxy" aria-hidden="true">#</a> 5.1 ES6中的Proxy</h3><p>在 ES6 中，提供了专门以代理角色出现的代理器 ------ <code>Proxy</code>。它的基本用法如下：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const proxy = new Proxy(obj, handler)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>第一个参数是我们的目标对象，也就是上文中的&quot;未知妹子&quot;。<code>handler</code> 也是一个对象，用来定义代理的行为，相当于上文中的&quot;婚介所&quot;。当我们通过 <code>proxy</code> 去访问目标对象的时候，<code>handler</code>会对我们的行为作一层拦截，我们的每次访问都需要经过 <code>handler</code> 这个第三方。</p><h3 id="_5-2-婚介所-的实现" tabindex="-1"><a class="header-anchor" href="#_5-2-婚介所-的实现" aria-hidden="true">#</a> 5.2 &quot;婚介所&quot;的实现</h3><p>未知妹子的个人信息，刚问了下我们已经注册了 VIP 的同事哥，大致如下：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 未知妹子
+const girl = {
+  // 姓名
+  name: &#39;小美&#39;,
+  // 自我介绍
+  aboutMe: &#39;...&#39;（大家自行脑补吧）
+  // 年龄
+  age: 24,
+  // 职业
+  career: &#39;teacher&#39;,
+  // 假头像
+  fakeAvatar: &#39;xxxx&#39;(新垣结衣的图片地址）
+  // 真实头像
+  avatar: &#39;xxxx&#39;(自己的照片地址),
+  // 手机号
+  phone: 123456,
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>婚介所收到了小美的信息，开始营业。大家想，这个姓名、自我介绍、假头像，这些信息大差不差，曝光一下没问题。但是人家妹子的年龄、职业、真实头像、手机号码，是不是属于非常私密的信息了？要想 get 这些信息，平台要考验一下你的诚意了 ------ 首先，你是不是已经通过了实名审核？如果通过实名审核，那么你可以查看一些相对私密的信息（年龄、职业）。然后，你是不是 VIP ？只有 VIP 可以查看真实照片和联系方式。满足了这两个判定条件，你才可以顺利访问到别人的全部私人信息，不然，就劝退你提醒你去完成认证和VIP购买再来。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 普通私密信息
+const baseInfo = [&#39;age&#39;, &#39;career&#39;]
+// 最私密信息
+const privateInfo = [&#39;avatar&#39;, &#39;phone&#39;]
+
+// 用户（同事A）对象实例
+const user = {
+  ...(一些必要的个人信息)
+  isValidated: true,
+  isVIP: false,
+}
+
+// 婚介所登场了
+const lovers = new Proxy(girl, {
+  get: function(girl, key) {
+      if(baseInfo.indexOf(key)!==-1 &amp;&amp; !user.isValidated) {
+          alert(&#39;您还没有完成验证哦&#39;)
+          return
+      }
+
+      //...(此处省略其它有的没的各种校验逻辑)
+
+      // 此处我们认为只有验证过的用户才可以购买VIP
+      if(user.isValidated &amp;&amp; privateInfo.indexOf(key) &amp;&amp; !user.isVIP) {
+          alert(&#39;只有VIP才可以查看该信息哦&#39;)
+          return
+      }
+  }
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>以上主要是 <code>getter</code> 层面的拦截。假设我们还允许会员间互送礼物，每个会员可以告知婚介所自己愿意接受的礼物的价格下限，我们还可以作 <code>setter</code> 层面的拦截。：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 规定礼物的数据结构由type和value组成
+const present = {
+    type: &#39;巧克力&#39;,
+    value: 60,
+}
+
+// 为用户增开presents字段存储礼物
+const girl = {
+  // 姓名
+  name: &#39;小美&#39;,
+  // 自我介绍
+  aboutMe: &#39;...&#39;（大家自行脑补吧）
+  // 年龄
+  age: 24,
+  // 职业
+  career: &#39;teacher&#39;,
+  // 假头像
+  fakeAvatar: &#39;xxxx&#39;(新垣结衣的图片地址）
+  // 真实头像
+  avatar: &#39;xxxx&#39;(自己的照片地址),
+  // 手机号
+  phone: 123456,
+  // 礼物数组
+  presents: [],
+  // 拒收50块以下的礼物
+  bottomValue: 50,
+  // 记录最近一次收到的礼物
+  lastPresent: present,
+}
+
+// 婚介所推出了小礼物功能
+const lovers = new Proxy(girl, {
+  get: function(girl, key) {
+    if(baseInfo.indexOf(key)!==-1 &amp;&amp; !user.isValidated) {
+        alert(&#39;您还没有完成验证哦&#39;)
+        return
+    }
+
+    //...(此处省略其它有的没的各种校验逻辑)
+
+    // 此处我们认为只有验证过的用户才可以购买VIP
+    if(user.isValidated &amp;&amp; privateInfo.indexOf(key) &amp;&amp; !user.isVIP) {
+        alert(&#39;只有VIP才可以查看该信息哦&#39;)
+        return
+    }
+  }
+
+  set: function(girl, key, val) {
+    // 最近一次送来的礼物会尝试赋值给lastPresent字段
+    if(key === &#39;lastPresent&#39;) {
+      if(val.value &lt; girl.bottomValue) {
+          alert(&#39;sorry，您的礼物被拒收了&#39;)
+          return
+      }
+
+      // 如果没有拒收，则赋值成功，同时并入presents数组
+      girl[lastPresent] = val
+      girl[presents] = [...presents, val]
+    }
+  }
+
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_5-3-事件代理" tabindex="-1"><a class="header-anchor" href="#_5-3-事件代理" aria-hidden="true">#</a> 5.3 事件代理</h3><blockquote><p>事件代理，可能是代理模式最常见的一种应用方式，也是一道实打实的高频面试题。它的场景是一个父元素下有多个子元素，像这样：</p></blockquote><p>事件代理，可能是代理模式最常见的一种应用方式，也是一道实打实的高频面试题。它的场景是一个父元素下有多个子元素，像这样：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+  &lt;title&gt;事件代理&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  &lt;div id=&quot;father&quot;&gt;
+    &lt;a href=&quot;#&quot;&gt;链接1号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接2号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接3号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接4号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接5号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接6号&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我们现在的需求是，希望鼠标点击每个 a 标签，都可以弹出&quot;我是xxx&quot;这样的提示。比如点击第一个 a 标签，弹出&quot;我是链接1号&quot;这样的提示。这意味着我们至少要安装 <code>6</code> 个监听函数给 <code>6</code> 个不同的的元素(一般我们会用循环，代码如下所示），如果我们的 <code>a</code> 标签进一步增多，那么性能的开销会更大。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 假如不用代理模式，我们将循环安装监听函数
+const aNodes = document.getElementById(&#39;father&#39;).getElementsByTagName(&#39;a&#39;)
+
+const aLength = aNodes.length
+
+for(let i=0;i&lt;aLength;i++) {
+    aNodes[i].addEventListener(&#39;click&#39;, function(e) {
+        e.preventDefault()
+        alert(`我是${aNodes[i].innerText}`)
+    })
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>考虑到事件本身具有&quot;冒泡&quot;的特性，当我们点击 a 元素时，点击事件会&quot;冒泡&quot;到父元素 div 上，从而被监听到。如此一来，点击事件的监听函数只需要在 div 元素上被绑定一次即可，而不需要在子元素上被绑定 N 次------这种做法就是事件代理，它可以很大程度上提高我们代码的性能。</p></blockquote><p>事件代理的实现</p><p>用代理模式实现多个子元素的事件监听，代码会简单很多：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 获取父元素
+const father = document.getElementById(&#39;father&#39;)
+
+// 给父元素安装一次监听函数
+father.addEventListener(&#39;click&#39;, function(e) {
+    // 识别是否是目标子元素
+    if(e.target.tagName === &#39;A&#39;) {
+        // 以下是监听函数的函数体
+        e.preventDefault()
+        alert(`我是${e.target.innerText}`)
+    }
+} )
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在这种做法下，我们的点击操作并不会直接触及目标子元素，而是由父元素对事件进行处理和分发、间接地将其作用于子元素，因此这种操作从模式上划分属于代理模式。</p><h3 id="_5-4-虚拟代理" tabindex="-1"><a class="header-anchor" href="#_5-4-虚拟代理" aria-hidden="true">#</a> 5.4 虚拟代理</h3><p>简单地给大家描述一下懒加载是个什么东西：它是针对图片加载时机的优化：在一些图片量比较大的网站，比如电商网站首页，或者团购网站、小游戏首页等。如果我们尝试在用户打开页面的时候，就把所有的图片资源加载完毕，那么很可能会造成白屏、卡顿等现象。</p><p>此时我们会采取&quot;先占位、后加载&quot;的方式来展示图片 ------ 在元素露出之前，我们给它一个 div 作占位，当它滚动到可视区域内时，再即时地去加载真实的图片资源，这样做既减轻了性能压力、又保住了用户体验。</p><p>除了图片懒加载，还有一种操作叫图片预加载。预加载主要是为了避免网络不好、或者图片太大时，页面长时间给用户留白的尴尬。常见的操作是先让这个 img 标签展示一个占位图，然后创建一个 Image 实例，让这个 Image 实例的 src 指向真实的目标图片地址、观察该 Image 实例的加载情况 ------ 当其对应的真实图片加载完毕后，即已经有了该图片的缓存内容，再将 DOM 上的 img 元素的 src 指向真实的目标图片地址。此时我们直接去取了目标图片的缓存，所以展示速度会非常快，从占位图到目标图片的时间差会非常小、小到用户注意不到，这样体验就会非常好了。</p><p>上面的思路，我们可以不假思索地实现如下</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class PreLoadImage {
+    // 占位图的url地址
+    static LOADING_URL = &#39;xxxxxx&#39;
+
+    constructor(imgNode) {
+        // 获取该实例对应的DOM节点
+        this.imgNode = imgNode
+    }
+
+    // 该方法用于设置真实的图片地址
+    setSrc(targetUrl) {
+        // img节点初始化时展示的是一个占位图
+        this.imgNode.src = PreLoadImage.LOADING_URL
+        // 创建一个帮我们加载图片的Image实例
+        const image = new Image()
+        // 监听目标图片加载的情况，完成时再将DOM上的img节点的src属性设置为目标图片的url
+        image.onload = () =&gt; {
+            this.imgNode.src = targetUrl
+        }
+        // 设置src属性，Image实例开始加载图片
+        image.src = srcUrl
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个 <code>PreLoadImage</code> 乍一看没问题，但其实违反了我们设计原则中的单一职责原则。<code>PreLoadImage</code> 不仅要负责图片的加载，还要负责 <code>DOM</code> 层面的操作（img 节点的初始化和后续的改变）。这样一来，就出现了两个可能导致这个类发生变化的原因。</p><blockquote><p>好的做法是将两个逻辑分离，让 <code>PreLoadImage</code> 专心去做 DOM 层面的事情（真实 DOM 节点的获取、img 节点的链接设置），再找一个对象来专门来帮我们搞加载------这两个对象之间缺个媒婆，这媒婆非代理器不可：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class PreLoadImage {
+    constructor(imgNode) {
+        // 获取真实的DOM节点
+        this.imgNode = imgNode
+    }
+
+    // 操作img节点的src属性
+    setSrc(imgUrl) {
+        this.imgNode.src = imgUrl
+    }
+}
+
+class ProxyImage {
+    // 占位图的url地址
+    static LOADING_URL = &#39;xxxxxx&#39;
+
+    constructor(targetImage) {
+        // 目标Image，即PreLoadImage实例
+        this.targetImage = targetImage
+    }
+
+    // 该方法主要操作虚拟Image，完成加载
+    setSrc(targetUrl) {
+       // 真实img节点初始化时展示的是一个占位图
+        this.targetImage.setSrc(ProxyImage.LOADING_URL)
+        // 创建一个帮我们加载图片的虚拟Image实例
+        const virtualImage = new Image()
+        // 监听目标图片加载的情况，完成时再将DOM上的真实img节点的src属性设置为目标图片的url
+        virtualImage.onload = () =&gt; {
+            this.targetImage.setSrc(targetUrl)
+        }
+        // 设置src属性，虚拟Image实例开始加载图片
+        virtualImage.src = targetUrl
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p><code>ProxyImage</code> 帮我们调度了预加载相关的工作，我们可以通过 <code>ProxyImage</code> 这个代理，实现对真实 img 节点的间接访问，并得到我们想要的效果。</p></blockquote><p>在这个实例中，<code>virtualImage</code> 这个对象是一个&quot;幕后英雄&quot;，它始终存在于 JavaScript 世界中、代替真实 DOM 发起了图片加载请求、完成了图片加载工作，却从未在渲染层面抛头露面。因此这种模式被称为&quot;虚拟代理&quot;模式。</p><h3 id="_5-5-缓存代理" tabindex="-1"><a class="header-anchor" href="#_5-5-缓存代理" aria-hidden="true">#</a> 5.5 缓存代理</h3><blockquote><p>缓存代理比较好理解，它应用于一些计算量较大的场景里。在这种场景下，我们需要&quot;用空间换时间&quot;------当我们需要用到某个已经计算过的值的时候，不想再耗时进行二次计算，而是希望能从内存里去取出现成的计算结果。这种场景下，就需要一个代理来帮我们在进行计算的同时，进行计算结果的缓存了。</p></blockquote><p>一个比较典型的例子，是对传入的参数进行求和：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// addAll方法会对你传入的所有参数做求和操作
+const addAll = function() {
+    console.log(&#39;进行了一次新计算&#39;)
+    let result = 0
+    const len = arguments.length
+    for(let i = 0; i &lt; len; i++) {
+        result += arguments[i]
+    }
+    return result
+}
+
+// 为求和方法创建代理
+const proxyAddAll = (function(){
+    // 求和结果的缓存池
+    const resultCache = {}
+    return function() {
+        // 将入参转化为一个唯一的入参字符串
+        const args = Array.prototype.join.call(arguments, &#39;,&#39;)
+
+        // 检查本次入参是否有对应的计算结果
+        if(args in resultCache) {
+            // 如果有，则返回缓存池里现成的结果
+            return resultCache[args]
+        }
+        return resultCache[args] = addAll(...arguments)
+    }
+})()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我们把这个方法丢进控制台，尝试同一套入参两次，结果喜人：</p><p><img src="/assets/20210327190950.efb581e9.png" alt=""></p><blockquote><p>我们发现 <code>proxyAddAll</code> 针对重复的入参只会计算一次，这将大大节省计算过程中的时间开销。现在我们有 6 个入参，可能还看不出来，当我们针对大量入参、做反复计算时，缓存代理的优势将得到更充分的凸显。</p></blockquote><h2 id="_6-行为型-策略模式" tabindex="-1"><a class="header-anchor" href="#_6-行为型-策略模式" aria-hidden="true">#</a> 6 行为型-策略模式</h2><blockquote><p>定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。</p></blockquote><p>例子</p><blockquote><p>定义：根据不同参数可以命中不同的策略</p></blockquote><ul><li><p>优点：</p></li><li><p>能减少大量的if语句</p></li><li><p>复用性好</p></li><li><p>优化使用：</p><ul><li>封装代码，暴露方法</li></ul></li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>export default {
+    xxx
+}
+
+import xxx from &#39;x.js&#39;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const strategy = {
+    &#39;A&#39;: (salary) =&gt; {
+        return salary * 2;
+    },
+
+    &#39;B&#39;: (salary) =&gt; {
+        return salary * 3;
+    },
+
+    &#39;C&#39;: (salary) =&gt; {
+        return salary * 4;
+    }
+}
+
+const calculateBonus = (level, salary) =&gt; {
+    return strategy[level](salary)
+}
+
+const A = calculateBonus(&#39;A&#39;, 10000);
+console.log(A); // 20000
+
+// 暴露方法
+export default {
+    calculateBonus
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6-1-先来看一个真实场景" tabindex="-1"><a class="header-anchor" href="#_6-1-先来看一个真实场景" aria-hidden="true">#</a> 6.1 先来看一个真实场景</h3><p>有一天，产品经理韩梅梅找到李雷，给李雷提了这么个需求：</p><p>马上大促要来了，我们本次大促要做差异化询价。啥是差异化询价？就是说同一个商品，我通过在后台给它设置不同的价格类型，可以让它展示不同的价格。具体的逻辑如下：</p><ul><li>当价格类型为&quot;预售价&quot;时，满 100 - 20，不满 100 打 9 折</li><li>当价格类型为&quot;大促价&quot;时，满 100 - 30，不满 100 打 8 折</li><li>当价格类型为&quot;返场价&quot;时，满 200 - 50，不叠加</li><li>当价格类型为&quot;尝鲜价&quot;时，直接打 5 折</li></ul><p>李雷扫了一眼 prd，立刻来了主意。他首先将四种价格做了标签化：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>预售价 - pre
+大促价 - onSale
+返场价 - back
+尝鲜价 - fresh
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>接下来李雷仔细研读了 prd 的内容，作为资深 if-else 侠，他三下五除二就写出一套功能完备的代码：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 询价方法，接受价格标签和原价为入参
+function askPrice(tag, originPrice) {
+
+  // 处理预热价
+  if(tag === &#39;pre&#39;) {
+    if(originPrice &gt;= 100) {
+      return originPrice - 20
+    }
+    return originPrice * 0.9
+  }
+
+  // 处理大促价
+  if(tag === &#39;onSale&#39;) {
+    if(originPrice &gt;= 100) {
+      return originPrice - 30
+    }
+    return originPrice * 0.8
+  }
+
+  // 处理返场价
+  if(tag === &#39;back&#39;) {
+    if(originPrice &gt;= 200) {
+      return originPrice - 50
+    }
+    return originPrice
+  }
+
+  // 处理尝鲜价
+  if(tag === &#39;fresh&#39;) {
+     return originPrice * 0.5
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_6-2-if-else-侠-人人喊打" tabindex="-1"><a class="header-anchor" href="#_6-2-if-else-侠-人人喊打" aria-hidden="true">#</a> 6.2 if-else 侠，人人喊打</h3><p>随便跑一下，上述代码运行起来确实没啥毛病。但也只是&quot;运行起来&quot;没毛病而已。作为人人喊打的 if-else 侠，李雷必须为他的行为付出代价。我们一起来看看这么写代码会带来什么后果：</p><ul><li>首先，它违背了&quot;单一功能&quot;原则。一个 function 里面，它竟然处理了四坨逻辑------这个函数的逻辑太胖了！这样会带来什么样的糟糕后果，笔者在前面的小节中已经 BB 过很多次了：比如说万一其中一行代码出了 Bug，那么整个询价逻辑都会崩坏；与此同时出了 Bug 你很难定位到底是哪个代码块坏了事；再比如说单个能力很难被抽离复用等等等等。相信跟着我一路学下来的各位，也已经在重重实战中对胖逻辑的恶劣影响有了切身的体会。总之，见到胖逻辑，我们的第一反应，就是一个字------拆！</li><li>不仅如此，它还违背了&quot;开放封闭&quot;原则。假如有一天韩梅梅再次找到李雷，要他加一个满 100 - 50 的&quot;新人价&quot;怎么办？他只能继续 if-else：</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function askPrice(tag, originPrice) {
+
+  // 处理预热价
+  if(tag === &#39;pre&#39;) {
+    if(originPrice &gt;= 100) {
+      return originPrice - 20
+    }
+    return originPrice * 0.9
+  }
+  // 处理大促价
+  if(tag === &#39;onSale&#39;) {
+    if(originPrice &gt;= 100) {
+      return originPrice - 30
+    }
+    return originPrice * 0.8
+  }
+
+  // 处理返场价
+  if(tag === &#39;back&#39;) {
+    if(originPrice &gt;= 200) {
+      return originPrice - 50
+    }
+    return originPrice
+  }
+
+  // 处理尝鲜价
+  if(tag === &#39;fresh&#39;) {
+      return originPrice * 0.5
+  }
+
+  // 处理新人价
+  if(tag === &#39;newUser&#39;) {
+    if(originPrice &gt;= 100) {
+      return originPrice - 50
+    }
+    return originPrice
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>没错，李雷灰溜溜地跑去改了 <code>askPrice</code> 函数！随后他恬不知耻地徐徐转头，对背后的测试同学说：哥，我改了询价函数，麻烦你帮我把整个询价逻辑回归一下。测试同学莞尔一笑， 心中早已有无数头羊驼在狂奔。他强忍着周末加班的悲痛，做完了这漫长而不必要的回归测试，随后默默点击了同事系统里的举报按钮对李雷说：哥，求你学学设计模式吧！！</p></blockquote><h3 id="_6-3-重构询价逻辑" tabindex="-1"><a class="header-anchor" href="#_6-3-重构询价逻辑" aria-hidden="true">#</a> 6.3 重构询价逻辑</h3><p>现在我们基于我们已经学过的设计模式思想，一点一点改造掉这个臃肿的 askPrice。</p><p>1. 单一功能改造</p><p>首先，我们赶紧把四种询价逻辑提出来，让它们各自为政：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 处理预热价
+function prePrice(originPrice) {
+  if(originPrice &gt;= 100) {
+    return originPrice - 20
+  }
+  return originPrice * 0.9
+}
+
+// 处理大促价
+function onSalePrice(originPrice) {
+  if(originPrice &gt;= 100) {
+    return originPrice - 30
+  }
+  return originPrice * 0.8
+}
+
+// 处理返场价
+function backPrice(originPrice) {
+  if(originPrice &gt;= 200) {
+    return originPrice - 50
+  }
+  return originPrice
+}
+
+// 处理尝鲜价
+function freshPrice(originPrice) {
+  return originPrice * 0.5
+}
+
+function askPrice(tag, originPrice) {
+  // 处理预热价
+  if(tag === &#39;pre&#39;) {
+    return prePrice(originPrice)
+  }
+  // 处理大促价
+  if(tag === &#39;onSale&#39;) {
+    return onSalePrice(originPrice)
+  }
+
+  // 处理返场价
+  if(tag === &#39;back&#39;) {
+    return backPrice(originPrice)
+  }
+
+  // 处理尝鲜价
+  if(tag === &#39;fresh&#39;) {
+     return freshPrice(originPrice)
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>OK，我们现在至少做到了一个函数只做一件事。现在每个函数都有了自己明确的、单一的分工：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>prePrice - 处理预热价
+onSalePrice - 处理大促价
+backPrice - 处理返场价
+freshPrice - 处理尝鲜价
+askPrice - 分发询价逻辑
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如此一来，我们在遇到 Bug 时，就可以做到&quot;头痛医头，脚痛医脚&quot;，而不必在庞大的逻辑海洋里费力去定位到底是哪块不对。</p><p>同时，如果我在另一个函数里也想使用某个询价能力，比如说我想询预热价，那我直接把 prePrice 这个函数拿去调用就是了，而不必在 askPrice 肥胖的身躯里苦苦寻觅、然后掏出这块逻辑、最后再复制粘贴到另一个函数去------更何况万一哪天 askPrice 里的预热价逻辑改了，你还得再复制粘贴一次，扎心啊老铁！</p><p>到这里，在单一功能原则的指引下，我们已经解决了一半的问题。</p><p>我们现在来捋一下，其实这个询价逻辑整体上来看只有两个关键动作：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>询价逻辑的分发 ------&gt; 询价逻辑的执行
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>在改造的第一步，我们已经把&quot;询价逻辑的执行&quot;给摘了出去，并且实现了不同询价逻辑之间的解耦。接下来，我们就要拿&quot;分发&quot;这个动作开刀。</p><p>2. 开放封闭改造</p><p>剩下一半的问题是啥呢？就是咱们上面说的那个新人价的问题------这会儿我要想给 askPrice 增加新人询价逻辑，我该咋整？我只能这么来：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 处理预热价
+function prePrice(originPrice) {
+  if(originPrice &gt;= 100) {
+    return originPrice - 20
+  }
+  return originPrice * 0.9
+}
+
+// 处理大促价
+function onSalePrice(originPrice) {
+  if(originPrice &gt;= 100) {
+    return originPrice - 30
+  }
+  return originPrice * 0.8
+}
+
+// 处理返场价
+function backPrice(originPrice) {
+  if(originPrice &gt;= 200) {
+    return originPrice - 50
+  }
+  return originPrice
+}
+
+// 处理尝鲜价
+function freshPrice(originPrice) {
+  return originPrice * 0.5
+}
+
+// 处理新人价
+function newUserPrice(originPrice) {
+  if(originPrice &gt;= 100) {
+    return originPrice - 50
+  }
+  return originPrice
+}
+
+function askPrice(tag, originPrice) {
+  // 处理预热价
+  if(tag === &#39;pre&#39;) {
+    return prePrice(originPrice)
+  }
+  // 处理大促价
+  if(tag === &#39;onSale&#39;) {
+    return onSalePrice(originPrice)
+  }
+
+  // 处理返场价
+  if(tag === &#39;back&#39;) {
+    return backPrice(originPrice)
+  }
+
+  // 处理尝鲜价
+  if(tag === &#39;fresh&#39;) {
+     return freshPrice(originPrice)
+  }
+
+  // 处理新人价
+  if(tag === &#39;newUser&#39;) {
+     return newUserPrice(originPrice)
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在外层，我们编写一个 newUser 函数用于处理新人价逻辑；在 askPrice 里面，我们新增了一个 if-else 判断。可以看出，这样其实还是在修改 askPrice 的函数体，没有实现&quot;对扩展开放，对修改封闭&quot;的效果。</p><blockquote><p>那么我们应该怎么做？我们仔细想想，楼上用了这么多 if-else，我们的目的到底是什么？是不是就是为了把 询价标签-询价函数 这个映射关系给明确下来？那么在 JS 中，有没有什么既能够既帮我们明确映射关系，同时不破坏代码的灵活性的方法呢？答案就是对象映射！</p></blockquote><p>咱们完全可以把询价算法全都收敛到一个对象里去嘛：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义一个询价处理器对象
+const priceProcessor = {
+  pre(originPrice) {
+    if (originPrice &gt;= 100) {
+      return originPrice - 20;
+    }
+    return originPrice * 0.9;
+  },
+  onSale(originPrice) {
+    if (originPrice &gt;= 100) {
+      return originPrice - 30;
+    }
+    return originPrice * 0.8;
+  },
+  back(originPrice) {
+    if (originPrice &gt;= 200) {
+      return originPrice - 50;
+    }
+    return originPrice;
+  },
+  fresh(originPrice) {
+    return originPrice * 0.5;
+  },
+};
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当我们想使用其中某个询价算法的时候：通过标签名去定位就好了：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 询价函数
+function askPrice(tag, originPrice) {
+  return priceProcessor[tag](originPrice)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>如此一来，askPrice 函数里的 if-else 大军彻底被咱们消灭了。这时候如果你需要一个新人价，只需要给 priceProcessor 新增一个映射关系：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>priceProcessor.newUser = function (originPrice) {
+  if (originPrice &gt;= 100) {
+    return originPrice - 50;
+  }
+  return originPrice;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这样一来，询价逻辑的分发也变成了一个清清爽爽的过程。当李雷以这种方式新增一个新人价的询价逻辑的时候，就可以底气十足地对测试同学说：老哥，我改了询价逻辑，但是改动范围仅仅涉及到新人价，是一个单纯的功能增加。所以你只测这个新功能点就 OK，老逻辑不用管！</p><p>从此，李雷就从人人喊打的 if-else 侠，摇身一变成为了测试之友、中国好开发。业务代码里的询价逻辑，也因为李雷坚守设计原则100年不动摇，而变得易读、易维护。</p><h3 id="_6-4-总结" tabindex="-1"><a class="header-anchor" href="#_6-4-总结" aria-hidden="true">#</a> 6.4 总结</h3><p>说起来你可能不相信，咱们上面的整个重构的过程，就是对策略模式的应用。</p><p>现在大家来品品策略模式的定义：</p><blockquote><p>定义一系列的算法,把它们一个个封装起来, 并且使它们可相互替换。</p></blockquote><p>回头看看，咱们忙活到现在，是不是就干了这事儿？</p><p>但你要直接读这句话，可能确实会懵圈------啥是算法？如何封装？可替换又是咋做到的？</p><p>如今你你已经自己动手实现了算法提取、算法封装、分发优化的整个一条龙的操作流，相信面对这条定义，你可以会心一笑------算法，就是我们这个场景中的询价逻辑，它也可以是你任何一个功能函数的逻辑；&quot;封装&quot;就是把某一功能点对应的逻辑给提出来；&quot;可替换&quot;建立在封装的基础上，只是说这个&quot;替换&quot;的判断过程，咱们不能直接怼 if-else，而要考虑更优的映射方案。</p><h2 id="_7-行为型-状态模式" tabindex="-1"><a class="header-anchor" href="#_7-行为型-状态模式" aria-hidden="true">#</a> 7 行为型-状态模式</h2><h3 id="_7-1-一台咖啡机的诞生" tabindex="-1"><a class="header-anchor" href="#_7-1-一台咖啡机的诞生" aria-hidden="true">#</a> 7.1 一台咖啡机的诞生</h3><p>作为一个具备强大抽象思维能力的程序员，李雷没有辜负自己这么多年来学过的现代前端框架。他敏锐地感知到，韩梅梅所说的这些不同的&quot;选择&quot;间的切换，本质就是状态的切换。在这个能做四种咖啡的咖啡机体内，蕴含着四种状态：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>- 美式咖啡态（american)：只吐黑咖啡
+- 普通拿铁态(latte)：黑咖啡加点奶
+- 香草拿铁态（vanillaLatte）：黑咖啡加点奶再加香草糖浆
+- 摩卡咖啡态(mocha)：黑咖啡加点奶再加点巧克力
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>嘿嘿，这么一梳理，李雷的思路一下子清晰了起来。作为死性不改的 if-else 侠，他再次三下五除二写出了一套功能完备的代码：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class CoffeeMaker {
+  constructor() {
+    /**
+     *这里略去咖啡机中与咖啡状态切换无关的一些初始化逻辑
+    **/
+    // 初始化状态，没有切换任何咖啡模式
+    this.state = &#39;init&#39;;
+  }
+  // 关注咖啡机状态切换函数
+  changeState(state) {
+    // 记录当前状态
+    this.state = state;
+    if(state === &#39;american&#39;) {
+      // 这里用 console 代指咖啡制作流程的业务逻辑
+      console.log(&#39;我只吐黑咖啡&#39;);
+    } else if(state === &#39;latte&#39;) {
+      console.log(`给黑咖啡加点奶`);
+    } else if(state === &#39;vanillaLatte&#39;) {
+      console.log(&#39;黑咖啡加点奶再加香草糖浆&#39;);
+    } else if(state === &#39;mocha&#39;) {
+      console.log(&#39;黑咖啡加点奶再加点巧克力&#39;);
+    }
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试一下，完美无缺：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const mk = new CoffeeMaker();
+mk.changeState(&#39;latte&#39;); // 输出 &#39;给黑咖啡加点奶&#39;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>鉴于 if-else 使不得，李雷赶紧翻出了他在策略模式中学到的&quot;单一职责&quot;和&quot;开放封闭&quot;原则，比猫画虎地改造起了自己的咖啡机：</p></blockquote><h3 id="_7-2-改造咖啡机的状态切换机制" tabindex="-1"><a class="header-anchor" href="#_7-2-改造咖啡机的状态切换机制" aria-hidden="true">#</a> 7.2 改造咖啡机的状态切换机制</h3><p>1. 职责分离</p><p>首先，映入李雷眼帘最大的问题，就是咖啡制作过程不可复用：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>changeState(state) {
+    // 记录当前状态
+    this.state = state;
+    if(state === &#39;american&#39;) {
+      // 这里用 console 代指咖啡制作流程的业务逻辑
+      console.log(&#39;我只吐黑咖啡&#39;);
+    } else if(state === &#39;latte&#39;) {
+      console.log(`给黑咖啡加点奶`);
+    } else if(state === &#39;vanillaLatte&#39;) {
+      console.log(&#39;黑咖啡加点奶再加香草糖浆&#39;);
+    } else if(state === &#39;mocha&#39;) {
+      console.log(&#39;黑咖啡加点奶再加点巧克力&#39;);
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>李雷发现，这个 changeState 函数，它好好管好自己的事（状态切换）不行吗？怎么连做咖啡的过程也写在这里面？这不合理。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class CoffeeMaker {
+  constructor() {
+    /**
+    这里略去咖啡机中与咖啡状态切换无关的一些初始化逻辑
+  **/
+    // 初始化状态，没有切换任何咖啡模式
+    this.state = &#39;init&#39;;
+  }
+  changeState(state) {
+    // 记录当前状态
+    this.state = state;
+    if(state === &#39;american&#39;) {
+      // 这里用 console 代指咖啡制作流程的业务逻辑
+      this.americanProcess();
+    } else if(state === &#39;latte&#39;) {
+      this.latteProcress();
+    } else if(state === &#39;vanillaLatte&#39;) {
+      this.vanillaLatteProcress();
+    } else if(state === &#39;mocha&#39;) {
+      this.mochaProcress();
+    }
+  }
+
+  americanProcess() {
+    console.log(&#39;我只吐黑咖啡&#39;);
+  }
+
+  latteProcress() {
+    this.americanProcess();
+    console.log(&#39;加点奶&#39;);
+  }
+
+  vanillaLatteProcress() {
+    this.latteProcress();
+    console.log(&#39;再加香草糖浆&#39;);
+  }
+
+  mochaProcress() {
+    this.latteProcress();
+    console.log(&#39;再加巧克力&#39;);
+  }
+}
+
+const mk = new CoffeeMaker();
+mk.changeState(&#39;latte&#39;);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果符合预期：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>我只吐黑咖啡
+加点奶
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_7-3-开放封闭" tabindex="-1"><a class="header-anchor" href="#_7-3-开放封闭" aria-hidden="true">#</a> 7.3 开放封闭</h3><p>复用的问题解决了，if-else 却仍然活得好好的。</p><p>现在咱们假如要增加&quot;气泡美式&quot;这个咖啡品种，就不得不去修改 changeState 的函数逻辑，这违反了开放封闭的原则。</p><p>同时，一个函数里收敛这么多判断，也着实不够体面。咱们现在要像策略模式一样，想办法把咖啡机状态和咖啡制作工序之间的映射关系（也就是咱们上节谈到的分发过程）用一个更优雅地方式做掉。如果你策略模式掌握得足够好，你会第一时间反映出对象映射的方案：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const stateToProcessor = {
+  american() {
+    console.log(&#39;我只吐黑咖啡&#39;);
+  },
+  latte() {
+    this.american();
+    console.log(&#39;加点奶&#39;);
+  },
+  vanillaLatte() {
+    this.latte();
+    console.log(&#39;再加香草糖浆&#39;);
+  },
+  mocha() {
+    this.latte();
+    console.log(&#39;再加巧克力&#39;);
+  }
+}
+
+class CoffeeMaker {
+  constructor() {
+    /**
+    这里略去咖啡机中与咖啡状态切换无关的一些初始化逻辑
+  **/
+    // 初始化状态，没有切换任何咖啡模式
+    this.state = &#39;init&#39;;
+  }
+
+  // 关注咖啡机状态切换函数
+  changeState(state) {
+    // 记录当前状态
+    this.state = state;
+    // 若状态不存在，则返回
+    if(!stateToProcessor[state]) {
+      return ;
+    }
+    stateToProcessor[state]();
+  }
+}
+
+const mk = new CoffeeMaker();
+mk.changeState(&#39;latte&#39;);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果符合预期：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>我只吐黑咖啡
+加点奶
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>当我们这么做时，其实已经实现了一个 js 版本的状态模式。</p><p>但这里有一点大家需要引起注意：这种方法仅仅是看上去完美无缺，其中却暗含一个非常重要的隐患------stateToProcessor 里的工序函数，感知不到咖啡机的内部状况。</p><h3 id="_7-4-进一步改造" tabindex="-1"><a class="header-anchor" href="#_7-4-进一步改造" aria-hidden="true">#</a> 7.4 进一步改造</h3><p>按照我们这一通描述，当务之急是要把咖啡机和它的状态处理函数建立关联。</p><p>如果你读过一些早期的设计模式教学资料，有一种思路是将每一个状态所对应的的一些行为抽象成类，然后通过传递 this 的方式来关联状态和状态主体。</p><p>这种思路也可以，不过它一般还需要你实现抽象工厂，比较麻烦。实际业务中这种做法极为少见。我这里要给大家介绍的是一种更方便也更常用的解决方案------非常简单，把状态-行为映射对象作为主体类对应实例的一个属性添加进去就行了：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class CoffeeMaker {
+  constructor() {
+    /**
+     *这里略去咖啡机中与咖啡状态切换无关的一些初始化逻辑
+    **/
+    // 初始化状态，没有切换任何咖啡模式
+    this.state = &#39;init&#39;;
+    // 初始化牛奶的存储量
+    this.leftMilk = &#39;500ml&#39;;
+  }
+  stateToProcessor = {
+    that: this,
+    american() {
+      // 尝试在行为函数里拿到咖啡机实例的信息并输出
+      console.log(&#39;咖啡机现在的牛奶存储量是:&#39;, this.that.leftMilk)
+      console.log(&#39;我只吐黑咖啡&#39;);
+    },
+    latte() {
+      this.american()
+      console.log(&#39;加点奶&#39;);
+    },
+    vanillaLatte() {
+      this.latte();
+      console.log(&#39;再加香草糖浆&#39;);
+    },
+    mocha() {
+      this.latte();
+      console.log(&#39;再加巧克力&#39;);
+    }
+  }
+
+  // 关注咖啡机状态切换函数
+  changeState(state) {
+    this.state = state;
+    if (!this.stateToProcessor[state]) {
+      return;
+    }
+    this.stateToProcessor[state]();
+  }
+}
+
+const mk = new CoffeeMaker();
+mk.changeState(&#39;latte&#39;);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果为：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>咖啡机现在的牛奶存储量是: 500ml
+我只吐黑咖啡
+加点奶
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>如此一来，我们就可以在 stateToProcessor 轻松拿到咖啡机的实例对象，进而感知咖啡机这个主体了。</p><h3 id="_7-5-状态模式复盘" tabindex="-1"><a class="header-anchor" href="#_7-5-状态模式复盘" aria-hidden="true">#</a> 7.5 状态模式复盘</h3><p>和策略模式一样，咱们仍然是敲完代码之后，一起来复盘一下状态模式的定义：</p><blockquote><p>状态模式(State Pattern) ：允许一个对象在其内部状态改变时改变它的行为，对象看起来似乎修改了它的类。</p></blockquote><p>这个定义比较粗糙，可能你读完仍然 get 不到它想让你干啥。这时候，我们就应该把目光转移到它解决的问题上来：</p><blockquote><p>状态模式主要解决的是当控制一个对象状态的条件表达式过于复杂时的情况。把状态的判断逻辑转移到表示不同状态的一系列类中，可以把复杂的判断逻辑简化。</p></blockquote><p>仔细回忆一下我们这节做的事情，也确实就是这么回事儿。</p><blockquote><p>唯一的区别在于，定义里强调了&quot;类&quot;的概念。但我们的示例中，包括大家今后的实践中，一个对象的状态如果复杂到了你不得不给它的每 N 种状态划分为一类、一口气划分很多类这种程度，我更倾向于你去反思一个这个对象是不是做太多事情了。事实上，在大多数场景下，我们的行为划分，都是可以像本节一样，控制在&quot;函数&quot;这个粒度的。</p></blockquote><h2 id="_8-行为型-观察者模式" tabindex="-1"><a class="header-anchor" href="#_8-行为型-观察者模式" aria-hidden="true">#</a> 8 行为型-观察者模式</h2><blockquote><p>观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个目标对象，当这个目标对象的状态发生变化时，会通知所有观察者对象，使它们能够自动更新。 ------ Graphic Design Patterns</p></blockquote><p>观察者模式，是所有 JavaScript 设计模式中使用频率最高，面试频率也最高的设计模式，所以说它十分重要------如果我是面试官，考虑到面试时间有限、设计模式这块不能多问，我可能在考查你设计模式的时候只会问观察者模式这一个模式。该模式的权重极高</p><p>重点不一定是难点。观察者模式十分重要，但它并不抽象，理解难度不大。这种模式不仅在业务开发中遍地开花，在日常生活中也是非常常见的。为了帮助大家形成初步的理解，在进入代码世界之前，我们照例来看一段日常：</p><h3 id="_8-1-生活中的观察者模式" tabindex="-1"><a class="header-anchor" href="#_8-1-生活中的观察者模式" aria-hidden="true">#</a> 8.1 生活中的观察者模式</h3><p>周一刚上班，前端开发李雷就被产品经理韩梅梅拉进了一个钉钉群------&quot;员工管理系统需求第99次变更群&quot;。这个群里不仅有李雷，还有后端开发 A，测试同学 B。三位技术同学看到这简单直白的群名便立刻做好了接受变更的准备、打算撸起袖子开始干了。此时韩梅梅却说：&quot;别急，这个需求有问题，我需要和业务方再确认一下，大家先各忙各的吧&quot;。这种情况下三位技术同学不必立刻投入工作，但他们都已经做好了本周需要做一个新需求的准备，时刻等待着产品经理的号召。</p><p>一天过去了，两天过去了。周三下午，韩梅梅终于和业务方确认了所有的需求细节，于是在&quot;员工管理系统需求第99次变更群&quot;里大吼一声：&quot;需求文档来了！&quot;，随后甩出了&quot;需求文档.zip&quot;文件，同时@所有人。三位技术同学听到熟悉的&quot;有人@我&quot;提示音，立刻点开群进行群消息和群文件查收，随后根据群消息和群文件提供的需求信息，投入到了各自的开发里。上述这个过程，就是一个典型的观察者模式。</p><p>重点角色对号入座</p><p>观察者模式有一个&quot;别名&quot;，叫<code>发布 - 订阅模式</code>（之所以别名加了引号，是因为两者之间存在着细微的差异，下个小节里我们会讲到这点）。这个别名非常形象地诠释了观察者模式里两个核心的角色要素------&quot;发布者&quot;与&quot;订阅者&quot;。</p><p>在上述的过程中，需求文档（目标对象）的发布者只有一个------产品经理韩梅梅。而需求信息的接受者却有多个------前端、后端、测试同学，这些同学的共性就是他们需要根据需求信息开展自己后续的工作、因此都非常关心这个需求信息，于是不得不时刻关注着这个群的群消息提醒，他们是实打实的订阅者，即观察者对象。</p><p>现在我们再回过头来看一遍开头我们提到的略显抽象的定义：</p><blockquote><p>观察者模式定义了一种一对多的依赖关系，让多个观察者对象同时监听某一个目标对象，当这个目标对象的状态发生变化时，会通知所有观察者对象，使它们能够自动更新。</p></blockquote><p>在我们上文这个钉钉群里，一个需求信息对象对应了多个观察者（技术同学），当需求信息对象的状态发生变化（从无到有）时，产品经理通知了群里的所有同学，以便这些同学接收信息进而开展工作：角色划分 --&gt; 状态变化 --&gt; 发布者通知到订阅者，这就是观察者模式的&quot;套路&quot;。</p><h3 id="_8-2-在实践中理解定义" tabindex="-1"><a class="header-anchor" href="#_8-2-在实践中理解定义" aria-hidden="true">#</a> 8.2 在实践中理解定义</h3><blockquote><p>结合我们上面的分析，现在大家知道，在观察者模式里，至少应该有两个关键角色是一定要出现的------发布者和订阅者。用面向对象的方式表达的话，那就是要有两个类。</p></blockquote><p>首先我们来看这个代表发布者的类，我们给它起名叫<code>Publisher</code>。这个类应该具备哪些&quot;基本技能&quot;呢？大家回忆一下上文中的韩梅梅，韩梅梅的基本操作是什么？首先是拉群（增加订阅者），然后是<code>@</code>所有人（通知订阅者），这俩是最明显的了。此外作为群主&amp;产品经理，韩梅梅还具有踢走项目组成员（移除订阅者）的能力。OK，产品经理发布者类的三个基本能力齐了，下面我们开始写代码：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义发布者类
+class Publisher {
+  constructor() {
+    this.observers = []
+    console.log(&#39;Publisher created&#39;)
+  }
+  // 增加订阅者
+  add(observer) {
+    console.log(&#39;Publisher.add invoked&#39;)
+    this.observers.push(observer)
+  }
+  // 移除订阅者
+  remove(observer) {
+    console.log(&#39;Publisher.remove invoked&#39;)
+    this.observers.forEach((item, i) =&gt; {
+      if (item === observer) {
+        this.observers.splice(i, 1)
+      }
+    })
+  }
+  // 通知所有订阅者
+  notify() {
+    console.log(&#39;Publisher.notify invoked&#39;)
+    this.observers.forEach((observer) =&gt; {
+      observer.update(this)
+    })
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>ok，搞定了发布者，我们一起来想想订阅者能干啥------其实订阅者的能力非常简单，作为被动的一方，它的行为只有两个------被通知、去执行（本质上是接受发布者的调用，这步我们在<code>Publisher</code>中已经做掉了）。既然我们在Publisher中做的是方法调用，那么我们在订阅者类里要做的就是方法的定义：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义订阅者类
+class Observer {
+    constructor() {
+        console.log(&#39;Observer created&#39;)
+    }
+    update() {
+        console.log(&#39;Observer.update invoked&#39;)
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>以上，我们就完成了最基本的发布者和订阅者类的设计和编写。在实际的业务开发中，我们所有的定制化的发布者/订阅者逻辑都可以基于这两个基本类来改写。比如我们可以通过拓展发布者类，来使所有的订阅者来监听某个特定状态的变化。</p><p>仍然以开篇的例子为例，我们让开发者们来监听需求文档（prd）的变化：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义一个具体的需求文档（prd）发布类
+class PrdPublisher extends Publisher {
+    constructor() {
+        super()
+        // 初始化需求文档
+        this.prdState = null
+        // 韩梅梅还没有拉群，开发群目前为空
+        this.observers = []
+        console.log(&#39;PrdPublisher created&#39;)
+    }
+
+    // 该方法用于获取当前的prdState
+    getState() {
+        console.log(&#39;PrdPublisher.getState invoked&#39;)
+        return this.prdState
+    }
+
+    // 该方法用于改变prdState的值
+    setState(state) {
+        console.log(&#39;PrdPublisher.setState invoked&#39;)
+        // prd的值发生改变
+        this.prdState = state
+        // 需求文档变更，立刻通知所有开发者
+        this.notify()
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>作为订阅方，开发者的任务也变得具体起来：接收需求文档、并开始干活：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class DeveloperObserver extends Observer {
+    constructor() {
+        super()
+        // 需求文档一开始还不存在，prd初始为空对象
+        this.prdState = {}
+        console.log(&#39;DeveloperObserver created&#39;)
+    }
+
+    // 重写一个具体的update方法
+    update(publisher) {
+        console.log(&#39;DeveloperObserver.update invoked&#39;)
+        // 更新需求文档
+        this.prdState = publisher.getState()
+        // 调用工作函数
+        this.work()
+    }
+
+    // work方法，一个专门搬砖的方法
+    work() {
+        // 获取需求文档
+        const prd = this.prdState
+        // 开始基于需求文档提供的信息搬砖。。。
+        ...
+        console.log(&#39;996 begins...&#39;)
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>下面，我们可以 <code>new</code> 一个 <code>PrdPublisher</code> 对象（产品经理），她可以通过调用 <code>setState</code> 方法来更新需求文档。需求文档每次更新，都会紧接着调用 <code>notify</code> 方法来通知所有开发者：</p><blockquote><p>目标对象的状态发生变化时，会通知所有观察者对象，使它们能够自动更新。</p></blockquote><p>OK，下面我们来看看韩梅梅和她的小伙伴们是如何搞事情的吧：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 创建订阅者：前端开发李雷
+const liLei = new DeveloperObserver()
+// 创建订阅者：服务端开发小A（sorry。。。起名字真的太难了）
+const A = new DeveloperObserver()
+// 创建订阅者：测试同学小B
+const B = new DeveloperObserver()
+// 韩梅梅出现了
+const hanMeiMei = new PrdPublisher()
+// 需求文档出现了
+const prd = {
+    // 具体的需求内容
+    ...
+}
+// 韩梅梅开始拉群
+hanMeiMei.add(liLei)
+hanMeiMei.add(A)
+hanMeiMei.add(B)
+// 韩梅梅发送了需求文档，并@了所有人
+hanMeiMei.setState(prd)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>以上，就是观察者模式在代码世界里的完整实现流程了。</p><p>相信走到这一步，大家对观察者模式的核心思想、基本实现模式都有了不错的掌握。下面我们趁热打铁，一起来看看如何凭借观察者模式，在面试中表演真正的技术~</p><h3 id="_8-3-vue数据双向绑定-响应式系统-的实现原理" tabindex="-1"><a class="header-anchor" href="#_8-3-vue数据双向绑定-响应式系统-的实现原理" aria-hidden="true">#</a> 8.3 Vue数据双向绑定（响应式系统）的实现原理</h3><p>1. 解析</p><p>Vue 框架是热门的渐进式 JavaScript框架。在 Vue 中，当我们修改状态时，视图会随之更新，这就是Vue的数据双向绑定（又称响应式原理）。数据双向绑定是Vue 最独特的特性之一。如果读者没有接触过 Vue，强烈建议阅读<a href="https://cn.vuejs.org/v2/guide/reactivity.html" target="_blank" rel="noopener noreferrer">Vue官方对响应式原理的介绍 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>。此处我们用官方的一张流程图来简要地说明一下Vue响应式系统的整个流程：</p><p><img src="/assets/20210327204351.278e2048.png" alt=""></p><p>在 <code>Vue</code> 中，每个组件实例都有相应的 <code>watcher</code> 实例对象，它会在组件渲染的过程中把属性记录为依赖，之后当依赖项的 <code>setter</code> 被调用时，会通知 <code>watcher</code> 重新计算，从而致使它关联的组件得以更新------这是一个典型的观察者模式。这道面试题考察了受试者对Vue底层原理的理解、对观察者模式的实现能力以及一系列重要的JS知识点，具有较强的综合性和代表性。</p><p>值得注意的是，在面试过程中，面试官多数情况下不会要求大家写出完整的响应式原理实现代码，而是要求你&quot;说说自己的理解&quot;。在本节，我们不会带大家一行一行写代码（具体深入Vue框架的相关知识，建议大家阅读<a href="https://github.com/vuejs/vue" target="_blank" rel="noopener noreferrer">Vue源码 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>及这本<a href="https://juejin.im/book/5a36661851882538e2259c0f" target="_blank" rel="noopener noreferrer">专门写Vue的小册 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>。），而是针对Vue响应式系统中与观察者模式紧密关联的这部分知识作讲解，帮助大家捋清楚整套流程里的来龙去脉、加深对观察者模式的理解。</p><p>在Vue数据双向绑定的实现逻辑里，有这样三个关键角色：</p><ul><li><code>observer</code>（监听器）：注意，此 <code>observer</code> 非彼 <code>observer</code>。在我们上面的解析中，<code>observer</code> 作为设计模式中的一个角色，代表&quot;订阅者&quot;。但在<code>Vue</code>数据双向绑定的角色结构里，所谓的 <code>observer</code> 不仅是一个数据监听器，它还需要对监听到的数据进行转发------也就是说它同时还是一个发布者。</li><li><code>watcher</code>（订阅者）：<code>observer</code> 把数据转发给了真正的订阅者------<code>watcher</code>对象。<code>watcher</code> 接收到新的数据后，会去更新视图。</li><li><code>compile</code>（编译器）：<code>MVVM</code> 框架特有的角色，负责对每个节点元素指令进行扫描和解析，指令的数据初始化、订阅者的创建这些&quot;杂活&quot;也归它管~</li></ul><p>这三者的配合过程如图所示：</p><p><img src="/assets/20210327204920.7d17f26a.png" alt=""></p><p>OK，实现方案搞清楚了，下面我们给整个流程中涉及到发布-订阅这一模式的代码来个特写：</p><p>2. 核心代码</p><p>实现observer</p><blockquote><p>首先我们需要实现一个方法，这个方法会对需要监听的数据对象进行遍历、给它的属性加上定制的 <code>getter</code> 和 <code>setter</code> 函数。这样但凡这个对象的某个属性发生了改变，就会触发 <code>setter</code> 函数，进而通知到订阅者。这个 <code>setter</code> 函数，就是我们的监听器：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// observe方法遍历并包装对象属性
+function observe(target) {
+    // 若target是一个对象，则遍历它
+    if(target &amp;&amp; typeof target === &#39;object&#39;) {
+        Object.keys(target).forEach((key)=&gt; {
+            // defineReactive方法会给目标属性装上&quot;监听器&quot;
+            defineReactive(target, key, target[key])
+        })
+    }
+}
+
+// 定义defineReactive方法
+function defineReactive(target, key, val) {
+    // 属性值也可能是object类型，这种情况下需要调用observe进行递归遍历
+    observe(val)
+    // 为当前属性安装监听器
+    Object.defineProperty(target, key, {
+         // 可枚举
+        enumerable: true,
+        // 不可配置
+        configurable: false,
+        get: function () {
+            return val;
+        },
+        // 监听器函数
+        set: function (value) {
+            console.log(`${target}属性的${key}属性从${val}值变成了了${value}`)
+            val = value
+        }
+    });
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>下面实现订阅者 <code>Dep</code>：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义订阅者类Dep
+class Dep {
+    constructor() {
+        // 初始化订阅队列
+        this.subs = []
+    }
+
+    // 增加订阅者
+    addSub(sub) {
+        this.subs.push(sub)
+    }
+
+    // 通知订阅者（是不是所有的代码都似曾相识？）
+    notify() {
+        this.subs.forEach((sub)=&gt;{
+            sub.update()
+        })
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>现在我们可以改写 <code>defineReactive</code> 中的 <code>setter</code> 方法，在监听器里去通知订阅者了：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function defineReactive(target, key, val) {
+    const dep = new Dep()
+    // 监听当前属性
+    observe(val)
+    Object.defineProperty(target, key, {
+        set: (value) =&gt; {
+            // 通知所有订阅者
+            dep.notify()
+        }
+    })
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_8-4-实现一个event-bus-event-emitter" tabindex="-1"><a class="header-anchor" href="#_8-4-实现一个event-bus-event-emitter" aria-hidden="true">#</a> 8.4 实现一个Event Bus / Event Emitter</h3><blockquote><p><code>Event Bus</code>（Vue、Flutter 等前端框架中有出镜）和 <code>Event Emitter</code>（Node中有出镜）出场的&quot;剧组&quot;不同，但是它们都对应一个共同的角色------全局事件总线。</p></blockquote><p>全局事件总线，严格来说不能说是观察者模式，而是发布-订阅模式。它在我们日常的业务开发中应用非常广。</p><blockquote><p>如果只能选一道题，那这道题一定是 <code>Event Bus/Event Emitter</code> 的代码实现------我都说这么清楚了，这个知识点到底要不要掌握、需要掌握到什么程度，就看各位自己的了。</p></blockquote><p>在Vue中使用Event Bus来实现组件间的通讯</p><blockquote><p><code>Event Bus/Event Emitter</code> 作为全局事件总线，它起到的是一个沟通桥梁的作用。我们可以把它理解为一个事件中心，我们所有事件的订阅/发布都不能由订阅方和发布方&quot;私下沟通&quot;，必须要委托这个事件中心帮我们实现。</p></blockquote><p>在Vue中，有时候 A 组件和 B 组件中间隔了很远，看似没什么关系，但我们希望它们之间能够通信。这种情况下除了求助于 <code>Vuex</code> 之外，我们还可以通过 <code>Event Bus</code> 来实现我们的需求。</p><p>创建一个 <code>Event Bus</code>（本质上也是 Vue 实例）并导出：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const EventBus = new Vue()
+export default EventBus
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>在主文件里引入<code>EventBus</code>，并挂载到全局：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>import bus from &#39;EventBus的文件路径&#39;
+Vue.prototype.bus = bus
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>订阅事件：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 这里func指someEvent这个事件的监听函数
+this.bus.$on(&#39;someEvent&#39;, func)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>发布（触发）事件：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 这里params指someEvent这个事件被触发时回调函数接收的入参
+this.bus.$emit(&#39;someEvent&#39;, params)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>大家会发现，整个调用过程中，没有出现具体的发布者和订阅者（比如上面的<code>PrdPublisher</code>和<code>DeveloperObserver</code>），全程只有<code>bus</code>这个东西一个人在疯狂刷存在感。这就是全局事件总线的特点------所有事件的发布/订阅操作，必须经由事件中心，禁止一切&quot;私下交易&quot;！</p></blockquote><p>下面，我们就一起来实现一个<code>Event Bus</code>（注意看注释里的解析）：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class EventEmitter {
+  constructor() {
+    // handlers是一个map，用于存储事件与回调之间的对应关系
+    this.handlers = {}
+  }
+
+  // on方法用于安装事件监听器，它接受目标事件名和回调函数作为参数
+  on(eventName, cb) {
+    // 先检查一下目标事件名有没有对应的监听函数队列
+    if (!this.handlers[eventName]) {
+      // 如果没有，那么首先初始化一个监听函数队列
+      this.handlers[eventName] = []
+    }
+
+    // 把回调函数推入目标事件的监听函数队列里去
+    this.handlers[eventName].push(cb)
+  }
+
+  // emit方法用于触发目标事件，它接受事件名和监听函数入参作为参数
+  emit(eventName, ...args) {
+    // 检查目标事件是否有监听函数队列
+    if (this.handlers[eventName]) {
+      // 如果有，则逐个调用队列里的回调函数
+      this.handlers[eventName].forEach((callback) =&gt; {
+        callback(...args)
+      })
+    }
+  }
+
+  // 移除某个事件回调队列里的指定回调函数
+  off(eventName, cb) {
+    const callbacks = this.handlers[eventName]
+    const index = callbacks.indexOf(cb)
+    if (index !== -1) {
+      callbacks.splice(index, 1)
+    }
+  }
+
+  // 为事件注册单次监听器
+  once(eventName, cb) {
+    // 对回调函数进行包装，使其执行完毕自动被移除
+    const wrapper = (...args) =&gt; {
+      cb.apply(...args)
+      this.off(eventName, wrapper)
+    }
+    this.on(eventName, wrapper)
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>在日常的开发中，大家用到<code>EventBus/EventEmitter</code>往往提供比这五个方法多的多的多的方法。但在面试过程中，如果大家能够完整地实现出这五个方法，已经非常可以说明问题了，因此楼上这个<code>EventBus</code>希望大家可以熟练掌握。学有余力的同学，推荐阅读<a href="https://github.com/facebook/emitter" target="_blank" rel="noopener noreferrer">FaceBook推出的通用EventEmiiter库的源码 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>，相信你会有更多收获。</p></blockquote><h3 id="_8-5-观察者模式与发布-订阅模式的区别是什么" tabindex="-1"><a class="header-anchor" href="#_8-5-观察者模式与发布-订阅模式的区别是什么" aria-hidden="true">#</a> 8.5 观察者模式与发布-订阅模式的区别是什么？</h3><blockquote><p>在面试过程中，一些对细节比较在意的面试官可能会追问观察者模式与发布-订阅模式的区别。这个问题可能会引发一些同学的不适，因为在大量参考资料以及已出版的纸质书籍中，都会告诉大家&quot;发布-订阅模式和观察者模式是同一个东西的两个名字&quot;。本书在前文的叙述中，也没有突出强调两者的区别。其实这两个模式，要较起真来，确实不能给它们划严格的等号。</p></blockquote><p>为什么大家都喜欢给它们强行划等号呢？这是因为就算划了等号，也不影响我们正常使用，毕竟两者在核心思想、运作机制上没有本质的差别。但考虑到这个问题确实可以成为面试题的一个方向，此处我们还是单独拿出来讲一下。</p><p>回到我们上文的例子里。韩梅梅把所有的开发者拉了一个群，直接把需求文档丢给每一位群成员，这种发布者直接触及到订阅者的操作，叫观察者模式。但如果韩梅梅没有拉群，而是把需求文档上传到了公司统一的需求平台上，需求平台感知到文件的变化、自动通知了每一位订阅了该文件的开发者，这种发布者不直接触及到订阅者、而是由统一的第三方来完成实际的通信的操作，叫做发布-订阅模式。</p><p>相信大家也已经看出来了，观察者模式和发布-订阅模式之间的区别，在于是否存在第三方、发布者能否直接感知订阅者（如图所示）。</p><p><img src="/assets/20210327211020.c31dd69f.png" alt=""></p><p>观察者模式</p><p><img src="/assets/20210327211122.8440d3f3.png" alt=""></p><p>发布-订阅模式</p><blockquote><p>在我们见过的这些例子里，韩梅梅拉钉钉群的操作，就是典型的<code>观察者模式</code>；而通过<code>EventBus</code>去实现事件<code>监听/发布</code>，则属于<code>发布-订阅模式</code>。</p></blockquote><p>既生瑜，何生亮？既然有了观察者模式，为什么还需要发布-订阅模式呢？</p><blockquote><p>大家思考一下：为什么要有观察者模式？<code>观察者模式</code>，解决的其实是模块间的耦合问题，有它在，即便是两个分离的、毫不相关的模块，也可以实现数据通信。但观察者模式仅仅是减少了耦合，并没有完全地解决耦合问题------被观察者必须去维护一套观察者的集合，这些观察者必须实现统一的方法供被观察者调用，两者之间还是有着说不清、道不明的关系。</p></blockquote><p>而<code>发布-订阅模式</code>，则是快刀斩乱麻了------<code>发布者完全不用感知订阅者</code>，不用关心它怎么实现回调方法，<code>事件的注册和触发都发生在独立于双方的第三方平台（事件总线）上</code>。<code>发布-订阅模式</code>下，实现了完全地解耦。</p><blockquote><p>但这并不意味着，<code>发布-订阅模式就比观察者模式&quot;高级&quot;</code>。在实际开发中，我们的模块解耦诉求并非总是需要它们完全解耦。如果两个模块之间本身存在关联，且这种关联是稳定的、必要的，那么我们使用观察者模式就足够了。而在模块与模块之间独立性较强、且没有必要单纯为了数据通信而强行为两者制造依赖的情况下，我们往往会倾向于使用<code>发布-订阅模式</code>。</p></blockquote><h2 id="_9-行为型-迭代器模式" tabindex="-1"><a class="header-anchor" href="#_9-行为型-迭代器模式" aria-hidden="true">#</a> 9 行为型-迭代器模式</h2><blockquote><p>迭代器模式提供一种方法顺序访问一个聚合对象中的各个元素，而又不暴露该对象的内部表示。 ------《设计模式：可复用面向对象软件的基础》</p></blockquote><p>迭代器模式是设计模式中少有的目的性极强的模式。所谓&quot;目的性极强&quot;就是说它不操心别的，它就解决这一个问题------遍历。</p><h3 id="_9-1-公元前-的迭代器模式" tabindex="-1"><a class="header-anchor" href="#_9-1-公元前-的迭代器模式" aria-hidden="true">#</a> 9.1 &quot;公元前&quot;的迭代器模式</h3><blockquote><p>遍历作为一种合理、高频的使用需求，几乎没有语言会要求它的开发者手动去实现。在JS中，本身也内置了一个比较简陋的数组迭代器的实现------ <code>Array.prototype.forEach</code></p></blockquote><p>通过调用<code>forEach</code>方法，我们可以轻松地遍历一个数组：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const arr = [1, 2, 3]
+arr.forEach((item, index)=&gt;{
+    console.log(`索引为${index}的元素是${item}`)
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>但<code>forEach</code>方法并不是万能的，比如下面这种场景：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;!DOCTYPE html&gt;
+&lt;html lang=&quot;en&quot;&gt;
+&lt;head&gt;
+  &lt;meta charset=&quot;UTF-8&quot;&gt;
+  &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot;&gt;
+  &lt;meta http-equiv=&quot;X-UA-Compatible&quot; content=&quot;ie=edge&quot;&gt;
+  &lt;title&gt;事件代理&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;a href=&quot;#&quot;&gt;链接1号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接2号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接3号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接4号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接5号&lt;/a&gt;
+    &lt;a href=&quot;#&quot;&gt;链接6号&lt;/a&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我想拿到所有的a标签，我可以这样做：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const aNodes = document.getElementsByTagName(&#39;a&#39;)
+console.log(&#39;aNodes are&#39;, aNodes)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>我想取其中一个<code>a</code>标签，可以这样做：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const aNode = aNodes[i]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>在这个操作的映衬下，<code>aNodes</code>看上去多么像一个数组啊！但当你尝试用数组的原型方法去遍历它时：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>aNodes.forEach((aNode, index){
+    console.log(aNode, index)
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>你发现报错了：</p><p><img src="/assets/20210327212411.c49b2bba.png" alt=""></p><p>原来这个<code>aNodes</code>是个假数组！准确地说，它是一个类数组对象，并没有为你实现好用的<code>forEach</code>方法。也就是说，要想实现类数组的遍历，你得另请高明。</p><p>现在问题就出现了：普通数组是不是集合？是！<code>aNodes</code>是不是集合？是！同样是集合，同样有遍历需求，我们却要针对不同的数据结构执行不同的遍历手段，好累！再回头看看迭代器的定义是什么------遍历集合的同时，我们不需要关心集合的内部结构。而<code>forEach</code>只能做到允许我们不关心数组这一种集合的内部结构，看来想要一套统一的遍历方案，我们非得请出一个更强的通用迭代器不可了。</p><p>这个小节的标题定语里有三个字&quot;公元前&quot;，这个&quot;公元前&quot;怎么定义呢？其实它说的就是ES标准内置迭代器之前的那些日子------差不多四五年之前，彼时还没有这么多轮子，<code>jQuery</code>风头正盛。当时面试可不问什么<code>Vue</code>原理、<code>React</code>原理、<code>Webpack</code>这些，当时问的最多的是你读过jQuery源码吗？答读过，好，那咱们就有的聊了。答没有？fine，看来你只是个调包侠，回见吧------因为前端的技术点在那时还很有限，所以可考察的东西也就这么点，读jQuery源码的程序员和不读jQuery源码的程序员在面试官眼里有着质的区别。但这也从一个侧面反映出来，jQuery这个库其实是非常优秀的，至少jQuery里有太多优秀的设计模式可以拿来考考你。就包括咱们当年想用一个真-迭代器又不想自己搞的时候，也是请jQuery实现的迭代器来帮忙：</p><p>首先我们要在页面里引入jQuery：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>  &lt;script src=&quot;https://cdn.bootcss.com/jquery/3.3.0/jquery.min.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/script&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>借助<code>jQuery</code>的<code>each</code>方法，我们可以用同一套遍历规则遍历不同的集合对象：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const arr = [1, 2, 3]
+const aNodes = document.getElementsByTagName(&#39;a&#39;)
+
+$.each(arr, function (index, item) {
+    console.log(`数组的第${index}个元素是${item}`)
+})
+
+$.each(aNodes, function (index, aNode) {
+    console.log(`DOM类数组的第${index}个元素是${aNode.innerText}`)
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果完全没问题</p><p>当然啦，遍历<code>jQuery</code>自己的集合对象也不在话下：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const jQNodes = $(&#39;a&#39;)
+$.each(jQNodes, function (index, aNode) {
+   console.log(`jQuery集合的第${index}个元素是${aNode.innerText}`)
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>输出结果仍然没问题：</p><p><img src="/assets/20210327212836.35b16bbe.png" alt=""></p><blockquote><p>可以看出，<code>jQuery</code>的迭代器为我们统一了不同类型集合的遍历方式，使我们在访问集合内每一个成员时不用去关心集合本身的内部结构以及集合与集合间的差异，这就是迭代器存在的价值~</p></blockquote><h3 id="_9-2-es6对迭代器的实现" tabindex="-1"><a class="header-anchor" href="#_9-2-es6对迭代器的实现" aria-hidden="true">#</a> 9.2 ES6对迭代器的实现</h3><p>在&quot;公元前&quot;，JS原生的集合类型数据结构，只有<code>Array</code>（数组）和<code>Object</code>（对象）；而<code>ES6</code>中，又新增了<code>Map</code>和<code>Set</code>。四种数据结构各自有着自己特别的内部实现，但我们仍期待以同样的一套规则去遍历它们，所以<code>ES6</code>在推出新数据结构的同时也推出了一套统一的接口机制------迭代器（<code>Iterator</code>）。</p><blockquote><p><code>ES6</code>约定，任何数据结构只要具备<code>Symbol.iterator</code>属性（这个属性就是<code>Iterator</code>的具体实现，它本质上是当前数据结构默认的迭代器生成函数），就可以被遍历------准确地说，是被<code>for...of...</code>循环和迭代器的next方法遍历。 事实上，<code>for...of...</code>的背后正是对<code>next</code>方法的反复调用。</p></blockquote><p>在ES6中，针对<code>Array</code>、<code>Map</code>、<code>Set</code>、<code>String</code>、<code>TypedArray</code>、函数的 <code>arguments</code> 对象、<code>NodeList</code> 对象这些原生的数据结构都可以通过<code>for...of...</code>进行遍历。原理都是一样的，此处我们拿最简单的数组进行举例，当我们用<code>for...of...</code>遍历数组时：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const arr = [1, 2, 3]
+const len = arr.length
+for(item of arr) {
+   console.log(`当前元素是${item}`)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>之所以能够按顺序一次一次地拿到数组里的每一个成员，是因为我们借助数组的<code>Symbol.iterator</code>生成了它对应的迭代器对象，通过反复调用迭代器对象的<code>next</code>方法访问了数组成员，像这样：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const arr = [1, 2, 3]
+// 通过调用iterator，拿到迭代器对象
+const iterator = arr[Symbol.iterator]()
+
+// 对迭代器对象执行next，就能逐个访问集合的成员
+iterator.next()
+iterator.next()
+iterator.next()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>丢进控制台，我们可以看到<code>next</code>每次会按顺序帮我们访问一个集合成员：</p><p><img src="/assets/20210327213037.ea85fcd8.png" alt=""></p><blockquote><p>而<code>for...of...</code>做的事情，基本等价于下面这通操作：</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 通过调用iterator，拿到迭代器对象
+const iterator = arr[Symbol.iterator]()
+
+// 初始化一个迭代结果
+let now = { done: false }
+
+// 循环往外迭代成员
+while(!now.done) {
+    now = iterator.next()
+    if(!now.done) {
+        console.log(`现在遍历到了${now.value}`)
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>可以看出，<code>for...of...</code>其实就是<code>iterator</code>循环调用换了种写法。在ES6中我们之所以能够开心地用<code>for...of...</code>遍历各种各种的集合，全靠迭代器模式在背后给力。</p></blockquote><p>ps：此处推荐阅读<a href="https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Iteration_protocols" target="_blank" rel="noopener noreferrer">迭代协议 (opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a>，相信大家读过后会对迭代器在ES6中的实现有更深的理解。</p><h3 id="_9-3-实现一个迭代器生成函数" tabindex="-1"><a class="header-anchor" href="#_9-3-实现一个迭代器生成函数" aria-hidden="true">#</a> 9.3 实现一个迭代器生成函数</h3><p>ok，看过了迭代器从古至今的操作，我们一起来实现一个自定义的迭代器。</p><p>楼上我们说迭代器对象全凭迭代器生成函数帮我们生成。在<code>ES6</code>中，实现一个迭代器生成函数并不是什么难事儿，因为ES6早帮我们考虑好了全套的解决方案，内置了贴心的生成器（<code>Generator</code>）供我们使用：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 编写一个迭代器生成函数
+function *iteratorGenerator() {
+    yield &#39;1号选手&#39;
+    yield &#39;2号选手&#39;
+    yield &#39;3号选手&#39;
+}
+
+const iterator = iteratorGenerator()
+
+iterator.next()
+iterator.next()
+iterator.next()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>丢进控制台，不负众望：</p><p><img src="/assets/20210327213223.cf0d84a1.png" alt=""></p><p>写一个生成器函数并没有什么难度，但在面试的过程中，面试官往往对生成器这种语法糖背后的实现逻辑更感兴趣。下面我们要做的，不仅仅是写一个迭代器对象，而是用<code>ES5</code>去写一个能够生成迭代器对象的迭代器生成函数（解析在注释里）：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义生成器函数，入参是任意集合
+function iteratorGenerator(list) {
+    // idx记录当前访问的索引
+    var idx = 0
+    // len记录传入集合的长度
+    var len = list.length
+    return {
+        // 自定义next方法
+        next: function() {
+            // 如果索引还没有超出集合长度，done为false
+            var done = idx &gt;= len
+            // 如果done为false，则可以继续取值
+            var value = !done ? list[idx++] : undefined
+
+            // 将当前值与遍历是否完毕（done）返回
+            return {
+                done: done,
+                value: value
+            }
+        }
+    }
+}
+
+var iterator = iteratorGenerator([&#39;1号选手&#39;, &#39;2号选手&#39;, &#39;3号选手&#39;])
+iterator.next()
+iterator.next()
+iterator.next()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>此处为了记录每次遍历的位置，我们实现了一个闭包，借助自由变量来做我们的迭代过程中的&quot;游标&quot;。</p><p>运行一下我们自定义的迭代器，结果符合预期：</p><p><img src="/assets/20210327213700.0cf6c76d.png" alt=""></p><p>迭代器模式比较特别，它非常重要，重要到语言和框架都争着抢着帮我们实现。但也正因为如此，大家业务开发中需要手动写迭代器的场景几乎没有，所以很少有同学会去刻意留意迭代器模式、思考它背后的实现机制。通过阅读本节，希望大家可以领略迭代器模式的妙处（为什么会有，为什么要用）和迭代器模式的实现思路（方便面试）。</p><h2 id="_10-中介者模式" tabindex="-1"><a class="header-anchor" href="#_10-中介者模式" aria-hidden="true">#</a> 10 中介者模式</h2><blockquote><p>定义：对象与对象之间借助第三方中介者通信</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class Player {
+    constructor(name) {
+        this.name = name;
+
+        this.playerMiddle = new PlayerMiddle();
+        this.playerMiddle.add(name);
+    }
+
+    win() {
+        this.playerMiddle.win(this.name);
+    }
+
+    lose() {
+        this.playerMiddle.lose(this.name);
+    }
+}
+
+// 中介者
+class PlayerMiddle {
+    constructor() {
+        this.players = [];
+        this.winArr = [];
+        this.loseArr = [];
+    }
+
+    add(name) {
+        this.players.push(name)
+    }
+
+    win(name) {
+        this.winArr.push(name)
+        if (this.winArr.length + this.loseArr.length === this.players.length) {
+            this.show()
+        }
+    }
+
+    lose(name) {
+        this.loseArr.push(name)
+        if (this.winArr.length + this.loseArr.length === this.players.length) {
+            this.show()
+        }
+    }
+
+    show() {
+        for (let winner of this.winArr) {
+            console.log(winner + &#39;挑战成功;&#39;)
+        }
+
+        for (let loser of this.loseArr) {
+            console.log(loser + &#39;挑战失败;&#39;)
+        }
+    }
+}
+
+const a = new Player(&#39;A 选手&#39;)
+const b = new Player(&#39;B 选手&#39;)
+const c = new Player(&#39;C 选手&#39;)
+
+a.win()
+b.win()
+c.lose()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_11-享元模式" tabindex="-1"><a class="header-anchor" href="#_11-享元模式" aria-hidden="true">#</a> 11 享元模式</h2><blockquote><p>定义：一种优化程序性能的模式, 本质为减少对象创建的个数。</p></blockquote><p>以下情况可以使用享元模式</p><ol><li>有大量相似的对象，占用了大量内存</li><li>对象中大部分状态可以抽离为外部状态</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 题目：某商家有 50 种男款内衣和 50 种款女款内衣, 要展示它们！
+
+class Model {
+    constructor(gender) {
+        this.gender = gender
+        // this.underwear = &#39;&#39;
+    }
+
+    /* 方法一 */
+    // takePhoto() {
+    //     console.log(`${this.gender}穿着${this.underwear}`)
+    // }
+
+   /* 方法二 */
+    takePhoto(i) {
+        console.log(`${this.gender}穿着${i}款衣服`)
+    }
+
+}
+
+const maleModel = new Model(&#39;male&#39;)
+const femaleModel = new Model(&#39;female&#39;)
+
+for (let i = 1; i &lt; 51; i++) {
+    // maleModel.underwear = `第${i}款衣服`
+    // maleModel.takePhoto()
+
+    maleModel.takePhoto(i)
+}
+
+for (let i = 1; i &lt; 51; i++) {
+    // femaleModel.underwear = `第${i}款衣服`
+    // femaleModel.takePhoto()
+
+    maleModel.takePhoto(i)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div></div><!--[--><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/selected/HTTP%E6%A8%A1%E5%9D%97.html" class="" aria-label="HTTP模块"><!--[--><!--]--> HTTP模块 <!--[--><!--]--></a></span><span class="next"><a href="/selected/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.12353158.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>JS模块 | Frontend Starter</title><meta name="description" content="">
+    <link rel="modulepreload" href="/assets/app.12353158.js"><link rel="modulepreload" href="/assets/JS模块.html.28259fe6.js"><link rel="modulepreload" href="/assets/JS模块.html.015ff251.js"><link rel="prefetch" href="/assets/index.html.ee998a26.js"><link rel="prefetch" href="/assets/CSS.html.c64e9431.js"><link rel="prefetch" href="/assets/HTML.html.a70e4433.js"><link rel="prefetch" href="/assets/HTTP.html.6dbdd949.js"><link rel="prefetch" href="/assets/JS基础.html.0a913d15.js"><link rel="prefetch" href="/assets/React.html.6802a56c.js"><link rel="prefetch" href="/assets/Vue.html.a81339b7.js"><link rel="prefetch" href="/assets/工程化.html.0c152696.js"><link rel="prefetch" href="/assets/性能.html.090fde92.js"><link rel="prefetch" href="/assets/框架通识.html.1a3f58ab.js"><link rel="prefetch" href="/assets/浏览器.html.2ec19a51.js"><link rel="prefetch" href="/assets/设计模式.html.5761cd54.js"><link rel="prefetch" href="/assets/Bootstrap.html.86ad9734.js"><link rel="prefetch" href="/assets/CSS.html.e3ee6176.js"><link rel="prefetch" href="/assets/HTTP _ HTML.html.6603dd61.js"><link rel="prefetch" href="/assets/JavaScript.html.14aca0a4.js"><link rel="prefetch" href="/assets/Webpack.html.f773c5e1.js"><link rel="prefetch" href="/assets/jQuery.html.c3b9972e.js"><link rel="prefetch" href="/assets/其他.html.c716f6ee.js"><link rel="prefetch" href="/assets/微信小程序.html.0335a142.js"><link rel="prefetch" href="/assets/综合.html.5dfe757e.js"><link rel="prefetch" href="/assets/编程题.html.cbfc1c8c.js"><link rel="prefetch" href="/assets/性能优化.html.30c3f1c5.js"><link rel="prefetch" href="/assets/高频考点.html.2ee4efd2.js"><link rel="prefetch" href="/assets/handwritten.html.879fcb5e.js"><link rel="prefetch" href="/assets/JavaScript.html.bcb5a0d9.js"><link rel="prefetch" href="/assets/Node.html.be9ed4e1.js"><link rel="prefetch" href="/assets/React.html.36beeb6b.js"><link rel="prefetch" href="/assets/Vue.html.b739e835.js"><link rel="prefetch" href="/assets/Webpack.html.b34fb870.js"><link rel="prefetch" href="/assets/综合.html.30e0bc70.js"><link rel="prefetch" href="/assets/CSS模块.html.99bd45d7.js"><link rel="prefetch" href="/assets/ES6模块.html.0f2bfddb.js"><link rel="prefetch" href="/assets/HTML模块.html.4fb65265.js"><link rel="prefetch" href="/assets/HTTP模块.html.b4ce19f7.js"><link rel="prefetch" href="/assets/Node模块.html.b1985276.js"><link rel="prefetch" href="/assets/React模块.html.f53e1f03.js"><link rel="prefetch" href="/assets/Vue模块.html.785747a6.js"><link rel="prefetch" href="/assets/前端安全模块.html.f0f98ff3.js"><link rel="prefetch" href="/assets/前端工程相关.html.183e2c9f.js"><link rel="prefetch" href="/assets/小程序模块.html.f7ab4d91.js"><link rel="prefetch" href="/assets/常用设计模式.html.03f9722f.js"><link rel="prefetch" href="/assets/性能优化相关.html.12e8a2e3.js"><link rel="prefetch" href="/assets/排序算法.html.40481e91.js"><link rel="prefetch" href="/assets/框架通识.html.c3c3096b.js"><link rel="prefetch" href="/assets/浏览器模块.html.24652566.js"><link rel="prefetch" href="/assets/移动多端开发.html.8636371c.js"><link rel="prefetch" href="/assets/计算机通识.html.728b7ceb.js"><link rel="prefetch" href="/assets/404.html.93c18560.js"><link rel="prefetch" href="/assets/index.html.60500264.js"><link rel="prefetch" href="/assets/CSS.html.02fa634c.js"><link rel="prefetch" href="/assets/HTML.html.3a31cd64.js"><link rel="prefetch" href="/assets/HTTP.html.a1df6d3a.js"><link rel="prefetch" href="/assets/JS基础.html.b88ab559.js"><link rel="prefetch" href="/assets/React.html.4ec983c7.js"><link rel="prefetch" href="/assets/Vue.html.5c58cab9.js"><link rel="prefetch" href="/assets/工程化.html.863e35db.js"><link rel="prefetch" href="/assets/性能.html.470e0a6f.js"><link rel="prefetch" href="/assets/框架通识.html.32d2fbab.js"><link rel="prefetch" href="/assets/浏览器.html.8279ebd9.js"><link rel="prefetch" href="/assets/设计模式.html.6afe6cf3.js"><link rel="prefetch" href="/assets/Bootstrap.html.2cc414a0.js"><link rel="prefetch" href="/assets/CSS.html.5d66e791.js"><link rel="prefetch" href="/assets/HTTP _ HTML.html.bbea8927.js"><link rel="prefetch" href="/assets/JavaScript.html.07acfd24.js"><link rel="prefetch" href="/assets/Webpack.html.a1c5dce1.js"><link rel="prefetch" href="/assets/jQuery.html.4e2f3899.js"><link rel="prefetch" href="/assets/其他.html.929587e1.js"><link rel="prefetch" href="/assets/微信小程序.html.69cc86fd.js"><link rel="prefetch" href="/assets/综合.html.1c892aa5.js"><link rel="prefetch" href="/assets/编程题.html.5478af99.js"><link rel="prefetch" href="/assets/性能优化.html.337c4654.js"><link rel="prefetch" href="/assets/高频考点.html.8772c401.js"><link rel="prefetch" href="/assets/handwritten.html.0f0ee7e3.js"><link rel="prefetch" href="/assets/JavaScript.html.5dd72bd0.js"><link rel="prefetch" href="/assets/Node.html.7eac5124.js"><link rel="prefetch" href="/assets/React.html.d8ccb952.js"><link rel="prefetch" href="/assets/Vue.html.47efbab1.js"><link rel="prefetch" href="/assets/Webpack.html.793df544.js"><link rel="prefetch" href="/assets/综合.html.ff78888d.js"><link rel="prefetch" href="/assets/CSS模块.html.bcc3cfc7.js"><link rel="prefetch" href="/assets/ES6模块.html.2ea3507a.js"><link rel="prefetch" href="/assets/HTML模块.html.6b729342.js"><link rel="prefetch" href="/assets/HTTP模块.html.2c6adffa.js"><link rel="prefetch" href="/assets/Node模块.html.c36cd1fb.js"><link rel="prefetch" href="/assets/React模块.html.b09a5954.js"><link rel="prefetch" href="/assets/Vue模块.html.a27ab950.js"><link rel="prefetch" href="/assets/前端安全模块.html.e3aebe2f.js"><link rel="prefetch" href="/assets/前端工程相关.html.281b6ffe.js"><link rel="prefetch" href="/assets/小程序模块.html.493268db.js"><link rel="prefetch" href="/assets/常用设计模式.html.a600f326.js"><link rel="prefetch" href="/assets/性能优化相关.html.aff23982.js"><link rel="prefetch" href="/assets/排序算法.html.361967d5.js"><link rel="prefetch" href="/assets/框架通识.html.7719e539.js"><link rel="prefetch" href="/assets/浏览器模块.html.ac4e495d.js"><link rel="prefetch" href="/assets/移动多端开发.html.d8fc5993.js"><link rel="prefetch" href="/assets/计算机通识.html.0e8ab127.js"><link rel="prefetch" href="/assets/404.html.232c3875.js"><link rel="prefetch" href="/assets/404.176778df.js"><link rel="prefetch" href="/assets/Layout.ac3a6e88.js">
+    <link rel="stylesheet" href="/assets/style.20e644be.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Frontend Starter</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">基础 Basic <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/basic/HTTP%20&amp;%20HTML.html" class="sidebar-item" aria-label="HTML、HTTP、Web"><!--[--><!--]--> HTML、HTTP、Web <!--[--><!--]--></a><!----></li><li><a href="/basic/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/basic/JavaScript.html" class="sidebar-item" aria-label="JavaScript"><!--[--><!--]--> JavaScript <!--[--><!--]--></a><!----></li><li><a href="/basic/jQuery.html" class="sidebar-item" aria-label="jQuery"><!--[--><!--]--> jQuery <!--[--><!--]--></a><!----></li><li><a href="/basic/Bootstrap.html" class="sidebar-item" aria-label="Bootstrap"><!--[--><!--]--> Bootstrap <!--[--><!--]--></a><!----></li><li><a href="/basic/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/basic/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html" class="sidebar-item" aria-label="微信小程序"><!--[--><!--]--> 微信小程序 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html" class="sidebar-item" aria-label="编程题"><!--[--><!--]--> 编程题 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E5%85%B6%E4%BB%96.html" class="sidebar-item" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E7%BB%BC%E5%90%88.html" class="sidebar-item" aria-label="综合"><!--[--><!--]--> 综合 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">进阶 Advanced <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/advanced/JS%E5%9F%BA%E7%A1%80.html" class="sidebar-item" aria-label="JS基础"><!--[--><!--]--> JS基础 <!--[--><!--]--></a><!----></li><li><a href="/advanced/HTML.html" class="sidebar-item" aria-label="HTML"><!--[--><!--]--> HTML <!--[--><!--]--></a><!----></li><li><a href="/advanced/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%B5%8F%E8%A7%88%E5%99%A8.html" class="sidebar-item" aria-label="浏览器"><!--[--><!--]--> 浏览器 <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a><!----></li><li><a href="/advanced/Vue.html" class="sidebar-item" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a><!----></li><li><a href="/advanced/React.html" class="sidebar-item" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%80%A7%E8%83%BD.html" class="sidebar-item" aria-label="性能"><!--[--><!--]--> 性能 <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E5%B7%A5%E7%A8%8B%E5%8C%96.html" class="sidebar-item" aria-label="工程化"><!--[--><!--]--> 工程化 <!--[--><!--]--></a><!----></li><li><a href="/advanced/HTTP.html" class="sidebar-item" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="sidebar-item" aria-label="设计模式"><!--[--><!--]--> 设计模式 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading active collapsible">精选 Selected <span class="down arrow"></span></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/selected/HTML%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="HTML模块"><!--[--><!--]--> HTML模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/CSS%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="CSS模块"><!--[--><!--]--> CSS模块 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="JS模块"><!--[--><!--]--> JS模块 <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_1-数据类型基础" class="router-link-active router-link-exact-active sidebar-item" aria-label="1 数据类型基础"><!--[--><!--]--> 1 数据类型基础 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_1-1-js内置类型" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.1 JS内置类型"><!--[--><!--]--> 1.1 JS内置类型 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_1-2-null和undefined区别" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.2 null和undefined区别"><!--[--><!--]--> 1.2 null和undefined区别 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_1-3-null是对象吗-为什么" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.3 null是对象吗？为什么？"><!--[--><!--]--> 1.3 null是对象吗？为什么？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_1-4-1-tostring-为什么可以调用" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.4 &#39;1&#39;.toString()为什么可以调用？"><!--[--><!--]--> 1.4 &#39;1&#39;.toString()为什么可以调用？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_1-5-0-1-0-2为什么不等于0-3" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.5 0.1+0.2为什么不等于0.3？"><!--[--><!--]--> 1.5 0.1+0.2为什么不等于0.3？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_1-6-如何理解bigint" class="router-link-active router-link-exact-active sidebar-item" aria-label="1.6 如何理解BigInt"><!--[--><!--]--> 1.6 如何理解BigInt <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_2-数据类型检测" class="router-link-active router-link-exact-active sidebar-item" aria-label="2 数据类型检测"><!--[--><!--]--> 2 数据类型检测 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_2-1-typeof类型判断" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.1 typeof类型判断"><!--[--><!--]--> 2.1 typeof类型判断 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_2-2-typeof-于-instanceof-区别" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.2 typeof 于 instanceof 区别"><!--[--><!--]--> 2.2 typeof 于 instanceof 区别 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_2-3-object-is和-的区别" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.3 Object.is和===的区别"><!--[--><!--]--> 2.3 Object.is和===的区别 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_2-4-总结" class="router-link-active router-link-exact-active sidebar-item" aria-label="2.4 总结"><!--[--><!--]--> 2.4 总结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-数据类型转换" class="router-link-active router-link-exact-active sidebar-item" aria-label="3 数据类型转换"><!--[--><!--]--> 3 数据类型转换 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-1-转化规则" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.1 转化规则"><!--[--><!--]--> 3.1 转化规则 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-2-转boolean" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.2 转Boolean"><!--[--><!--]--> 3.2 转Boolean <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-3-对象转原始类型是根据什么流程运行的" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.3 对象转原始类型是根据什么流程运行的"><!--[--><!--]--> 3.3 对象转原始类型是根据什么流程运行的 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-4-如何让if-a-1-a-2-条件成立" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.4 如何让if(a == 1 &amp;&amp; a == 2)条件成立"><!--[--><!--]--> 3.4 如何让if(a == 1 &amp;&amp; a == 2)条件成立 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-5-四则运算符" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.5 四则运算符"><!--[--><!--]--> 3.5 四则运算符 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-6-比较运算符" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.6 比较运算符"><!--[--><!--]--> 3.6 比较运算符 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-7-结果是什么-为什么" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.7 [] == ![]结果是什么？为什么？"><!--[--><!--]--> 3.7 [] == ![]结果是什么？为什么？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-8-和-有什么区别" class="router-link-active router-link-exact-active sidebar-item" aria-label="3.8 == 和 ===有什么区别"><!--[--><!--]--> 3.8 == 和 ===有什么区别 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_4-闭包" class="router-link-active router-link-exact-active sidebar-item" aria-label="4 闭包"><!--[--><!--]--> 4 闭包 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_4-1-闭包产生的原因" class="router-link-active router-link-exact-active sidebar-item" aria-label="4.1 闭包产生的原因"><!--[--><!--]--> 4.1 闭包产生的原因 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_4-2-闭包有哪些表现形式" class="router-link-active router-link-exact-active sidebar-item" aria-label="4.2 闭包有哪些表现形式"><!--[--><!--]--> 4.2 闭包有哪些表现形式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_4-3-如何解决下面的循环输出问题" class="router-link-active router-link-exact-active sidebar-item" aria-label="4.3 如何解决下面的循环输出问题"><!--[--><!--]--> 4.3 如何解决下面的循环输出问题 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_5-原型链" class="router-link-active router-link-exact-active sidebar-item" aria-label="5 原型链"><!--[--><!--]--> 5 原型链 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_5-1-原型-构造函数-实例" class="router-link-active router-link-exact-active sidebar-item" aria-label="5.1 原型/构造函数/实例"><!--[--><!--]--> 5.1 原型/构造函数/实例 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_5-2-原型对象和构造函数有何关系" class="router-link-active router-link-exact-active sidebar-item" aria-label="5.2 原型对象和构造函数有何关系"><!--[--><!--]--> 5.2 原型对象和构造函数有何关系 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_5-3-能不能描述一下原型链" class="router-link-active router-link-exact-active sidebar-item" aria-label="5.3 能不能描述一下原型链"><!--[--><!--]--> 5.3 能不能描述一下原型链 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-继承" class="router-link-active router-link-exact-active sidebar-item" aria-label="6 继承"><!--[--><!--]--> 6 继承 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-1-方式1-借助call" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.1 方式1: 借助call"><!--[--><!--]--> 6.1 方式1: 借助call <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-2-方式2-借助原型链" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.2 方式2: 借助原型链"><!--[--><!--]--> 6.2 方式2: 借助原型链 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-3-方式3-将前两种组合" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.3 方式3：将前两种组合"><!--[--><!--]--> 6.3 方式3：将前两种组合 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-4-方式4-组合继承的优化1" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.4 方式4: 组合继承的优化1"><!--[--><!--]--> 6.4 方式4: 组合继承的优化1 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-5-方式5-最推荐使用-组合继承的优化2" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.5 方式5(最推荐使用): 组合继承的优化2"><!--[--><!--]--> 6.5 方式5(最推荐使用): 组合继承的优化2 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-6-es6的extends被编译后的javascript代码" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.6 ES6的extends被编译后的JavaScript代码"><!--[--><!--]--> 6.6 ES6的extends被编译后的JavaScript代码 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-7-从设计思想上谈谈继承本身的问题" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.7 从设计思想上谈谈继承本身的问题"><!--[--><!--]--> 6.7 从设计思想上谈谈继承本身的问题 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_6-8-继承-简版" class="router-link-active router-link-exact-active sidebar-item" aria-label="6.8 继承-简版"><!--[--><!--]--> 6.8 继承-简版 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_7-this" class="router-link-active router-link-exact-active sidebar-item" aria-label="7 this"><!--[--><!--]--> 7 this <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_8-内存机制" class="router-link-active router-link-exact-active sidebar-item" aria-label="8 内存机制"><!--[--><!--]--> 8 内存机制 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_9-执行上下文" class="router-link-active router-link-exact-active sidebar-item" aria-label="9 执行上下文"><!--[--><!--]--> 9 执行上下文 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#小结" class="router-link-active router-link-exact-active sidebar-item" aria-label="小结"><!--[--><!--]--> 小结 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_10-变量提升" class="router-link-active router-link-exact-active sidebar-item" aria-label="10 变量提升"><!--[--><!--]--> 10 变量提升 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_11-模块化" class="router-link-active router-link-exact-active sidebar-item" aria-label="11 模块化"><!--[--><!--]--> 11 模块化 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_12-settimeout、promise、async-await-的区别" class="router-link-active router-link-exact-active sidebar-item" aria-label="12 setTimeout、Promise、Async / Await 的区别"><!--[--><!--]--> 12 setTimeout、Promise、Async / Await 的区别 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_13-async原理" class="router-link-active router-link-exact-active sidebar-item" aria-label="13 async原理"><!--[--><!--]--> 13 async原理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_14-js-整数是怎么表示的" class="router-link-active router-link-exact-active sidebar-item" aria-label="14 JS 整数是怎么表示的"><!--[--><!--]--> 14 JS 整数是怎么表示的 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_15-number-的存储空间是多大-如果后台发送了一个超过最大自己的数字怎么办" class="router-link-active router-link-exact-active sidebar-item" aria-label="15 Number() 的存储空间是多大？如果后台发送了一个超过最大自己的数字怎么办"><!--[--><!--]--> 15 Number() 的存储空间是多大？如果后台发送了一个超过最大自己的数字怎么办 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_16-settimeout-fn-0-多久才执行-event-loop" class="router-link-active router-link-exact-active sidebar-item" aria-label="16 setTimeout(fn, 0)多久才执行，Event Loop"><!--[--><!--]--> 16 setTimeout(fn, 0)多久才执行，Event Loop <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_17-js脚本加载问题-async、defer问题" class="router-link-active router-link-exact-active sidebar-item" aria-label="17 js脚本加载问题，async、defer问题"><!--[--><!--]--> 17 js脚本加载问题，async、defer问题 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_18-javascript垃圾回收机制的了解" class="router-link-active router-link-exact-active sidebar-item" aria-label="18 JavaScript垃圾回收机制的了解"><!--[--><!--]--> 18 JavaScript垃圾回收机制的了解 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_19-说说有几种类型的dom节点" class="router-link-active router-link-exact-active sidebar-item" aria-label="19 说说有几种类型的DOM节点"><!--[--><!--]--> 19 说说有几种类型的DOM节点 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_20-说说javascript对象的几种创建方式" class="router-link-active router-link-exact-active sidebar-item" aria-label="20 说说JavaScript对象的几种创建方式"><!--[--><!--]--> 20 说说JavaScript对象的几种创建方式 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#工厂模式-创建方式" class="router-link-active router-link-exact-active sidebar-item" aria-label="工厂模式,创建方式"><!--[--><!--]--> 工厂模式,创建方式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#构造函数模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="构造函数模式"><!--[--><!--]--> 构造函数模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#使用原型模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="使用原型模式"><!--[--><!--]--> 使用原型模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#组合使用构造函数模式和原型模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="组合使用构造函数模式和原型模式"><!--[--><!--]--> 组合使用构造函数模式和原型模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#动态原型模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="动态原型模式"><!--[--><!--]--> 动态原型模式 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_21-如何转化类数组成数组" class="router-link-active router-link-exact-active sidebar-item" aria-label="21 如何转化类数组成数组"><!--[--><!--]--> 21 如何转化类数组成数组 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#array-prototype-slice-call" class="router-link-active router-link-exact-active sidebar-item" aria-label="Array.prototype.slice.call()"><!--[--><!--]--> Array.prototype.slice.call() <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#array-from" class="router-link-active router-link-exact-active sidebar-item" aria-label="Array.from()"><!--[--><!--]--> Array.from() <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#es6展开运算符" class="router-link-active router-link-exact-active sidebar-item" aria-label="ES6展开运算符"><!--[--><!--]--> ES6展开运算符 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#利用concat-apply" class="router-link-active router-link-exact-active sidebar-item" aria-label="利用concat+apply"><!--[--><!--]--> 利用concat+apply <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_22-foreach中return有效果吗-如何中断foreach循环" class="router-link-active router-link-exact-active sidebar-item" aria-label="22 forEach中return有效果吗？如何中断forEach循环？"><!--[--><!--]--> 22 forEach中return有效果吗？如何中断forEach循环？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_23-js判断数组中是否包含某个值" class="router-link-active router-link-exact-active sidebar-item" aria-label="23 JS判断数组中是否包含某个值"><!--[--><!--]--> 23 JS判断数组中是否包含某个值 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#方法一-array-indexof" class="router-link-active router-link-exact-active sidebar-item" aria-label="方法一：array.indexOf"><!--[--><!--]--> 方法一：array.indexOf <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#方法二-array-includes-searcelement-fromindex" class="router-link-active router-link-exact-active sidebar-item" aria-label="方法二：array.includes(searcElement[,fromIndex])"><!--[--><!--]--> 方法二：array.includes(searcElement[,fromIndex]) <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#方法三-array-find-callback-thisarg" class="router-link-active router-link-exact-active sidebar-item" aria-label="方法三：array.find(callback[,thisArg])"><!--[--><!--]--> 方法三：array.find(callback[,thisArg]) <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#方法四-array-findeindex-callback-thisarg" class="router-link-active router-link-exact-active sidebar-item" aria-label="方法四：array.findeIndex(callback[,thisArg])"><!--[--><!--]--> 方法四：array.findeIndex(callback[,thisArg]) <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_24-js中flat-数组扁平化" class="router-link-active router-link-exact-active sidebar-item" aria-label="24 JS中flat---数组扁平化"><!--[--><!--]--> 24 JS中flat---数组扁平化 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#调用es6中的flat方法" class="router-link-active router-link-exact-active sidebar-item" aria-label="调用ES6中的flat方法"><!--[--><!--]--> 调用ES6中的flat方法 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#replace-split" class="router-link-active router-link-exact-active sidebar-item" aria-label="replace + split"><!--[--><!--]--> replace + split <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#replace-json-parse" class="router-link-active router-link-exact-active sidebar-item" aria-label="replace + JSON.parse"><!--[--><!--]--> replace + JSON.parse <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#普通递归" class="router-link-active router-link-exact-active sidebar-item" aria-label="普通递归"><!--[--><!--]--> 普通递归 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#利用reduce函数迭代" class="router-link-active router-link-exact-active sidebar-item" aria-label="利用reduce函数迭代"><!--[--><!--]--> 利用reduce函数迭代 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#扩展运算符" class="router-link-active router-link-exact-active sidebar-item" aria-label="扩展运算符"><!--[--><!--]--> 扩展运算符 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_25-js中浅拷贝的手段有哪些" class="router-link-active router-link-exact-active sidebar-item" aria-label="25 JS中浅拷贝的手段有哪些"><!--[--><!--]--> 25 JS中浅拷贝的手段有哪些 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#重要-什么是拷贝" class="router-link-active router-link-exact-active sidebar-item" aria-label="重要: 什么是拷贝？"><!--[--><!--]--> 重要: 什么是拷贝？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_1-手动实现" class="router-link-active router-link-exact-active sidebar-item" aria-label="1. 手动实现"><!--[--><!--]--> 1. 手动实现 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_2-object-assign" class="router-link-active router-link-exact-active sidebar-item" aria-label="2. Object.assign"><!--[--><!--]--> 2. Object.assign <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_3-concat浅拷贝数组" class="router-link-active router-link-exact-active sidebar-item" aria-label="3. concat浅拷贝数组"><!--[--><!--]--> 3. concat浅拷贝数组 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_4-slice浅拷贝" class="router-link-active router-link-exact-active sidebar-item" aria-label="4. slice浅拷贝"><!--[--><!--]--> 4. slice浅拷贝 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_5-展开运算符" class="router-link-active router-link-exact-active sidebar-item" aria-label="5. ...展开运算符"><!--[--><!--]--> 5. ...展开运算符 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_26-数组-array" class="router-link-active router-link-exact-active sidebar-item" aria-label="26 数组(array)"><!--[--><!--]--> 26 数组(array) <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_27-代码的复用" class="router-link-active router-link-exact-active sidebar-item" aria-label="27 代码的复用"><!--[--><!--]--> 27 代码的复用 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_28-操作dom节点方法" class="router-link-active router-link-exact-active sidebar-item" aria-label="28 操作DOM节点方法"><!--[--><!--]--> 28 操作DOM节点方法 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_29-ajax总结" class="router-link-active router-link-exact-active sidebar-item" aria-label="29 Ajax总结"><!--[--><!--]--> 29 Ajax总结 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_30-谈谈你对for-in-for-of的理解" class="router-link-active router-link-exact-active sidebar-item" aria-label="30 谈谈你对for in/for of的理解"><!--[--><!--]--> 30 谈谈你对for in/for of的理解 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_31-数组相关" class="router-link-active router-link-exact-active sidebar-item" aria-label="31 数组相关"><!--[--><!--]--> 31 数组相关 <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#array-3-和array-3-4-的区别" class="router-link-active router-link-exact-active sidebar-item" aria-label="Array(3)和Array(3, 4)的区别？"><!--[--><!--]--> Array(3)和Array(3, 4)的区别？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#请创建一个长度为100-值都为1的数组" class="router-link-active router-link-exact-active sidebar-item" aria-label="请创建一个长度为100，值都为1的数组"><!--[--><!--]--> 请创建一个长度为100，值都为1的数组 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#请创建一个长度为100-值为对应下标的数组" class="router-link-active router-link-exact-active sidebar-item" aria-label="请创建一个长度为100，值为对应下标的数组"><!--[--><!--]--> 请创建一个长度为100，值为对应下标的数组 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_32-setinterval存在哪些问题" class="router-link-active router-link-exact-active sidebar-item" aria-label="32 setInterval存在哪些问题？"><!--[--><!--]--> 32 setInterval存在哪些问题？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_33-链式调用settimeout对比setinterval" class="router-link-active router-link-exact-active sidebar-item" aria-label="33 链式调用setTimeout对比setInterval"><!--[--><!--]--> 33 链式调用setTimeout对比setInterval <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_34-说一下requestanimationframe" class="router-link-active router-link-exact-active sidebar-item" aria-label="34 说一下requestAnimationFrame"><!--[--><!--]--> 34 说一下requestAnimationFrame <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_35-requestanimationframe对比settimeout" class="router-link-active router-link-exact-active sidebar-item" aria-label="35 requestAnimationFrame对比setTimeout"><!--[--><!--]--> 35 requestAnimationFrame对比setTimeout <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_36-xmlhttprequest" class="router-link-active router-link-exact-active sidebar-item" aria-label="36 XMLHttpRequest"><!--[--><!--]--> 36 XMLHttpRequest <!--[--><!--]--></a><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#关于http-xmlhttprequest-ajax的关系" class="router-link-active router-link-exact-active sidebar-item" aria-label="关于http,XMLHttpRequest,Ajax的关系"><!--[--><!--]--> 关于http,XMLHttpRequest,Ajax的关系 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#xmlhttprequest的发展历程是怎样的" class="router-link-active router-link-exact-active sidebar-item" aria-label="XMLHttpRequest的发展历程是怎样的？"><!--[--><!--]--> XMLHttpRequest的发展历程是怎样的？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#使用xmlhttprequest封装一个get和post请求" class="router-link-active router-link-exact-active sidebar-item" aria-label="使用XMLHttpRequest封装一个get和post请求"><!--[--><!--]--> 使用XMLHttpRequest封装一个get和post请求 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#_37-javascript-实现对上传图片的压缩" class="router-link-active router-link-exact-active sidebar-item" aria-label="37 JavaScript 实现对上传图片的压缩？"><!--[--><!--]--> 37 JavaScript 实现对上传图片的压缩？ <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/selected/JS%E6%A8%A1%E5%9D%97.html#参考" class="router-link-active router-link-exact-active sidebar-item" aria-label="参考"><!--[--><!--]--> 参考 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/selected/ES6%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="ES6模块"><!--[--><!--]--> ES6模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="浏览器模块"><!--[--><!--]--> 浏览器模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/React%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="React模块"><!--[--><!--]--> React模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/Vue%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="Vue模块"><!--[--><!--]--> Vue模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/Node%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="Node模块"><!--[--><!--]--> Node模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E7%9B%B8%E5%85%B3.html" class="sidebar-item" aria-label="前端工程相关"><!--[--><!--]--> 前端工程相关 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E7%A7%BB%E5%8A%A8%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91.html" class="sidebar-item" aria-label="移动多端开发"><!--[--><!--]--> 移动多端开发 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="小程序模块"><!--[--><!--]--> 小程序模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="前端安全模块"><!--[--><!--]--> 前端安全模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9B%B8%E5%85%B3.html" class="sidebar-item" aria-label="性能优化相关"><!--[--><!--]--> 性能优化相关 <!--[--><!--]--></a><!----></li><li><a href="/selected/HTTP%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="HTTP模块"><!--[--><!--]--> HTTP模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="sidebar-item" aria-label="常用设计模式"><!--[--><!--]--> 常用设计模式 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html" class="sidebar-item" aria-label="排序算法"><!--[--><!--]--> 排序算法 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="计算机通识"><!--[--><!--]--> 计算机通识 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">高频 Frequency <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/frequency/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html" class="sidebar-item" aria-label="高频考点"><!--[--><!--]--> 高频考点 <!--[--><!--]--></a><!----></li><li><a href="/frequency/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="sidebar-item" aria-label="性能优化"><!--[--><!--]--> 性能优化 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">原理 Principle <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/principle/React.html" class="sidebar-item" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a><!----></li><li><a href="/principle/Vue.html" class="sidebar-item" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a><!----></li><li><a href="/principle/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/principle/Node.html" class="sidebar-item" aria-label="Node"><!--[--><!--]--> Node <!--[--><!--]--></a><!----></li><li><a href="/principle/JavaScript.html" class="sidebar-item" aria-label="JavaScript"><!--[--><!--]--> JavaScript <!--[--><!--]--></a><!----></li><li><a href="/principle/%E7%BB%BC%E5%90%88.html" class="sidebar-item" aria-label="综合"><!--[--><!--]--> 综合 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="js模块" tabindex="-1"><a class="header-anchor" href="#js模块" aria-hidden="true">#</a> JS模块</h1><hr><h2 id="_1-数据类型基础" tabindex="-1"><a class="header-anchor" href="#_1-数据类型基础" aria-hidden="true">#</a> 1 数据类型基础</h2><h3 id="_1-1-js内置类型" tabindex="-1"><a class="header-anchor" href="#_1-1-js内置类型" aria-hidden="true">#</a> 1.1 JS内置类型</h3><ul><li><code>JS</code> 中分为七种内置类型，七种内置类型又分为两大类型：基本类型和对象（<code>Object</code>）。</li><li>基本类型有七种： <code>null</code>，<code>undefined</code>，<code>boolean</code>，<code>number</code>，<code>string</code>，<code>symbol</code>, <code>bigint</code>。</li><li>其中 <code>JS</code> 的数字类型是浮点类型的，没有整型。并且浮点类型基于 <code>IEEE 754</code>标准实现，在使用中会遇到某些 Bug。<code>NaN</code> 也属于 <code>number</code> 类型，并且 <code>NaN</code> 不等于自身。</li><li>对于基本类型来说，如果使用字面量的方式，那么这个变量只是个字面量，只有在必要的时候才会转换为对应的类型。</li></ul><p>引用数据类型:</p><ul><li>对象<code>Object</code>（包含普通对象-<code>Object</code>，数组对象-<code>Array</code>，正则对象-<code>RegExp</code>，日期对象-<code>Date</code>，数学函数-<code>Math</code>，函数对象-<code>Function</code>）</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let a = 111 // 这只是字面量，不是 number 类型
+a.toString() // 使用时候才会转换为对象类型
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>对象（<code>Object</code>）是引用类型，在使用过程中会遇到浅拷贝和深拷贝的问题。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let a = { name: &#39;FE&#39; }
+let b = a
+b.name = &#39;EF&#39;
+console.log(a.name) // EF
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>说出下面运行的结果，解释原因。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function test(person) {
+  person.age = 26
+  person = {
+    name: &#39;hzj&#39;,
+    age: 18
+  }
+  return person
+}
+const p1 = {
+  name: &#39;fyq&#39;,
+  age: 19
+}
+const p2 = test(p1)
+console.log(p1) // -&gt; ?
+console.log(p2) // -&gt; ?
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 结果:
+p1：{name: &quot;fyq&quot;, age: 26}
+p2：{name: &quot;hzj&quot;, age: 18}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>原因: 在函数传参的时候传递的是对象在堆中的内存地址值，test函数中的实参person是p1对象的内存地址，通过调用<code>person.age = 26</code>确实改变了p1的值，但随后<code>person</code>变成了另一块内存空间的地址，并且在最后将这另外一份内存空间的地址返回，赋给了p2。</p></blockquote><h3 id="_1-2-null和undefined区别" tabindex="-1"><a class="header-anchor" href="#_1-2-null和undefined区别" aria-hidden="true">#</a> 1.2 null和undefined区别</h3><blockquote><p><code>Undefined</code>类型只有一个值，即<code>undefined</code>。当声明的变量还未被初始化时，变量的默认值为<code>undefined</code>。用法</p></blockquote><ul><li>变量被声明了，但没有赋值时，就等于<code>undefined</code>。</li><li>调用函数时，应该提供的参数没有提供，该参数等于<code>undefined</code>。</li><li>对象没有赋值的属性，该属性的值为<code>undefined</code>。</li><li>函数没有返回值时，默认返回<code>undefined</code></li></ul><blockquote><p><code>Null</code>类型也只有一个值，即<code>null</code>。<code>null</code>用来表示尚未存在的对象，常用来表示函数企图返回一个不存在的对象。用法</p></blockquote><ul><li>作为函数的参数，表示该函数的参数不是对象。</li><li>作为对象原型链的终点</li></ul><h3 id="_1-3-null是对象吗-为什么" tabindex="-1"><a class="header-anchor" href="#_1-3-null是对象吗-为什么" aria-hidden="true">#</a> 1.3 null是对象吗？为什么？</h3><p>结论: <code>null</code>不是对象。</p><blockquote><p>解释: 虽然 <code>typeof null</code> 会输出 object，但是这只是 JS 存在的一个悠久 Bug。在 JS 的最初版本中使用的是 32 位系统，为了性能考虑使用低位存储变量的类型信息，000 开头代表是对象然而 null 表示为全零，所以将它错误的判断为 object 。</p></blockquote><h3 id="_1-4-1-tostring-为什么可以调用" tabindex="-1"><a class="header-anchor" href="#_1-4-1-tostring-为什么可以调用" aria-hidden="true">#</a> 1.4 &#39;1&#39;.toString()为什么可以调用？</h3><p>其实在这个语句运行的过程中做了这样几件事情：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var s = new Object(&#39;1&#39;);
+s.toString();
+s = null;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>第一步: 创建Object类实例。注意为什么不是String ？ 由于Symbol和BigInt的出现，对它们调用new都会报错，目前ES6规范也不建议用new来创建基本类型的包装类。</li><li>第二步: 调用实例方法。</li><li>第三步: 执行完方法立即销毁这个实例。</li></ul><blockquote><p>整个过程体现了<code>基本包装类型</code>的性质，而基本包装类型恰恰属于<code>基本数据类型</code>，包括Boolean, Number和String。</p></blockquote><h3 id="_1-5-0-1-0-2为什么不等于0-3" tabindex="-1"><a class="header-anchor" href="#_1-5-0-1-0-2为什么不等于0-3" aria-hidden="true">#</a> 1.5 0.1+0.2为什么不等于0.3？</h3><blockquote><p>0.1和0.2在转换成二进制后会无限循环，由于标准位数的限制后面多余的位数会被截掉，此时就已经出现了精度的损失，相加后因浮点数小数位的限制而截断的二进制数字在转换为十进制就会变成<code>0.30000000000000004</code></p></blockquote><h3 id="_1-6-如何理解bigint" tabindex="-1"><a class="header-anchor" href="#_1-6-如何理解bigint" aria-hidden="true">#</a> 1.6 如何理解BigInt</h3><p>什么是BigInt?</p><blockquote><p><code>BigInt</code>是一种新的数据类型，用于当整数值大于Number数据类型支持的范围时。这种数据类型允许我们安全地对大整数执行算术操作，表示高分辨率的时间戳，使用大整数id，等等，而不需要使用库。</p></blockquote><p>为什么需要BigInt?</p><p>在JS中，所有的数字都以双精度64位浮点格式表示，那这会带来什么问题呢？</p><blockquote><p>这导致JS中的Number无法精确表示非常大的整数，它会将非常大的整数四舍五入，确切地说，JS中的<code>Number</code>类型只能安全地表示<code>-9007199254740991(-(2^53-1))和9007199254740991（(2^53-1)）</code>，任何超出此范围的整数值都可能失去精度。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>console.log(999999999999999);  //=&gt;10000000000000000
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>同时也会有一定的安全性问题:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>9007199254740992 === 9007199254740993;    // → true 居然是true!
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>如何创建并使用BigInt？</p><p>要创建<code>BigInt</code>，只需要在数字末尾追加<code>n</code>即可</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>console.log( 9007199254740995n );    // → 9007199254740995n	
+console.log( 9007199254740995 );     // → 9007199254740996
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>另一种创建<code>BigInt</code>的方法是用<code>BigInt()</code>构造函数</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>BigInt(&quot;9007199254740995&quot;);    // → 9007199254740995n
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>简单使用如下:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>10n + 20n;    // → 30n	
+10n - 20n;    // → -10n	
++10n;         // → TypeError: Cannot convert a BigInt value to a number	
+-10n;         // → -10n	
+10n * 20n;    // → 200n	
+20n / 10n;    // → 2n	
+23n % 10n;    // → 3n	
+10n ** 3n;    // → 1000n	
+
+const x = 10n;	
+++x;          // → 11n	
+--x;          // → 9n
+console.log(typeof x);   //&quot;bigint&quot;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>值得警惕的点</p><blockquote><p><code>BigInt</code>不支持一元加号运算符, 这可能是某些程序可能依赖于 + 始终生成 <code>Number</code> 的不变量，或者抛出异常。另外，更改 <code>+</code> 的行为也会破坏 <code>asm.js</code> 代码。</p></blockquote><p>因为隐式类型转换可能丢失信息，所以不允许在<code>bigint</code>和 <code>Number</code> 之间进行混合操作。当混合使用大整数和浮点数时，结果值可能无法由<code>BigInt</code>或<code>Number</code>精确表示。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>10 + 10n;    // → TypeError
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>不能将<code>BigInt</code>传递给<code>Web api</code>和内置的 JS 函数，这些函数需要一个 Number 类型的数字。尝试这样做会报TypeError错误。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Math.max(2n, 4n, 6n);    // → TypeError
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>当 <code>Boolean</code> 类型与 <code>BigInt</code> 类型相遇时，<code>BigInt</code> 的处理方式与<code>Number</code>类似，换句话说，只要不是<code>0n</code>，<code>BigInt</code>就被视为<code>truthy</code>的值。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>if(0n){//条件判断为false
+
+}
+if(3n){//条件为true
+
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>元素都为BigInt的数组可以进行sort。</li><li><code>BigInt</code>可以正常地进行位运算，如<code>|</code>、<code>&amp;</code>、<code>&lt;&lt;</code>、<code>&gt;&gt;</code>和<code>^</code></li></ul><p>浏览器兼容性</p><p>caniuse的结果:</p><p><img src="/assets/20210309092826.3747f8b0.png" alt=""></p><p>其实现在的兼容性并不怎么好，只有chrome67、firefox、Opera这些主流实现，要正式成为规范，其实还有很长的路要走。</p><h2 id="_2-数据类型检测" tabindex="-1"><a class="header-anchor" href="#_2-数据类型检测" aria-hidden="true">#</a> 2 数据类型检测</h2><h3 id="_2-1-typeof类型判断" tabindex="-1"><a class="header-anchor" href="#_2-1-typeof类型判断" aria-hidden="true">#</a> 2.1 typeof类型判断</h3><blockquote><p>在写业务逻辑的时候，经常要用到JS数据类型的判断，面试常见的案例深浅拷贝也要用到数据类型的判断。</p></blockquote><p>typeof</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>console.log(typeof 2);               // number
+console.log(typeof true);            // boolean
+console.log(typeof &#39;str&#39;);           // string
+console.log(typeof undefined);       // undefined
+console.log(typeof []);              // object
+console.log(typeof {});              // object
+console.log(typeof function(){});    // function
+console.log(typeof null);            // object
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>优点：能够快速区分基本数据类型 缺点：不能将<code>Object</code>、<code>Array</code>和<code>Null</code>区分，都返回<code>object</code></p></blockquote><p>instanceof</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>console.log(2 instanceof Number);                    // false
+console.log(true instanceof Boolean);                // false
+console.log(&#39;str&#39; instanceof String);                // false
+console.log([] instanceof Array);                    // true
+console.log(function(){} instanceof Function);       // true
+console.log({} instanceof Object);                   // true
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>优点：能够区分<code>Array</code>、<code>Object</code>和<code>Function</code>，适合用于判断自定义的类实例对象</li><li>缺点：<code>Number</code>，<code>Boolean</code>，<code>String</code>基本数据类型不能判断</li></ul><p>Object.prototype.toString.call()</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var toString = Object.prototype.toString;
+
+console.log(toString.call(2));                      //[object Number]
+console.log(toString.call(true));                   //[object Boolean]
+console.log(toString.call(&#39;str&#39;));                  //[object String]
+console.log(toString.call([]));                     //[object Array]
+console.log(toString.call(function(){}));           //[object Function]
+console.log(toString.call({}));                     //[object Object]
+console.log(toString.call(undefined));              //[object Undefined]
+console.log(toString.call(null));                   //[object Null]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>优点：精准判断数据类型</li><li>缺点：写法繁琐不容易记，推荐进行封装后使用</li></ul><p>判断是否是promise对象</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function isPromise (val) {
+    return (
+      typeof val.then === &#39;function&#39; &amp;&amp;
+      typeof val.catch === &#39;function&#39;
+    )
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-2-typeof-于-instanceof-区别" tabindex="-1"><a class="header-anchor" href="#_2-2-typeof-于-instanceof-区别" aria-hidden="true">#</a> 2.2 typeof 于 instanceof 区别</h3><blockquote><p><code>typeof</code> 对于基本类型，除了 <code>null</code>都可以显示正确的类型</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>typeof 1 // &#39;number&#39;
+typeof &#39;1&#39; // &#39;string&#39;
+typeof undefined // &#39;undefined&#39;
+typeof true // &#39;boolean&#39;
+typeof Symbol() // &#39;symbol&#39;
+typeof b // b 没有声明，但是还会显示 undefined
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p><code>typeof</code> 对于对象，除了函数都会显示 <code>object</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>typeof [] // &#39;object&#39;
+typeof {} // &#39;object&#39;
+typeof console.log // &#39;function&#39;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>对于 <code>null</code> 来说，虽然它是基本类型，但是会显示 <code>object</code>，这是一个存在很久了的 <code>Bug</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>typeof null // &#39;object&#39;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p><code>instanceof</code> 可以正确的判断对象的类型，因为内部机制是通过判断对象的原型链中是不是能找到类型的 <code>iprototype</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 我们也可以试着实现一下 instanceof
+function _instanceof(left, right) {
+    // 由于instance要检测的是某对象，需要有一个前置判断条件
+    //基本数据类型直接返回false
+    if(typeof left !== &#39;object&#39; || left === null) return false;
+
+    // 获得类型的原型
+    let prototype = right.prototype
+    // 获得对象的原型
+    left = left.__proto__
+    // 判断对象的类型是否等于类型的原型
+    while (true) {
+    	if (left === null)
+    		return false
+    	if (prototype === left)
+    		return true
+    	left = left.__proto__
+    }
+}
+
+console.log(&#39;test&#39;, _instanceof(null, Array)) // false
+console.log(&#39;test&#39;, _instanceof([], Array)) // true
+console.log(&#39;test&#39;, _instanceof(&#39;&#39;, Array)) // false
+console.log(&#39;test&#39;, _instanceof({}, Object)) // true
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-3-object-is和-的区别" tabindex="-1"><a class="header-anchor" href="#_2-3-object-is和-的区别" aria-hidden="true">#</a> 2.3 Object.is和===的区别</h3><blockquote><p><code>Object</code>在严格等于的基础上修复了一些特殊情况下的失误，具体来说就是<code>+0</code>和<code>-0</code>，<code>NaN</code>和<code>NaN</code>。 源码如下</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function is(x, y) {
+  if (x === y) {
+    //运行到1/x === 1/y的时候x和y都为0，但是1/+0 = +Infinity， 1/-0 = -Infinity, 是不一样的
+    return x !== 0 || y !== 0 || 1 / x === 1 / y;
+  } else {
+    //NaN===NaN是false,这是不对的，我们在这里做一个拦截，x !== x，那么一定是 NaN, y 同理
+    //两个都是NaN的时候返回true
+    return x !== x &amp;&amp; y !== y;
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-4-总结" tabindex="-1"><a class="header-anchor" href="#_2-4-总结" aria-hidden="true">#</a> 2.4 总结</h3><ul><li><code>typeof</code><ul><li>直接在计算机底层基于数据类型的值（二进制）进行检测</li><li><code>typeof null</code>为<code>object</code> 原因是对象存在在计算机中，都是以<code>000</code>开始的二进制存储，所以检测出来的结果是对象</li><li><code>typeof</code> 普通对象/数组对象/正则对象/日期对象 都是<code>object</code></li><li><code>typeof NaN === &#39;number&#39;</code></li></ul></li><li><code>instanceof</code><ul><li>检测当前实例是否属于这个类的</li><li>底层机制：只要当前类出现在实例的原型上，结果都是true</li><li>不能检测基本数据类型</li></ul></li><li><code>constructor</code><ul><li>支持基本类型</li><li>constructor可以随便改，也不准</li></ul></li><li><code>Object.prototype.toString.call([val])</code><ul><li>返回当前实例所属类信息</li></ul></li></ul><blockquote><p>判断 <code>Target</code> 的类型，单单用 <code>typeof</code> 并无法完全满足，这其实并不是 <code>bug</code>，本质原因是 <code>JS</code> 的万物皆对象的理论。因此要真正完美判断时，我们需要区分对待:</p></blockquote><ul><li>基本类型(<code>null</code>): 使用 <code>String(null)</code></li><li>基本类型(<code>string / number / boolean / undefined</code>) + <code>function</code>: - 直接使用 <code>typeof</code>即可</li><li>其余引用类型(<code>Array / Date / RegExp Error</code>): 调用<code>toString</code>后根据<code>[object XXX]</code>进行判断</li></ul><p>很稳的判断封装:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let class2type = {}
+&#39;Array Date RegExp Object Error&#39;.split(&#39; &#39;).forEach(e =&gt; class2type[ &#39;[object &#39; + e + &#39;]&#39; ] = e.toLowerCase())
+
+function type(obj) {
+    if (obj == null) return String(obj)
+    return typeof obj === &#39;object&#39; ? class2type[ Object.prototype.toString.call(obj) ] || &#39;object&#39; : typeof obj
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_3-数据类型转换" tabindex="-1"><a class="header-anchor" href="#_3-数据类型转换" aria-hidden="true">#</a> 3 数据类型转换</h2><blockquote><p>大家都知道 JS 中在使用运算符号或者对比符时，会自带隐式转换，规则如下:</p></blockquote><h3 id="_3-1-转化规则" tabindex="-1"><a class="header-anchor" href="#_3-1-转化规则" aria-hidden="true">#</a> 3.1 转化规则</h3><ul><li><code>-、*、/、%</code>：一律转换成数值后计算</li><li>+： <ul><li>数字 + 字符串 = 字符串， 运算顺序是从左到右</li><li>数字 + 对象， 优先调用对象的<code>valueOf -&gt; toString</code></li><li>数字 + <code>boolean/null</code> -&gt; 数字</li><li>数字 + <code>undefined</code> -&gt; <code>NaN</code></li></ul></li><li><code>[1].toString() === &#39;1&#39;</code></li><li><code>{}.toString() === &#39;[object object]&#39;</code></li><li><code>NaN !== NaN</code> 、+<code>undefined</code> 为 <code>NaN</code></li></ul><blockquote><p>首先我们要知道，在 <code>JS</code> 中类型转换只有三种情况，分别是：</p></blockquote><ul><li>转换为布尔值</li><li>转换为数字</li><li>转换为字符串</li></ul><p><img src="/assets/20220804152909.48b24c06.png" alt=""></p><h3 id="_3-2-转boolean" tabindex="-1"><a class="header-anchor" href="#_3-2-转boolean" aria-hidden="true">#</a> 3.2 转Boolean</h3><blockquote><p>在条件判断时，除了 <code>undefined</code>，<code>null</code>， <code>false</code>， <code>NaN</code>， <code>&#39;&#39;</code>， <code>0</code>， <code>-0</code>，其他所有值都转为 <code>true</code>，包括所有对象</p></blockquote><h3 id="_3-3-对象转原始类型是根据什么流程运行的" tabindex="-1"><a class="header-anchor" href="#_3-3-对象转原始类型是根据什么流程运行的" aria-hidden="true">#</a> 3.3 对象转原始类型是根据什么流程运行的</h3><blockquote><p>对象转原始类型，会调用内置的<code>[ToPrimitive]</code>函数，对于该函数而言，其逻辑如下：</p></blockquote><ul><li>如果有<code>Symbol.toPrimitive()</code>方法，优先调用再返回</li><li>调用<code>valueOf()</code>，如果转换为原始类型，则返回</li><li>调用<code>toString()</code>，如果转换为原始类型，则返回</li><li>如果都没有返回原始类型，会报错</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var obj = {
+  value: 3,
+  valueOf() {
+    return 4;
+  },
+  toString() {
+    return &#39;5&#39;
+  },
+  [Symbol.toPrimitive]() {
+    return 6
+  }
+}
+console.log(obj + 1); // 输出7
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-4-如何让if-a-1-a-2-条件成立" tabindex="-1"><a class="header-anchor" href="#_3-4-如何让if-a-1-a-2-条件成立" aria-hidden="true">#</a> 3.4 如何让if(a == 1 &amp;&amp; a == 2)条件成立</h3><p>其实就是上一个问题的应用。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var a = {
+  value: 0,
+  valueOf: function() {
+    this.value++;
+    return this.value;
+  }
+};
+console.log(a == 1 &amp;&amp; a == 2);//true
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-5-四则运算符" tabindex="-1"><a class="header-anchor" href="#_3-5-四则运算符" aria-hidden="true">#</a> 3.5 四则运算符</h3><blockquote><p>它有以下几个特点：</p></blockquote><ul><li>运算中其中一方为字符串，那么就会把另一方也转换为字符串</li><li>如果一方不是字符串或者数字，那么会将它转换为数字或者字符串</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>1 + &#39;1&#39; // &#39;11&#39;
+true + true // 2
+4 + [1,2,3] // &quot;41,2,3&quot;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>对于第一行代码来说，触发特点一，所以将数字 <code>1</code> 转换为字符串，得到结果 <code>&#39;11&#39;</code></li><li>对于第二行代码来说，触发特点二，所以将 <code>true</code> 转为数字 <code>1</code></li><li>对于第三行代码来说，触发特点二，所以将数组通过 <code>toString</code>转为字符串 <code>1,2,3</code>，得到结果 <code>41,2,3</code></li></ul><blockquote><p>另外对于加法还需要注意这个表达式 <code>&#39;a&#39; + + &#39;b&#39;</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&#39;a&#39; + + &#39;b&#39; // -&gt; &quot;aNaN&quot;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>因为 <code>+ &#39;b&#39;</code> 等于 <code>NaN</code>，所以结果为 <code>&quot;aNaN&quot;</code>，你可能也会在一些代码中看到过 <code>+ &#39;1&#39;</code>的形式来快速获取 <code>number</code> 类型。</li><li>那么对于除了加法的运算符来说，只要其中一方是数字，那么另一方就会被转为数字</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>4 * &#39;3&#39; // 12
+4 * [] // 0
+4 * [1, 2] // NaN
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-6-比较运算符" tabindex="-1"><a class="header-anchor" href="#_3-6-比较运算符" aria-hidden="true">#</a> 3.6 比较运算符</h3><ul><li>如果是对象，就通过 <code>toPrimitive</code> 转换对象</li><li>如果是字符串，就通过 <code>unicode</code> 字符索引来比较</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let a = {
+  valueOf() {
+    return 0
+  },
+  toString() {
+    return &#39;1&#39;
+  }
+}
+a &gt; -1 // true
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>在以上代码中，因为 <code>a</code> 是对象，所以会通过 <code>valueOf</code> 转换为原始类型再比较值。</p></blockquote><h3 id="_3-7-结果是什么-为什么" tabindex="-1"><a class="header-anchor" href="#_3-7-结果是什么-为什么" aria-hidden="true">#</a> 3.7 [] == ![]结果是什么？为什么？</h3><ul><li><code>==</code> 中，左右两边都需要转换为数字然后进行比较</li><li><code>[]</code>转换为数字为<code>0</code></li><li><code>![]</code> 首先是转换为布尔值，由于<code>[]</code>作为一个引用类型转换为布尔值为<code>true</code></li><li>因此<code>![]</code>为<code>false</code>，进而在转换成数字，变为<code>0</code></li><li><code>0 == 0</code> ， 结果为<code>true</code></li></ul><h3 id="_3-8-和-有什么区别" tabindex="-1"><a class="header-anchor" href="#_3-8-和-有什么区别" aria-hidden="true">#</a> 3.8 == 和 ===有什么区别</h3><blockquote><p><code>===</code>叫做严格相等，是指：左右两边不仅值要相等，类型也要相等，例如<code>&#39;1&#39;===1</code>的结果是<code>false</code>，因为一边是<code>string</code>，另一边是<code>number</code></p></blockquote><p>==不像===那样严格，对于一般情况，只要值相等，就返回true，但==还涉及一些类型转换，它的转换规则如下</p><ul><li>两边的类型是否相同，相同的话就比较值的大小，例如<code>1==2</code>，返回<code>false</code></li><li>判断的是否是<code>null</code>和<code>undefined</code>，是的话就返回true</li><li>判断的类型是否是<code>String</code>和<code>Number</code>，是的话，把<code>String</code>类型转换成<code>Number</code>，再进行比较</li><li>判断其中一方是否是<code>Boolean</code>，是的话就把<code>Boolean</code>转换成<code>N</code>umber`，再进行比较</li><li>如果其中一方为<code>Object</code>，且另一方为<code>String</code>、<code>Number</code>或者<code>Symbol</code>，会将<code>Object</code>转换成字符串，再进行比较</li></ul><h2 id="_4-闭包" tabindex="-1"><a class="header-anchor" href="#_4-闭包" aria-hidden="true">#</a> 4 闭包</h2><blockquote><p>红宝书(p178)上对于闭包的定义：闭包是指有权访问另外一个函数作用域中的变量的函数，</p></blockquote><blockquote><p>MDN 对闭包的定义为：闭包是指那些能够访问自由变量的函数。</p><ul><li>（其中自由变量，指在函数中使用的，但既不是函数参数arguments也不是函数的局部变量的变量，其实就是另外一个函数作用域中的变量。）</li></ul></blockquote><h3 id="_4-1-闭包产生的原因" tabindex="-1"><a class="header-anchor" href="#_4-1-闭包产生的原因" aria-hidden="true">#</a> 4.1 闭包产生的原因</h3><blockquote><p>首先要明白作用域链的概念，其实很简单，在ES5中只存在两种作用域------------<code>全局作用域</code>和<code>函数作用域</code>，当访问一个变量时，解释器会首先在当前作用域查找标示符，如果没有找到，就去父作用域找，直到找到该变量的标示符或者不在父作用域中，这就是作用域链，值得注意的是，每一个子函数都会拷贝上级的作用域，形成一个作用域的链条。 比如:</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var a = 1;
+function f1() {
+  var a = 2
+  function f2() {
+    var a = 3;
+    console.log(a);//3
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>在这段代码中，<code>f1</code>的作用域指向有全局作用域(<code>window</code>)和它本身，而<code>f2</code>的作用域指向全局作用域(<code>window</code>)、<code>f1</code>和它本身。而且作用域是从最底层向上找，直到找到全局作用域<code>window</code>为止，如果全局还没有的话就会报错。就这么简单一件事情</p></blockquote><p>闭包产生的本质就是，当前环境中存在指向父级作用域的引用。还是举上面的例子:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function f1() {
+  var a = 2
+  function f2() {
+    console.log(a);//2
+  }
+  return f2;
+}
+var x = f1();
+x();
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>这里x会拿到父级作用域中的变量，输出2。因为在当前环境中，含有对f2的引用，f2恰恰引用了window、f1和f2的作用域。因此f2可以访问到f1的作用域的变量。</p></blockquote><ul><li>那是不是只有返回函数才算是产生了闭包呢？</li><li>回到闭包的本质，我们只需要让父级作用域的引用存在即可，因此我们还可以这么做：</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var f3;
+function f1() {
+  var a = 2
+  f3 = function() {
+    console.log(a);
+  }
+}
+f1();
+f3();
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>让<code>f1</code>执行，给<code>f3</code>赋值后，等于说现在<code>f3</code>拥有了<code>window、f1和f3本身这几个作用域的访问权限</code>，还是自底向上查找，最近是在<code>f1</code>中找到了<code>a</code>,因此输出2。</li><li>在这里是外面的变量<code>f3</code>存在着父级作用域的引用，因此产生了闭包，形式变了，本质没有改变</li></ul><h3 id="_4-2-闭包有哪些表现形式" tabindex="-1"><a class="header-anchor" href="#_4-2-闭包有哪些表现形式" aria-hidden="true">#</a> 4.2 闭包有哪些表现形式</h3><p>明白了本质之后，我们就来看看，在真实的场景中，究竟在哪些地方能体现闭包的存在？</p><ol><li>返回一个函数。刚刚已经举例。</li><li>作为函数参数传递</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var a = 1;
+function foo(){
+  var a = 2;
+  function baz(){
+    console.log(a);
+  }
+  bar(baz);
+}
+function bar(fn){
+  // 这就是闭包
+  fn();
+}
+// 输出2，而不是1
+foo();
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>在定时器、事件监听、Ajax请求、跨窗口通信、<code>Web Workers</code>或者任何异步中，只要使用了回调函数，实际上就是在使用闭包</li></ol><p>以下的闭包保存的仅仅是window和当前作用域。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定时器
+setTimeout(function timeHandler(){
+  console.log(&#39;111&#39;);
+}，100)
+
+// 事件监听
+$(&#39;#app&#39;).click(function(){
+  console.log(&#39;DOM Listener&#39;);
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li><code>IIFE</code>(立即执行函数表达式)创建闭包, 保存了全局作用域<code>window</code>和当前函数的作用域，因此可以访问全局的变量</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var a = 2;
+(function IIFE(){
+  // 输出2
+  console.log(a);
+})();
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-3-如何解决下面的循环输出问题" tabindex="-1"><a class="header-anchor" href="#_4-3-如何解决下面的循环输出问题" aria-hidden="true">#</a> 4.3 如何解决下面的循环输出问题</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>for(var i = 1; i &lt;= 5; i ++){
+  setTimeout(function timer(){
+    console.log(i)
+  }, 0)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>为什么会全部输出6？如何改进，让它输出1，2，3，4，5？(方法越多越好) 因为setTimeout为宏任务，由于JS中单线程eventLoop机制，在主线程同步任务执行完后才去执行宏任务，因此循环结束后setTimeout中的回调才依次执行，但输出i的时候当前作用域没有，往上一级再找，发现了i,此时循环已经结束，i变成了6。因此会全部输出6。</p><p>解决方法：</p><ol><li>利用IIFE(立即执行函数表达式)当每次for循环时，把此时的i变量传递到定时器中</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>for(var i = 1;i &lt;= 5;i++){
+  (function(j){
+    setTimeout(function timer(){
+      console.log(j)
+    }, 0)
+  })(i)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>给定时器传入第三个参数, 作为<code>timer</code>函数的第一个函数参数</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>for(var i=1;i&lt;=5;i++){
+  setTimeout(function timer(j){
+    console.log(j)
+  }, 0, i)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>使用ES6中的let</li></ol><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>for(let i = 1; i &lt;= 5; i++){
+  setTimeout(function timer(){
+    console.log(i)
+  },0)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>let使JS发生革命性的变化，让JS有函数作用域变为了块级作用域，用let后作用域链不复存在。代码的作用域以块级为单位，以上面代码为例:</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// i = 1
+{
+  setTimeout(function timer(){
+    console.log(1)
+  },0)
+}
+// i = 2
+{
+  setTimeout(function timer(){
+    console.log(2)
+  },0)
+}
+// i = 3
+...
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_5-原型链" tabindex="-1"><a class="header-anchor" href="#_5-原型链" aria-hidden="true">#</a> 5 原型链</h2><h3 id="_5-1-原型-构造函数-实例" tabindex="-1"><a class="header-anchor" href="#_5-1-原型-构造函数-实例" aria-hidden="true">#</a> 5.1 原型/构造函数/实例</h3><ul><li>原型(<code>prototype</code>): 一个简单的对象，用于实现对象的 属性继承。可以简单的理解成对象的爹。在 <code>Firefox</code> 和 <code>Chrome</code> 中，每个<code>JavaScript</code>对象中都包含一个<code>__proto__</code>(非标准)的属性指向它爹(该对象的原型)，可<code>obj.__proto__</code>进行访问。</li><li>构造函数: 可以通过<code>new</code>来 新建一个对象 的函数。</li><li>实例: 通过构造函数和<code>new</code>创建出来的对象，便是实例。 实例通过<code>__proto__</code>指向原型，通过<code>constructor</code>指向构造函数。</li></ul><blockquote><p>以<code>Object</code>为例，我们常用的<code>Object</code>便是一个构造函数，因此我们可以通过它构建实例。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 实例
+const instance = new Object()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>则此时， 实例为<code>instance</code>, 构造函数为<code>Object</code>，我们知道，构造函数拥有一个<code>prototype</code>的属性指向原型，因此原型为:</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 原型
+const prototype = Object.prototype
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里我们可以来看出三者的关系:</p><ul><li><code>实例.__proto__ === 原型</code></li><li><code>原型.constructor === 构造函数</code></li><li><code>构造函数.prototype === 原型</code></li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 这条线其实是是基于原型进行获取的，可以理解成一条基于原型的映射线
+// 例如:
+// const o = new Object()
+// o.constructor === Object   --&gt; true
+// o.__proto__ = null;
+// o.constructor === Object   --&gt; false
+实例.constructor === 构造函数
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="/assets/20220307225112.c8cd19da.png" alt=""></p><h3 id="_5-2-原型对象和构造函数有何关系" tabindex="-1"><a class="header-anchor" href="#_5-2-原型对象和构造函数有何关系" aria-hidden="true">#</a> 5.2 原型对象和构造函数有何关系</h3><ul><li>在JavaScript中，每当定义一个函数数据类型(普通函数、类)时候，都会天生自带一个<code>prototype</code>属性，这个属性指向函数的原型对象。</li><li>当函数经过<code>new</code>调用时，这个函数就成为了构造函数，返回一个全新的实例对象，这个实例对象有一个<code>__proto__</code>属性，指向构造函数的原型对象。</li></ul><p><img src="/assets/20210309102015.2d473253.png" alt=""></p><h3 id="_5-3-能不能描述一下原型链" tabindex="-1"><a class="header-anchor" href="#_5-3-能不能描述一下原型链" aria-hidden="true">#</a> 5.3 能不能描述一下原型链</h3><blockquote><p>JavaScript对象通过<code>__proto__</code> 指向父类对象，直到指向<code>Object</code>对象为止，这样就形成了一个原型指向的链条, 即原型链</p></blockquote><p><img src="/assets/20210309102100.b3db44d1.png" alt=""></p><ul><li>对象的 <code>hasOwnProperty()</code> 来检查对象自身中是否含有该属性</li><li>使用 <code>in</code> 检查对象中是否含有某个属性时，如果对象中没有但是原型链中有，也会返回 <code>true</code></li></ul><h2 id="_6-继承" tabindex="-1"><a class="header-anchor" href="#_6-继承" aria-hidden="true">#</a> 6 继承</h2><h3 id="_6-1-方式1-借助call" tabindex="-1"><a class="header-anchor" href="#_6-1-方式1-借助call" aria-hidden="true">#</a> 6.1 方式1: 借助call</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code> function Parent1(){
+    this.name = &#39;parent1&#39;;
+  }
+  function Child1(){
+    Parent1.call(this);
+    this.type = &#39;child1&#39;
+  }
+  console.log(new Child1);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>这样写的时候子类虽然能够拿到父类的属性值，但是问题是父类原型对象中一旦存在方法那么子类无法继承。那么引出下面的方法。</p></blockquote><h3 id="_6-2-方式2-借助原型链" tabindex="-1"><a class="header-anchor" href="#_6-2-方式2-借助原型链" aria-hidden="true">#</a> 6.2 方式2: 借助原型链</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code> function Parent2() {
+    this.name = &#39;parent2&#39;;
+    this.play = [1, 2, 3]
+  }
+  function Child2() {
+    this.type = &#39;child2&#39;;
+  }
+  Child2.prototype = new Parent2();
+
+  console.log(new Child2());
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>看似没有问题，父类的方法和属性都能够访问，但实际上有一个潜在的不足。举个例子：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var s1 = new Child2();
+var s2 = new Child2();
+s1.play.push(4);
+console.log(s1.play, s2.play);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>可以看到控制台：</p><p><img src="/assets/20210309103243.772341e2.png" alt=""></p><blockquote><p>明明我只改变了s1的play属性，为什么s2也跟着变了呢？很简单，因为两个实例使用的是同一个原型对象。</p></blockquote><p>那么还有更好的方式么？</p><h3 id="_6-3-方式3-将前两种组合" tabindex="-1"><a class="header-anchor" href="#_6-3-方式3-将前两种组合" aria-hidden="true">#</a> 6.3 方式3：将前两种组合</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>  function Parent3 () {
+    this.name = &#39;parent3&#39;;
+    this.play = [1, 2, 3];
+  }
+  function Child3() {
+    Parent3.call(this);
+    this.type = &#39;child3&#39;;
+  }
+  Child3.prototype = new Parent3();
+  var s3 = new Child3();
+  var s4 = new Child3();
+  s3.play.push(4);
+  console.log(s3.play, s4.play);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>可以看到控制台：</p><p><img src="/assets/20210309103312.eb7d3aa8.png" alt=""></p><blockquote><p>之前的问题都得以解决。但是这里又徒增了一个新问题，那就是<code>Parent3</code>的构造函数会多执行了一次（<code>Child3.prototype = new Parent3();</code>）。这是我们不愿看到的。那么如何解决这个问题？</p></blockquote><h3 id="_6-4-方式4-组合继承的优化1" tabindex="-1"><a class="header-anchor" href="#_6-4-方式4-组合继承的优化1" aria-hidden="true">#</a> 6.4 方式4: 组合继承的优化1</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>  function Parent4 () {
+    this.name = &#39;parent4&#39;;
+    this.play = [1, 2, 3];
+  }
+  function Child4() {
+    Parent4.call(this);
+    this.type = &#39;child4&#39;;
+  }
+  Child4.prototype = Parent4.prototype;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这里让将父类原型对象直接给到子类，父类构造函数只执行一次，而且父类属性和方法均能访问，但是我们来测试一下：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var s3 = new Child4();
+var s4 = new Child4();
+console.log(s3)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="/assets/20210309103358.817e73a0.png" alt=""></p><blockquote><p>子类实例的构造函数是Parent4，显然这是不对的，应该是Child4。</p></blockquote><h3 id="_6-5-方式5-最推荐使用-组合继承的优化2" tabindex="-1"><a class="header-anchor" href="#_6-5-方式5-最推荐使用-组合继承的优化2" aria-hidden="true">#</a> 6.5 方式5(最推荐使用): 组合继承的优化2</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code> function Parent5 () {
+    this.name = &#39;parent5&#39;;
+    this.play = [1, 2, 3];
+  }
+  function Child5() {
+    Parent5.call(this);
+    this.type = &#39;child5&#39;;
+  }
+  Child5.prototype = Object.create(Parent5.prototype);
+  Child5.prototype.constructor = Child5;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这是最推荐的一种方式，接近完美的继承，它的名字也叫做寄生组合继承。</p><h3 id="_6-6-es6的extends被编译后的javascript代码" tabindex="-1"><a class="header-anchor" href="#_6-6-es6的extends被编译后的javascript代码" aria-hidden="true">#</a> 6.6 ES6的extends被编译后的JavaScript代码</h3><blockquote><p>ES6的代码最后都是要在浏览器上能够跑起来的，这中间就利用了babel这个编译工具，将ES6的代码编译成ES5让一些不支持新语法的浏览器也能运行。</p></blockquote><p>那最后编译成了什么样子呢？</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function _possibleConstructorReturn(self, call) {
+    // ...
+    return call &amp;&amp; (typeof call === &#39;object&#39; || typeof call === &#39;function&#39;) ? call : self;
+}
+
+function _inherits(subClass, superClass) {
+    // ...
+    //看到没有
+    subClass.prototype = Object.create(superClass &amp;&amp; superClass.prototype, {
+        constructor: {
+            value: subClass,
+            enumerable: false,
+            writable: true,
+            configurable: true
+        }
+    });
+    if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass;
+}
+
+var Parent = function Parent() {
+    // 验证是否是 Parent 构造出来的 this
+    _classCallCheck(this, Parent);
+};
+
+var Child = (function (_Parent) {
+    _inherits(Child, _Parent);
+
+    function Child() {
+        _classCallCheck(this, Child);
+
+        return _possibleConstructorReturn(this, (Child.__proto__ || Object.getPrototypeOf(Child)).apply(this, arguments));
+    }
+
+    return Child;
+}(Parent));
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>核心是<code>_inherits</code>函数，可以看到它采用的依然也是第五种方式------------寄生组合继承方式，同时证明了这种方式的成功。不过这里加了一个<code>Object.setPrototypeOf(subClass, superClass)</code>，这是用来干啥的呢？</p></blockquote><p>答案是用来继承父类的静态方法。这也是原来的继承方式疏忽掉的地方。</p><p>追问: 面向对象的设计一定是好的设计吗？</p><blockquote><p>不一定。从继承的角度说，这一设计是存在巨大隐患的。</p></blockquote><h3 id="_6-7-从设计思想上谈谈继承本身的问题" tabindex="-1"><a class="header-anchor" href="#_6-7-从设计思想上谈谈继承本身的问题" aria-hidden="true">#</a> 6.7 从设计思想上谈谈继承本身的问题</h3><p>假如现在有不同品牌的车，每辆车都有drive、music、addOil这三个方法。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class Car{
+  constructor(id) {
+    this.id = id;
+  }
+  drive(){
+    console.log(&quot;wuwuwu!&quot;);
+  }
+  music(){
+    console.log(&quot;lalala!&quot;)
+  }
+  addOil(){
+    console.log(&quot;哦哟！&quot;)
+  }
+}
+class otherCar extends Car{}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>现在可以实现车的功能，并且以此去扩展不同的车。</p><p>但是问题来了，新能源汽车也是车，但是它并不需要addOil(加油)。</p><p>如果让新能源汽车的类继承Car的话，也是有问题的，俗称&quot;大猩猩和香蕉&quot;的问题。大猩猩手里有香蕉，但是我现在明明只需要香蕉，却拿到了一只大猩猩。也就是说加油这个方法，我现在是不需要的，但是由于继承的原因，也给到子类了。</p><blockquote><p>继承的最大问题在于：无法决定继承哪些属性，所有属性都得继承。</p></blockquote><p>当然你可能会说，可以再创建一个父类啊，把加油的方法给去掉，但是这也是有问题的，一方面父类是无法描述所有子类的细节情况的，为了不同的子类特性去增加不同的父类，代码势必会大量重复，另一方面一旦子类有所变动，父类也要进行相应的更新，代码的耦合性太高，维护性不好。</p><p>那如何来解决继承的诸多问题呢？</p><blockquote><p>用组合，这也是当今编程语法发展的趋势，比如golang完全采用的是面向组合的设计方式。</p></blockquote><p>顾名思义，面向组合就是先设计一系列零件，然后将这些零件进行拼装，来形成不同的实例或者类。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function drive(){
+  console.log(&quot;wuwuwu!&quot;);
+}
+function music(){
+  console.log(&quot;lalala!&quot;)
+}
+function addOil(){
+  console.log(&quot;哦哟！&quot;)
+}
+
+let car = compose(drive, music, addOil);
+let newEnergyCar = compose(drive, music);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>代码干净，复用性也很好。这就是面向组合的设计方式。</p></blockquote><h3 id="_6-8-继承-简版" tabindex="-1"><a class="header-anchor" href="#_6-8-继承-简版" aria-hidden="true">#</a> 6.8 继承-简版</h3><blockquote><p>在 ES5 中，我们可以使用如下方式解决继承的问题</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function Super() {}
+Super.prototype.getNumber = function() {
+  return 1
+}
+
+function Sub() {}
+let s = new Sub()
+Sub.prototype = Object.create(Super.prototype, {
+  constructor: {
+    value: Sub,
+    enumerable: false,
+    writable: true,
+    configurable: true
+  }
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>以上继承实现思路就是将子类的原型设置为父类的原型</li><li>在 <code>ES6</code> 中，我们可以通过 <code>class</code> 语法轻松解决这个问题</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class MyDate extends Date {
+  test() {
+    return this.getTime()
+  }
+}
+let myDate = new MyDate()
+myDate.test()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>但是 <code>ES6</code> 不是所有浏览器都兼容，所以我们需要使用 <code>Babel</code> 来编译这段代码。</li><li>如果你使用编译过得代码调用 <code>myDate.test()</code>你会惊奇地发现出现了报错</li></ul><blockquote><p>因为在 <code>JS</code> 底层有限制，如果不是由 <code>Date</code>构造出来的实例的话，是不能调用 <code>Date</code> 里的函数的。所以这也侧面的说明了：<code>ES6</code> 中的 <code>class</code> 继承与 <code>ES5</code> 中的一般继承写法是不同的。</p></blockquote><ul><li>既然底层限制了实例必须由 <code>Date</code> 构造出来，那么我们可以改变下思路实现继承</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function MyData() {
+
+}
+MyData.prototype.test = function () {
+  return this.getTime()
+}
+let d = new Date()
+Object.setPrototypeOf(d, MyData.prototype)
+Object.setPrototypeOf(MyData.prototype, Date.prototype)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>以上继承实现思路：先创建父类实例 =&gt; 改变实例原先的 <code>_proto__</code>转而连接到子类的 <code>prototype</code>=&gt; 子类的 <code>prototype</code> 的 <code>__proto__</code> 改为父类的 <code>prototype</code>。</li><li>通过以上方法实现的继承就可以完美解决 <code>JS</code> 底层的这个限制</li></ul><h2 id="_7-this" tabindex="-1"><a class="header-anchor" href="#_7-this" aria-hidden="true">#</a> 7 this</h2><blockquote><p>我们先来看几个函数调用的场景</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function foo() {
+  console.log(this.a)
+}
+var a = 1
+foo()
+
+const obj = {
+  a: 2,
+  foo: foo
+}
+obj.foo()
+
+const c = new foo()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>对于直接调用 <code>foo</code> 来说，不管 <code>foo</code> 函数被放在了什么地方，<code>this</code> 一定是<code>window</code></li><li>对于 <code>obj.foo()</code> 来说，我们只需要记住，谁调用了函数，谁就是 <code>this</code>，所以在这个场景下 <code>foo</code> 函数中的 <code>this</code> 就是 <code>obj</code> 对象</li><li>对于 <code>new</code> 的方式来说，<code>this</code> 被永远绑定在了 <code>c</code> 上面，不会被任何方式改变 <code>this</code></li></ul><blockquote><p>说完了以上几种情况，其实很多代码中的 <code>this</code> 应该就没什么问题了，下面让我们看看箭头函数中的 <code>this</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function a() {
+  return () =&gt; {
+    return () =&gt; {
+      console.log(this)
+    }
+  }
+}
+console.log(a()()())
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>首先箭头函数其实是没有 <code>this</code> 的，箭头函数中的 <code>this</code> 只取决包裹箭头函数的第一个普通函数的 <code>this</code>。在这个例子中，因为包裹箭头函数的第一个普通函数是 <code>a</code>，所以此时的 <code>this</code> 是 <code>window</code>。另外对箭头函数使用 <code>bind</code>这类函数是无效的。</li><li>最后种情况也就是 <code>bind</code> 这些改变上下文的 <code>API</code> 了，对于这些函数来说，<code>this</code> 取决于第一个参数，如果第一个参数为空，那么就是 <code>window</code>。</li><li>那么说到 <code>bind</code>，不知道大家是否考虑过，如果对一个函数进行多次 <code>bind</code>，那么上下文会是什么呢？</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let a = {}
+let fn = function () { console.log(this) }
+fn.bind().bind(a)() // =&gt; ?
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>如果你认为输出结果是 <code>a</code>，那么你就错了，其实我们可以把上述代码转换成另一种形式</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// fn.bind().bind(a) 等于
+let fn2 = function fn1() {
+  return function() {
+    return fn.apply()
+  }.apply(a)
+}
+fn2()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>可以从上述代码中发现，不管我们给函数 <code>bind</code> 几次，<code>fn</code> 中的 <code>this</code> 永远由第一次 <code>bind</code> 决定，所以结果永远是 <code>window</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let a = { name: &#39;poetries&#39; }
+function foo() {
+  console.log(this.name)
+}
+foo.bind(a)() // =&gt; &#39;poetries&#39;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>以上就是 <code>this</code> 的规则了，但是可能会发生多个规则同时出现的情况，这时候不同的规则之间会根据优先级最高的来决定 <code>this</code> 最终指向哪里。</p></blockquote><blockquote><p>首先，<code>new</code> 的方式优先级最高，接下来是 <code>bind</code> 这些函数，然后是 <code>obj.foo()</code> 这种调用方式，最后是 <code>foo</code> 这种调用方式，同时，箭头函数的 <code>this</code> 一旦被绑定，就不会再被任何方式所改变。</p></blockquote><p><img src="/assets/20220307225252.e5d5971d.png" alt=""></p><p>总结</p><blockquote><p><code>this</code>执行主体，谁把它执行的和在哪创建的在哪执行的都没有必然的关系</p></blockquote><ul><li>函数执行，看方法前面是否有点，没有点<code>this</code>是<code>window</code>(严格模式下是<code>undefined</code>)，有点，点前面是谁-this-就是谁</li><li>给当前元素的某个事件行为绑定方法，当事件行为触发，方法中的this是当前元素本身（排除<code>attachEvent</code>）</li><li>构造函数体中<code>this</code>是当前类的实例</li><li>箭头函数中没有执行主体，所用到的this都是所处上下文中的<code>this</code></li><li>可以基于<code>Function.prototype</code>上的<code>call/apply/bind</code>改变<code>this</code>指向</li></ul><h2 id="_8-内存机制" tabindex="-1"><a class="header-anchor" href="#_8-内存机制" aria-hidden="true">#</a> 8 内存机制</h2><blockquote><p>网上的资料基本是这样说的: 基本数据类型用栈存储，引用数据类型用堆存储。</p></blockquote><p>看起来没有错误，但实际上是有问题的。可以考虑一下闭包的情况，如果变量存在栈中，那函数调用完栈顶空间销毁，闭包变量不就没了吗？</p><p>其实还是需要补充一句:</p><blockquote><p>闭包变量是存在堆内存中的。</p></blockquote><p>具体而言，以下数据类型存储在栈中:</p><ul><li><code>boolean</code></li><li><code>null</code></li><li><code>undefined</code></li><li><code>number</code></li><li><code>string</code></li><li><code>symbol</code></li><li><code>bigint</code></li></ul><p>而所有的对象数据类型存放在堆中。</p><blockquote><p>值得注意的是，对于赋值操作，原始类型的数据直接完整地复制变量值，对象数据类型的数据则是复制引用地址。</p></blockquote><p>因此会有下面的情况:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let obj = { a: 1 };
+let newObj = obj;
+newObj.a = 2;
+console.log(obj.a);//变成了2
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>之所以会这样，是因为 <code>obj</code> 和 <code>newObj</code> 是同一份堆空间的地址，改变<code>newObj</code>，等于改变了共同的堆内存，这时候通过 obj 来获取这块内存的值当然会改变。 当然，你可能会问: 为什么不全部用栈来保存呢？</li><li>首先，对于系统栈来说，它的功能除了保存变量之外，还有创建并切换函数执行上下文的功能。举个例子:</li></ul><p>当然，你可能会问: 为什么不全部用栈来保存呢？</p><p>首先，对于系统栈来说，它的功能除了保存变量之外，还有<code>创建并切换函数执行上下文的功能</code>。举个例子:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function f(a) {
+  console.log(a);
+}
+
+function func(a) {
+  f(a);
+}
+
+func(1);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>假设用ESP指针来保存当前的执行状态，在系统栈中会产生如下的过程：</li><li>调用func, 将 func 函数的上下文压栈，ESP指向栈顶。</li><li>执行func，又调用f函数，将 f 函数的上下文压栈，ESP 指针上移。</li><li>执行完 f 函数，将ESP 下移，f函数对应的栈顶空间被回收。</li><li>执行完 func，ESP 下移，func对应的空间被回收。</li></ul><p>图示如下:</p><p><img src="/assets/20210309114827.ba0ff833.png" alt=""></p><ul><li>因此你也看到了，如果采用栈来存储相对基本类型更加复杂的对象数据，那么切换上下文的开销将变得巨大！</li><li>不过堆内存虽然空间大，能存放大量的数据，但与此同时垃圾内存的回收会带来更大的开销</li></ul><h2 id="_9-执行上下文" tabindex="-1"><a class="header-anchor" href="#_9-执行上下文" aria-hidden="true">#</a> 9 执行上下文</h2><blockquote><p>当执行 JS 代码时，会产生三种执行上下文</p></blockquote><ul><li>全局执行上下文</li><li>函数执行上下文</li><li><code>eval</code> 执行上下文</li></ul><blockquote><p>每个执行上下文中都有三个重要的属性</p></blockquote><ul><li>变量对象（<code>VO</code>），包含变量、函数声明和函数的形参，该属性只能在全局上下文中访问</li><li>作用域链（<code>JS</code> 采用词法作用域，也就是说变量的作用域是在定义时就决定了）</li><li><code>this</code></li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var a = 10
+function foo(i) {
+  var b = 20
+}
+foo()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>对于上述代码，执行栈中有两个上下文：全局上下文和函数 foo 上下文。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>stack = [
+    globalContext,
+    fooContext
+]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>对于全局上下文来说，<code>VO</code>大概是这样的</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>globalContext.VO === globe
+globalContext.VO = {
+    a: undefined,
+	foo: &lt;Function&gt;,
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>对于函数 <code>foo</code> 来说，<code>VO</code> 不能访问，只能访问到活动对象（<code>AO</code>）</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>fooContext.VO === foo.AO
+fooContext.AO {
+    i: undefined,
+	b: undefined,
+    arguments: &lt;&gt;
+}
+// arguments 是函数独有的对象(箭头函数没有)
+// 该对象是一个伪数组，有 `length` 属性且可以通过下标访问元素
+// 该对象中的 `callee` 属性代表函数本身
+// `caller` 属性代表函数的调用者
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>对于作用域链，可以把它理解成包含自身变量对象和上级变量对象的列表，通过 <code>[[Scope]]</code>属性查找上级变量</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>fooContext.[[Scope]] = [
+    globalContext.VO
+]
+fooContext.Scope = fooContext.[[Scope]] + fooContext.VO
+fooContext.Scope = [
+    fooContext.VO,
+    globalContext.VO
+]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>接下来让我们看一个老生常谈的例子，<code>var</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>b() // call b
+console.log(a) // undefined
+
+var a = &#39;Hello world&#39;
+
+function b() {
+	console.log(&#39;call b&#39;)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>想必以上的输出大家肯定都已经明白了，这是因为函数和变量提升的原因。通常提升的解释是说将声明的代码移动到了顶部，这其实没有什么错误，便于大家理解。但是更准确的解释应该是：在生成执行上下文时，会有两个阶段。第一个阶段是创建的阶段（具体步骤是创建 <code>VO</code>），<code>JS</code> 解释器会找出需要提升的变量和函数，并且给他们提前在内存中开辟好空间，函数的话会将整个函数存入内存中，变量只声明并且赋值为 <code>undefined</code>，所以在第二个阶段，也就是代码执行阶段，我们可以直接提前使用。</p></blockquote><ul><li>在提升的过程中，相同的函数会覆盖上一个函数，并且函数优先于变量提升</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>b() // call b second
+
+function b() {
+	console.log(&#39;call b fist&#39;)
+}
+function b() {
+	console.log(&#39;call b second&#39;)
+}
+var b = &#39;Hello world&#39;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p><code>var</code>会产生很多错误，所以在 <code>ES6</code>中引入了 <code>let</code>。<code>let</code>不能在声明前使用，但是这并不是常说的 <code>let</code> 不会提升，<code>let</code> 提升了声明但没有赋值，因为临时死区导致了并不能在声明前使用。</p></blockquote><ul><li>对于非匿名的立即执行函数需要注意以下一点</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var foo = 1
+(function foo() {
+    foo = 10
+    console.log(foo)
+}()) // -&gt; ƒ foo() { foo = 10 ; console.log(foo) }
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>因为当 <code>JS</code> 解释器在遇到非匿名的立即执行函数时，会创建一个辅助的特定对象，然后将函数名称作为这个对象的属性，因此函数内部才可以访问到 <code>foo</code>，但是这个值又是只读的，所以对它的赋值并不生效，所以打印的结果还是这个函数，并且外部的值也没有发生更改。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>specialObject = {};
+
+Scope = specialObject + Scope;
+
+foo = new FunctionExpression;
+foo.[[Scope]] = Scope;
+specialObject.foo = foo; // {DontDelete}, {ReadOnly}
+
+delete Scope[0]; // remove specialObject from the front of scope chain
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="小结" tabindex="-1"><a class="header-anchor" href="#小结" aria-hidden="true">#</a> 小结</h3><blockquote><p>执行上下文可以简单理解为一个对象:</p></blockquote><p>它包含三个部分:</p><ul><li>变量对象(<code>VO</code>)</li><li>作用域链(词法作用域)</li><li><code>this</code>指向</li></ul><p>它的类型:</p><ul><li>全局执行上下文</li><li>函数执行上下文</li><li><code>eval</code>执行上下文</li></ul><p>代码执行过程:</p><ul><li>创建 全局上下文 (<code>global EC</code>)</li><li>全局执行上下文 (<code>caller</code>) 逐行 自上而下 执行。遇到函数时，函数执行上下文 (<code>callee</code>) 被<code>push</code>到执行栈顶层</li><li>函数执行上下文被激活，成为 <code>active EC</code>, 开始执行函数中的代码，<code>caller</code> 被挂起</li><li>函数执行完后，<code>callee</code> 被<code>pop</code>移除出执行栈，控制权交还全局上下文 (<code>caller</code>)，继续执行</li></ul><h2 id="_10-变量提升" tabindex="-1"><a class="header-anchor" href="#_10-变量提升" aria-hidden="true">#</a> 10 变量提升</h2><blockquote><p>当执行 <code>JS</code> 代码时，会生成执行环境，只要代码不是写在函数中的，就是在全局执行环境中，函数中的代码会产生函数执行环境，只此两种执行环境。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>b() // call b
+console.log(a) // undefined
+
+var a = &#39;Hello world&#39;
+
+function b() {
+    console.log(&#39;call b&#39;)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>想必以上的输出大家肯定都已经明白了，这是因为函数和变量提升的原因。通常提升的解释是说将声明的代码移动到了顶部，这其实没有什么错误，便于大家理解。但是更准确的解释应该是：在生成执行环境时，会有两个阶段。第一个阶段是创建的阶段，<code>JS</code> 解释器会找出需要提升的变量和函数，并且给他们提前在内存中开辟好空间，函数的话会将整个函数存入内存中，变量只声明并且赋值为 <code>undefined</code>，所以在第二个阶段，也就是代码执行阶段，我们可以直接提前使用</p></blockquote><ul><li>在提升的过程中，相同的函数会覆盖上一个函数，并且函数优先于变量提升</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>b() // call b second
+
+function b() {
+    console.log(&#39;call b fist&#39;)
+}
+function b() {
+    console.log(&#39;call b second&#39;)
+}
+var b = &#39;Hello world&#39;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p><code>var</code> 会产生很多错误，所以在 ES6中引入了 <code>let</code>。<code>let</code>不能在声明前使用，但是这并不是常说的 <code>let</code> 不会提升，<code>let</code>提升了，在第一阶段内存也已经为他开辟好了空间，但是因为这个声明的特性导致了并不能在声明前使用</p></blockquote><h2 id="_11-模块化" tabindex="-1"><a class="header-anchor" href="#_11-模块化" aria-hidden="true">#</a> 11 模块化</h2><blockquote><p>模块化开发在现代开发中已是必不可少的一部分，它大大提高了项目的可维护、可拓展和可协作性。通常，我们 在浏览器中使用 <code>ES6</code> 的模块化支持，在 <code>Node</code> 中使用 <code>commonjs</code> 的模块化支持。</p></blockquote><p>分类:</p><ul><li><code>es6: import / export</code></li><li><code>commonjs: require / module.exports / exports</code></li><li><code>amd: require / defined</code></li></ul><p>require与import的区别</p><ul><li><code>require</code>支持 动态导入，<code>import</code>不支持，正在提案 (<code>babel</code> 下可支持)</li><li><code>require</code>是 同步 导入，<code>impor</code>t属于 异步 导入</li><li><code>require</code>是 值拷贝，导出值变化不会影响导入值；<code>import</code>指向 内存地址，导入值会随导出值而变化</li></ul><h2 id="_12-settimeout、promise、async-await-的区别" tabindex="-1"><a class="header-anchor" href="#_12-settimeout、promise、async-await-的区别" aria-hidden="true">#</a> 12 setTimeout、Promise、Async / Await 的区别</h2><ul><li>首先，我们先来了解一下基本概念： <ul><li>js EventLoop 事件循环机制:</li><li>JavaScript的事件分两种，宏任务(macro-task)和微任务(micro-task)</li></ul></li><li>宏任务：包括整体代码script，setTimeout，setInterval</li><li>微任务：Promise.then(非new Promise)，process.nextTick(node中)</li><li>事件的执行顺序，是先执行宏任务，然后执行微任务，这个是基础，任务可以有同步任务和异步任务，同步的进入主线程，异步的进入Event Table并注册函数，异步事件完成后，会将回调函数放入Event Queue中(宏任务和微任务是不同的Event Queue)，同步任务执行完成后，会从Event Queue中读取事件放入主线程执行，回调函数中可能还会包含不同的任务，因此会循环执行上述操作。</li><li>注意： setTimeOut并不是直接的把你的回掉函数放进上述的异步队列中去，而是在定时器的时间到了之后，把回掉函数放到执行异步队列中去。如果此时这个队列已经有很多任务了，那就排在他们的后面。这也就解释了为什么setTimeOut为什么不能精准的执行的问题了。</li><li>setTimeout执行需要满足两个条件： <ul><li>主进程必须是空闲的状态，如果到时间了，主进程不空闲也不会执行你的回掉函数</li><li>这个回掉函数需要等到插入异步队列时前面的异步函数都执行完了，才会执行</li></ul></li><li>上面是比较官方的解释，说一下自己的理解吧： <ul><li>了解了什么是宏任务和微任务，就好理解多了，首先执行 宏任务 =&gt; 微任务的Event Queue =&gt; 宏任务的Event Queue</li></ul></li><li>promise、async/await <ul><li>首先，new Promise是同步的任务，会被放到主进程中去立即执行。而.then()函数是异步任务会放到异步队列中去，那什么时候放到异步队列中去呢？当你的promise状态结束的时候，就会立即放进异步队列中去了。</li><li>带async关键字的函数会返回一个promise对象，如果里面没有await，执行起来等同于普通函数；如果没有await，async函数并没有很厉害是不是</li><li>await 关键字要在 async 关键字函数的内部，await 写在外面会报错；await如同他的语意，就是在等待，等待右侧的表达式完成。此时的await会让出线程，阻塞async内后续的代码，先去执行async外的代码。等外面的同步代码执行完毕，才会执行里面的后续代码。就算await的不是promise对象，是一个同步函数，也会等这样操作</li></ul></li></ul><p><img src="/assets/v2-9540801abdfb378ae5120b0df9a96059_1440w.35202a02.jpg" alt=""></p><p>根据图片显示我们来整理一下流程：</p><ul><li>执行<code>console.log(&#39;script start&#39;)</code>，输出<code>script start</code>；</li><li>执行<code>setTimeout</code>，是一个异步动作，放入宏任务异步队列中；</li><li>执行<code>async1()</code>，输出<code>async1 start</code>，继续向下执行；</li><li>执行<code>async2()</code>，输出<code>async2</code>，并返回了一个<code>promise</code>对象，<code>await</code>让出了线程，把返回的promise加入了微任务异步队列，所以<code>async1()</code>下面的代码也要等待上面完成后继续执行;</li><li>执行 <code>new Promise</code>，输出<code>promise1</code>，然后将<code>resolve</code>放入微任务异步队列；</li><li>执行<code>console.log(&#39;script end&#39;)</code>，输出<code>script end</code>；</li><li>到此同步的代码就都执行完成了，然后去微任务异步队列里去获取任务</li><li>接下来执行<code>resolve</code>（<code>async2</code>返回的<code>promise</code>返回的），输出了<code>async1 end</code>。</li><li>然后执行<code>resolve</code>（<code>new Promise</code>的），输出了<code>promise2</code></li><li>最后执行<code>setTimeout</code>，输出了<code>settimeout</code></li></ul><h2 id="_13-async原理" tabindex="-1"><a class="header-anchor" href="#_13-async原理" aria-hidden="true">#</a> 13 async原理</h2><blockquote><p><code>async/await</code>语法糖就是使用<code>Generator</code>函数+自动执行器来运作的</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 定义了一个promise，用来模拟异步请求，作用是传入参数++
+function getNum(num){
+    return new Promise((resolve, reject) =&gt; {
+        setTimeout(() =&gt; {
+            resolve(num+1)
+        }, 1000)
+    })
+}
+
+//自动执行器，如果一个Generator函数没有执行完，则递归调用
+function asyncFun(func){
+  var gen = func();
+
+  function next(data){
+    var result = gen.next(data);
+    if (result.done) return result.value;
+    result.value.then(function(data){
+      next(data);
+    });
+  }
+
+  next();
+}
+
+// 所需要执行的Generator函数，内部的数据在执行完成一步的promise之后，再调用下一步
+var func = function* (){
+  var f1 = yield getNum(1);
+  var f2 = yield getNum(f1);
+  console.log(f2) ;
+};
+asyncFun(func);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ul><li>在执行的过程中，判断一个函数的<code>promise</code>是否完成，如果已经完成，将结果传入下一个函数，继续重复此步骤</li><li>每一个 <code>next()</code> 方法返回值的 <code>value</code> 属性为一个 <code>Promise</code> 对象，所以我们为其添加 <code>then</code> 方法， 在 <code>then</code> 方法里面接着运行 <code>next</code> 方法挪移遍历器指针，直到 <code>Generator</code>函数运行完成</li></ul><h2 id="_14-js-整数是怎么表示的" tabindex="-1"><a class="header-anchor" href="#_14-js-整数是怎么表示的" aria-hidden="true">#</a> 14 JS 整数是怎么表示的</h2><blockquote><p>通过 Number 类型来表示，遵循 IEEE754 标准，通过 64 位来表示一个数字，（1 + 11 + 52），最大安全数字是 Math.pow(2, 53) - 1，对于 16 位十进制。（符号位 + 指数位 + 小数部分有效位）</p></blockquote><h2 id="_15-number-的存储空间是多大-如果后台发送了一个超过最大自己的数字怎么办" tabindex="-1"><a class="header-anchor" href="#_15-number-的存储空间是多大-如果后台发送了一个超过最大自己的数字怎么办" aria-hidden="true">#</a> 15 Number() 的存储空间是多大？如果后台发送了一个超过最大自己的数字怎么办</h2><blockquote><p>Math.pow(2, 53) ，53 为有效数字，会发生截断，等于 JS 能支持的最大数字。</p></blockquote><h2 id="_16-settimeout-fn-0-多久才执行-event-loop" tabindex="-1"><a class="header-anchor" href="#_16-settimeout-fn-0-多久才执行-event-loop" aria-hidden="true">#</a> 16 setTimeout(fn, 0)多久才执行，Event Loop</h2><blockquote><p>setTimeout 按照顺序放到队列里面，然后等待函数调用栈清空之后才开始执行，而这些操作进入队列的顺序，则由设定的延迟时间来决定</p></blockquote><h2 id="_17-js脚本加载问题-async、defer问题" tabindex="-1"><a class="header-anchor" href="#_17-js脚本加载问题-async、defer问题" aria-hidden="true">#</a> 17 js脚本加载问题，async、defer问题</h2><ul><li>如果依赖其他脚本和 DOM 结果，使用 defer</li><li>如果与 DOM 和其他脚本依赖不强时，使用 async</li></ul><p>script 引入方式</p><ul><li><code>html</code> 静态<code>&lt;script&gt;</code>引入</li><li><code>js</code> 动态插入<code>&lt;script&gt;</code></li><li><code>&lt;script defer&gt;</code>: 异步加载，元素解析完成后执行</li><li><code>&lt;script async&gt;</code>: 异步加载，但执行时会阻塞元素渲染</li></ul><h2 id="_18-javascript垃圾回收机制的了解" tabindex="-1"><a class="header-anchor" href="#_18-javascript垃圾回收机制的了解" aria-hidden="true">#</a> 18 JavaScript垃圾回收机制的了解</h2><ul><li>对于在JavaScript中的字符串，对象，数组是没有固定大小的，只有当对他们进行动态分配存储时，解释器就会分配内存来存储这些数据，当JavaScript的解释器消耗完系统中所有可用的内存时，就会造成系统崩溃。</li><li>内存泄漏，在某些情况下，不再使用到的变量所占用内存没有及时释放，导致程序运行中，内存越占越大，极端情况下可以导致系统崩溃，服务器宕机。</li><li>JavaScript有自己的一套垃圾回收机制，JavaScript的解释器可以检测到什么时候程序不再使用这个对象了（数据），就会把它所占用的内存释放掉。</li><li>针对JavaScript的来及回收机制有以下两种方法（常用）：标记清除，引用计数</li><li>标记清除</li></ul><h2 id="_19-说说有几种类型的dom节点" tabindex="-1"><a class="header-anchor" href="#_19-说说有几种类型的dom节点" aria-hidden="true">#</a> 19 说说有几种类型的DOM节点</h2><ul><li>Document节点，整个文档是一个文档节点；</li><li>Element节点，每个HTML标签是一个元素节点；</li><li>Attribute节点，每一个HTML属性是一个属性节点；</li><li>Text节点，包含在HTML元素中的文本是文本节点</li></ul><h2 id="_20-说说javascript对象的几种创建方式" tabindex="-1"><a class="header-anchor" href="#_20-说说javascript对象的几种创建方式" aria-hidden="true">#</a> 20 说说JavaScript对象的几种创建方式</h2><h3 id="工厂模式-创建方式" tabindex="-1"><a class="header-anchor" href="#工厂模式-创建方式" aria-hidden="true">#</a> 工厂模式,创建方式</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function createPerson(name,age,job){
+    var o = new Object();
+    o.name=name;
+    o.age=age;
+    o.job=job;
+    o.sayName = function(){
+        alert(this.name);
+    }
+}
+var person1 = createPerson(&quot;da&quot;,1,&quot;it&quot;);
+var person2 = createPerson(&quot;dada&quot;,2,&quot;it&quot;);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="构造函数模式" tabindex="-1"><a class="header-anchor" href="#构造函数模式" aria-hidden="true">#</a> 构造函数模式</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function Person(name,age,ob){
+    this.name=name;
+    this.age=age;
+    this.job=job;
+    this.sayName = function(){
+        alert(this.name);
+    }
+var person1 = new Person(&quot;dada&quot;,1,&quot;web&quot;);
+var person2 = new Person(&quot;dada&quot;,2,&quot;web&quot;);
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="使用原型模式" tabindex="-1"><a class="header-anchor" href="#使用原型模式" aria-hidden="true">#</a> 使用原型模式</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function Person(){
+}
+Person.prototype.name = &quot;da&quot;;
+Person.prototype.age = 1;
+Person.prototype.job = &quot;web&quot;;
+Person.prototype.sayName = function(){
+    alert(this.name);
+}
+
+var person1 = new Person();
+person1.sayName();    //&quot;dada&quot;
+
+var person2 = new Person();
+person2.sayName();    //&quot;dada&quot;
+
+alert(person1.sayName == person2.sayName);   //true
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="组合使用构造函数模式和原型模式" tabindex="-1"><a class="header-anchor" href="#组合使用构造函数模式和原型模式" aria-hidden="true">#</a> 组合使用构造函数模式和原型模式</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function Person(name,age){
+    this.name = name;
+    this.age = age;
+    this.friends = [&quot;da&quot;,&quot;dada&quot;];
+}
+Person.prototype = {
+    constructor:Person,
+    sayName:function(){
+        alert(this.name);
+    }
+}
+var person1 = new Person(&quot;da1&quot;,1);
+var person2 = new Person(&quot;da2&quot;,2);
+person1.friends.push(&quot;dadada&quot;);
+console.log(person1.friends);    //[&quot;da&quot;,&quot;dada&quot;,&quot;dadada&quot;]
+console.log(person2.friends);    //[&quot;da&quot;,&quot;dada&quot;]
+console.log(person1.friends === person2.friends);    //false
+console.log(person1.sayName === person2.sayName);   //true
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="动态原型模式" tabindex="-1"><a class="header-anchor" href="#动态原型模式" aria-hidden="true">#</a> 动态原型模式</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function Person(name,age,job){
+    this.name=name;
+    this.age=age;
+    this.job=job;
+
+    if(typeof this.sayName!=&quot;function&quot;){
+        Person.prototype.sayName=function(){
+            alert(this.name);
+        };
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_21-如何转化类数组成数组" tabindex="-1"><a class="header-anchor" href="#_21-如何转化类数组成数组" aria-hidden="true">#</a> 21 如何转化类数组成数组</h2><blockquote><p>因为<code>arguments</code>本身并不能调用数组方法，它是一个另外一种对象类型，只不过属性从<code>0</code>开始排，依次为<code>0，1，2...</code>最后还有<code>callee</code>和<code>length</code>属性。我们也把这样的对象称为类数组</p></blockquote><p>常见的类数组还有：</p><ul><li>用<code>getElementsByTagName/ClassName()</code>获得的<code>HTMLCollection</code></li><li>用<code>querySelector</code>获得的<code>nodeList</code></li></ul><blockquote><p>那这导致很多数组的方法就不能用了，必要时需要我们将它们转换成数组，有哪些方法呢？</p></blockquote><h3 id="array-prototype-slice-call" tabindex="-1"><a class="header-anchor" href="#array-prototype-slice-call" aria-hidden="true">#</a> Array.prototype.slice.call()</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function sum(a, b) {
+  let args = Array.prototype.slice.call(arguments);
+  console.log(args.reduce((sum, cur) =&gt; sum + cur));//args可以调用数组原生的方法啦
+}
+sum(1, 2);//3
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="array-from" tabindex="-1"><a class="header-anchor" href="#array-from" aria-hidden="true">#</a> Array.from()</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function sum(a, b) {
+  let args = Array.from(arguments);
+  console.log(args.reduce((sum, cur) =&gt; sum + cur));//args可以调用数组原生的方法啦
+}
+sum(1, 2);//3
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这种方法也可以用来转换<code>Set</code>和<code>Map</code>哦！</p><h3 id="es6展开运算符" tabindex="-1"><a class="header-anchor" href="#es6展开运算符" aria-hidden="true">#</a> ES6展开运算符</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function sum(a, b) {
+  let args = [...arguments];
+  console.log(args.reduce((sum, cur) =&gt; sum + cur));//args可以调用数组原生的方法啦
+}
+sum(1, 2);//3
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="利用concat-apply" tabindex="-1"><a class="header-anchor" href="#利用concat-apply" aria-hidden="true">#</a> 利用concat+apply</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function sum(a, b) {
+  let args = Array.prototype.concat.apply([], arguments);//apply方法会把第二个参数展开
+  console.log(args.reduce((sum, cur) =&gt; sum + cur));//args可以调用数组原生的方法啦
+}
+sum(1, 2);//3
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_22-foreach中return有效果吗-如何中断foreach循环" tabindex="-1"><a class="header-anchor" href="#_22-foreach中return有效果吗-如何中断foreach循环" aria-hidden="true">#</a> 22 forEach中return有效果吗？如何中断forEach循环？</h2><blockquote><p>在<code>forEach</code>中用<code>return</code>不会返回，函数会继续执行。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let nums = [1, 2, 3];
+nums.forEach((item, index) =&gt; {
+  return;//无效
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>中断方法：</p><ul><li>使用<code>try</code>监视代码块，在需要中断的地方抛出异常。</li><li>官方推荐方法（替换方法）：用<code>every</code>和<code>some</code>替代<code>forEach</code>函数。<code>every</code>在碰到<code>return false</code>的时候，中止循环。<code>some</code>在碰到<code>return true</code>的时候，中止循环</li></ul><h2 id="_23-js判断数组中是否包含某个值" tabindex="-1"><a class="header-anchor" href="#_23-js判断数组中是否包含某个值" aria-hidden="true">#</a> 23 JS判断数组中是否包含某个值</h2><h3 id="方法一-array-indexof" tabindex="-1"><a class="header-anchor" href="#方法一-array-indexof" aria-hidden="true">#</a> 方法一：array.indexOf</h3><blockquote><p>此方法判断数组中是否存在某个值，如果存在，则返回数组元素的下标，否则返回<code>-1</code>。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var arr=[1,2,3,4];
+var index=arr.indexOf(3);
+console.log(index);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="方法二-array-includes-searcelement-fromindex" tabindex="-1"><a class="header-anchor" href="#方法二-array-includes-searcelement-fromindex" aria-hidden="true">#</a> 方法二：array.includes(searcElement[,fromIndex])</h3><blockquote><p>此方法判断数组中是否存在某个值，如果存在返回<code>true</code>，否则返回<code>false</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var arr=[1,2,3,4];
+if(arr.includes(3))
+    console.log(&quot;存在&quot;);
+else
+    console.log(&quot;不存在&quot;);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="方法三-array-find-callback-thisarg" tabindex="-1"><a class="header-anchor" href="#方法三-array-find-callback-thisarg" aria-hidden="true">#</a> 方法三：array.find(callback[,thisArg])</h3><p>返回数组中满足条件的第一个元素的值，如果没有，返回<code>undefined</code></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var arr=[1,2,3,4];
+var result = arr.find(item =&gt;{
+    return item &gt; 3
+});
+console.log(result);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="方法四-array-findeindex-callback-thisarg" tabindex="-1"><a class="header-anchor" href="#方法四-array-findeindex-callback-thisarg" aria-hidden="true">#</a> 方法四：array.findeIndex(callback[,thisArg])</h3><blockquote><p>返回数组中满足条件的第一个元素的下标，如果没有找到，返回<code>-1</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var arr=[1,2,3,4];
+var result = arr.findIndex(item =&gt;{
+    return item &gt; 3
+});
+console.log(result);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_24-js中flat-数组扁平化" tabindex="-1"><a class="header-anchor" href="#_24-js中flat-数组扁平化" aria-hidden="true">#</a> 24 JS中flat---数组扁平化</h2><blockquote><p>对于前端项目开发过程中，偶尔会出现层叠数据结构的数组，我们需要将多层级数组转化为一级数组（即提取嵌套数组元素最终合并为一个数组），使其内容合并且展开。那么该如何去实现呢？</p></blockquote><p>需求:多维数组=&gt;一维数组</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let ary = [1, [2, [3, [4, 5]]], 6];// -&gt; [1, 2, 3, 4, 5, 6]
+let str = JSON.stringify(ary);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="调用es6中的flat方法" tabindex="-1"><a class="header-anchor" href="#调用es6中的flat方法" aria-hidden="true">#</a> 调用ES6中的flat方法</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>ary = ary.flat(Infinity);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="replace-split" tabindex="-1"><a class="header-anchor" href="#replace-split" aria-hidden="true">#</a> replace + split</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>ary = str.replace(/(\[|\])/g, &#39;&#39;).split(&#39;,&#39;)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="replace-json-parse" tabindex="-1"><a class="header-anchor" href="#replace-json-parse" aria-hidden="true">#</a> replace + JSON.parse</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>str = str.replace(/(\[|\])/g, &#39;&#39;);
+str = &#39;[&#39; + str + &#39;]&#39;;
+ary = JSON.parse(str);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="普通递归" tabindex="-1"><a class="header-anchor" href="#普通递归" aria-hidden="true">#</a> 普通递归</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let result = [];
+let fn = function(ary) {
+  for(let i = 0; i &lt; ary.length; i++) {
+    let item = ary[i];
+    if (Array.isArray(ary[i])){
+      fn(item);
+    } else {
+      result.push(item);
+    }
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="利用reduce函数迭代" tabindex="-1"><a class="header-anchor" href="#利用reduce函数迭代" aria-hidden="true">#</a> 利用reduce函数迭代</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function flatten(ary) {
+    return ary.reduce((pre, cur) =&gt; {
+        return pre.concat(Array.isArray(cur) ? flatten(cur) : cur);
+    }, []);
+}
+let ary = [1, 2, [3, 4], [5, [6, 7]]]
+console.log(flatten(ary))
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="扩展运算符" tabindex="-1"><a class="header-anchor" href="#扩展运算符" aria-hidden="true">#</a> 扩展运算符</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>//只要有一个元素有数组，那么循环继续
+while (ary.some(Array.isArray)) {
+  ary = [].concat(...ary);
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_25-js中浅拷贝的手段有哪些" tabindex="-1"><a class="header-anchor" href="#_25-js中浅拷贝的手段有哪些" aria-hidden="true">#</a> 25 JS中浅拷贝的手段有哪些</h2><h3 id="重要-什么是拷贝" tabindex="-1"><a class="header-anchor" href="#重要-什么是拷贝" aria-hidden="true">#</a> 重要: 什么是拷贝？</h3><p>首先来直观的感受一下什么是拷贝</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let arr = [1, 2, 3];
+let newArr = arr;
+newArr[0] = 100;
+
+console.log(arr);//[100, 2, 3]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>这是直接赋值的情况，不涉及任何拷贝。当改变<code>newArr</code>的时候，由于是同一个引用，arr指向的值也跟着改变。</p></blockquote><p>现在进行浅拷贝:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let arr = [1, 2, 3];
+let newArr = arr.slice();
+newArr[0] = 100;
+
+console.log(arr);//[1, 2, 3]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>当修改newArr的时候，arr的值并不改变。什么原因?因为这里newArr是arr浅拷贝后的结果，newArr和arr现在引用的已经不是同一块空间啦！</p></blockquote><p>这就是浅拷贝！</p><p>但是这又会带来一个潜在的问题:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let arr = [1, 2, {val: 4}];
+let newArr = arr.slice();
+newArr[2].val = 1000;
+
+console.log(arr);//[ 1, 2, { val: 1000 } ]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>不是已经不是同一块空间的引用了吗？为什么改变了newArr改变了第二个元素的val值，arr也跟着变了。</p><blockquote><p>这就是浅拷贝的限制所在了。它只能拷贝一层对象。如果有对象的嵌套，那么浅拷贝将无能为力。但幸运的是，深拷贝就是为了解决这个问题而生的，它能</p></blockquote><p>解决无限极的对象嵌套问题，实现彻底的拷贝。当然，这是我们下一篇的重点。 现在先让大家有一个基本的概念。</p><p>接下来，我们来研究一下JS中实现浅拷贝到底有多少种方式？</p><h3 id="_1-手动实现" tabindex="-1"><a class="header-anchor" href="#_1-手动实现" aria-hidden="true">#</a> 1. 手动实现</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const shallowClone = (target) =&gt; {
+  if (typeof target === &#39;object&#39; &amp;&amp; target !== null) {
+    const cloneTarget = Array.isArray(target) ? []: {};
+    for (let prop in target) {
+      if (target.hasOwnProperty(prop)) {
+          cloneTarget[prop] = target[prop];
+      }
+    }
+    return cloneTarget;
+  } else {
+    return target;
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_2-object-assign" tabindex="-1"><a class="header-anchor" href="#_2-object-assign" aria-hidden="true">#</a> 2. Object.assign</h3><blockquote><p>但是需要注意的是，<code>Object.assgin()</code> 拷贝的是对象的属性的引用，而不是对象本身。</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let obj = { name: &#39;sy&#39;, age: 18 };
+const obj2 = Object.assign({}, obj, {name: &#39;sss&#39;});
+console.log(obj2);//{ name: &#39;sss&#39;, age: 18 }
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_3-concat浅拷贝数组" tabindex="-1"><a class="header-anchor" href="#_3-concat浅拷贝数组" aria-hidden="true">#</a> 3. concat浅拷贝数组</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let arr = [1, 2, 3];
+let newArr = arr.concat();
+newArr[1] = 100;
+console.log(arr);//[ 1, 2, 3 ]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_4-slice浅拷贝" tabindex="-1"><a class="header-anchor" href="#_4-slice浅拷贝" aria-hidden="true">#</a> 4. slice浅拷贝</h3><p>开头的例子</p><h3 id="_5-展开运算符" tabindex="-1"><a class="header-anchor" href="#_5-展开运算符" aria-hidden="true">#</a> 5. ...展开运算符</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let arr = [1, 2, 3];
+let newArr = [...arr];//跟arr.slice()是一样的效果
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_26-数组-array" tabindex="-1"><a class="header-anchor" href="#_26-数组-array" aria-hidden="true">#</a> 26 数组(array)</h2><ul><li><code>map</code>: 遍历数组，返回回调返回值组成的新数组</li><li><code>forEach</code>: 无法<code>break</code>，可以用<code>try/catch</code>中<code>throw new Error</code>来停止</li><li><code>filter</code>: 过滤</li><li><code>some</code>: 有一项返回<code>true</code>，则整体为<code>true</code></li><li><code>every</code>: 有一项返回<code>false</code>，则整体为<code>false</code></li><li><code>join</code>: 通过指定连接符生成字符串</li><li><code>push / pop</code>: 末尾推入和弹出，改变原数组， 返回推入/弹出项</li><li><code>unshift / shift</code>: 头部推入和弹出，改变原数组，返回操作项</li><li><code>sort(fn) / reverse</code>: 排序与反转，改变原数组</li><li><code>concat</code>: 连接数组，不影响原数组， 浅拷贝</li><li><code>slice(start, end)</code>: 返回截断后的新数组，不改变原数组</li><li><code>splice(start, number, value...)</code>: 返回删除元素组成的数组，<code>value</code>为插入项，改变原数组</li><li><code>indexOf / lastIndexOf(value, fromIndex)</code>: 查找数组项，返回对应的下标</li><li><code>reduce / reduceRight(fn(prev, cur)</code>， <code>defaultPrev)</code>: 两两执行，<code>prev</code> 为上次化简函数的<code>return</code>值，<code>cur</code>为当前值(从第二项开始)</li></ul><p>数组乱序：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>var arr = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+arr.sort(function () {
+    return Math.random() - 0.5;
+});
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>数组拆解: flat: [1,[2,3]] --&gt; [1, 2, 3]</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>Array.prototype.flat = function() {
+    this.toString().split(&#39;,&#39;).map(item =&gt; +item )
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_27-代码的复用" tabindex="-1"><a class="header-anchor" href="#_27-代码的复用" aria-hidden="true">#</a> 27 代码的复用</h2><blockquote><p>当你发现任何代码开始写第二遍时，就要开始考虑如何复用。一般有以下的方式:</p></blockquote><ul><li>函数封装</li><li>继承</li><li>复制<code>extend</code></li><li>混入<code>mixin</code></li><li>借用<code>apply/call</code></li></ul><h2 id="_28-操作dom节点方法" tabindex="-1"><a class="header-anchor" href="#_28-操作dom节点方法" aria-hidden="true">#</a> 28 操作DOM节点方法</h2><p>创建新节点</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>createDocumentFragment()    //创建一个DOM片段
+createElement()   //创建一个具体的元素
+createTextNode()   //创建一个文本节点
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>添加、移除、替换、插入</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>appendChild()      //添加
+removeChild()      //移除
+replaceChild()      //替换
+insertBefore()      //插入
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>查找</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>getElementsByTagName()    //通过标签名称
+getElementsByName()     //通过元素的Name属性的值
+getElementById()        //通过元素Id，唯一性
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_29-ajax总结" tabindex="-1"><a class="header-anchor" href="#_29-ajax总结" aria-hidden="true">#</a> 29 Ajax总结</h2><ul><li><code>Ajax</code>的原理简单来说是在用户和服务器之间加了---个中间层(<code>AJAX</code>引擎)，通过<code>XmlHttpRequest</code>对象来向服务器发异步请求，从服务器获得数据，然后用<code>javascript</code>来操作DOM而更新页面。使用户操作与服务器响应异步化。这其中最关键的一步就是从服务器获得请求数据</li><li><code>Ajax</code>的过程只涉及<code>JavaScript</code>、<code>XMLHttpRequest</code>和<code>DOM</code>。<code>XMLHttpRequest</code>是<code>ajax</code>的核心机制</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 1. 创建连接
+var xhr = null;
+xhr = new XMLHttpRequest()
+// 2. 连接服务器
+xhr.open(&#39;get&#39;, url, true)
+// 3. 发送请求
+xhr.send(null);
+// 4. 接受请求
+xhr.onreadystatechange = function(){
+    if(xhr.readyState == 4){
+        if(xhr.status == 200){
+            success(xhr.responseText);
+        } else { // fail
+            fail &amp;&amp; fail(xhr.status);
+        }
+    }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>ajax 有那些优缺点?</p><p>优点：</p><ul><li>通过异步模式，提升了用户体验.</li><li>优化了浏览器和服务器之间的传输，减少不必要的数据往返，减少了带宽占用.</li><li><code>Ajax</code>在客户端运行，承担了一部分本来由服务器承担的工作，减少了大用户量下的服务器负载。</li><li><code>Ajax</code>可以实现动态不刷新（局部刷新）</li></ul><p>缺点：</p><ul><li>安全问题 <code>AJAX</code>暴露了与服务器交互的细节。</li><li>对搜索引擎的支持比较弱。</li><li>不容易调试。</li></ul><h2 id="_30-谈谈你对for-in-for-of的理解" tabindex="-1"><a class="header-anchor" href="#_30-谈谈你对for-in-for-of的理解" aria-hidden="true">#</a> 30 谈谈你对for in/for of的理解</h2><blockquote><p><code>for in</code>性能很差，迭代当前对象中可枚举的属性，并且一直查找到原型上去。</p></blockquote><ul><li>问题1：遍历顺序数字优先</li><li>问题2：无法遍历<code>symbol</code>属性</li><li>问题3：可以遍历到原型属性中可枚举的</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let obj = {
+  name: &#39;poetry&#39;,
+  age: 22,
+  [Symbol(&#39;aa&#39;)]: 100,
+  0: 200,
+  1: 300
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="/assets/20210320103701.aeebc87c.png" alt=""></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>for(let key in obj) {
+  // 不遍历原型上的属性
+  if(!obj.hasOwnProperty(key)) {
+    break;
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>遍历obj的私有属性拼接</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let keys = Object.keys(obj)
+keys = keys.concat(Object.getOwnPropertySymbols(obj1))
+keys.forEach(v=&gt;{
+  console.log(v)
+})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>for of</p><ul><li>部分数据结构实现了迭代器规范 <ul><li><code>Symbol.itertor</code></li><li><code>数组/set/map</code></li><li>对象没有实现，<code>for of</code>不能遍历对象</li></ul></li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 数组具备迭代器规范，模拟实现
+var arr = [1,2,3,4,5]
+
+arr[Symbol.iterator] = function() {
+  let self = this, index = 0;
+
+  return {
+    next() {
+      if(index &gt; self.length - 1) {
+        return {
+          done: true,
+          value: undefined
+        }
+      }
+      return {
+        done: false,
+        value: self[index++]
+      }
+    }
+  }
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 使对象具备可迭代特性
+let obj = {
+  0: 100,
+  1: 200,
+  length: 2
+}
+
+obj[Symbol.iterator] = Array.prototype[Symbol.iterator]
+
+for(var val of obj) {
+  console.log(val)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_31-数组相关" tabindex="-1"><a class="header-anchor" href="#_31-数组相关" aria-hidden="true">#</a> 31 数组相关</h2><h3 id="array-3-和array-3-4-的区别" tabindex="-1"><a class="header-anchor" href="#array-3-和array-3-4-的区别" aria-hidden="true">#</a> Array(3)和Array(3, 4)的区别？</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>console.log(Array(3)) // [empty x 3]
+console.log(Array(3, 4)) // [3, 4]
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="请创建一个长度为100-值都为1的数组" tabindex="-1"><a class="header-anchor" href="#请创建一个长度为100-值都为1的数组" aria-hidden="true">#</a> 请创建一个长度为100，值都为1的数组</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>new Array(100).fill(1)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="请创建一个长度为100-值为对应下标的数组" tabindex="-1"><a class="header-anchor" href="#请创建一个长度为100-值为对应下标的数组" aria-hidden="true">#</a> 请创建一个长度为100，值为对应下标的数组</h3><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// cool的写法：
+[...Array(100).keys()]
+
+// 其他方法：
+Array(100).join(&quot;,&quot;).split(&quot;,&quot;).map((v, i) =&gt; i)
+Array(100).fill().map((v, i) =&gt; i)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_32-setinterval存在哪些问题" tabindex="-1"><a class="header-anchor" href="#_32-setinterval存在哪些问题" aria-hidden="true">#</a> 32 setInterval存在哪些问题？</h2><blockquote><p><code>JavaScript</code>中使用 <code>setInterval</code> 开启轮询。定时器代码可能在代码再次被添加到队列之前还没有完成执行，结果导致定时器代码连续运行好几次，而之间没有任何停顿。而javascript引擎对这个问题的解决是：当使用<code>setInterval()</code>时，仅当没有该定时器的任何其他代码实例时，才将定时器代码添加到队列中。这确保了定时器代码加入到队列中的最小时间间隔为指定间隔。</p></blockquote><p>但是，这样会导致两个问题：</p><ul><li>某些间隔被跳过；</li><li>多个定时器的代码执行之间的间隔可能比预期的小</li></ul><h2 id="_33-链式调用settimeout对比setinterval" tabindex="-1"><a class="header-anchor" href="#_33-链式调用settimeout对比setinterval" aria-hidden="true">#</a> 33 链式调用setTimeout对比setInterval</h2><p>在上一题中也说到了<code>setInterval</code>本身是会存在一些问题的。而使用链式调用<code>setTimeout</code>这种方式会比它好一些：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>setTimeout(function fn(){
+    console.log(&#39;我是setTimeout&#39;);
+    setTimeout(fn, 1000);
+},1000);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>这个模式链式调用了<code>setTimeout()</code>，每次函数执行的时候都会创建一个新的定时器。第二个<code>setTimeout()</code>调用当前执行的函数，并为其设置另外一个定时器。这样做的好处是：</p><ul><li>在前一个定时器代码执行完之前，不会向队列插入新的定时器代码，确保不会有任何缺失的间隔。</li><li>而且，它可以保证在下一次定时器代码执行之前，至少要等待指定的间隔，避免了连续的运行。</li></ul><h2 id="_34-说一下requestanimationframe" tabindex="-1"><a class="header-anchor" href="#_34-说一下requestanimationframe" aria-hidden="true">#</a> 34 说一下requestAnimationFrame</h2><p>简介：</p><p>显示器都有自己固有的刷新频率(60HZ或者75HZ)，也就是说每秒最多重绘60次或者75次。而<code>requestAnimationFrame</code>的基本思想就是与这个刷新频率保持同步，利用这个刷新频率进行重绘。</p><p>特点：</p><ul><li>使用这个API时，一旦页面不处于浏览器的当前标签，就会自动停止刷新，这样就节省了CPU、GPU、电力。</li><li>由于它时在主线程上完成的，所以若是主线程非常忙时它的动画也会收到影响</li><li>它使用一个回调函数作为参数，这个回调函数会在浏览器重绘之前调用。</li></ul><p>使用：</p><p>正常使用：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>const requestID = window.requestAnimationFrame(callback);
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>兼容版本：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 给 window 下挂载一个兼容版本的 requestAniFrame
+window.requestAniFrame = (function () {
+  return  window.requestAnimationFrame ||
+    window.webkitRequestAnimationFrame ||
+    window.mozRequestAnimationFrame    ||
+    window.oRequestAnimationFrame      ||
+    window.msRequestAnimationFrame     ||
+    function( callback ){
+      window.setTimeout(callback, 1000 / 60);
+    };
+})();
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_35-requestanimationframe对比settimeout" tabindex="-1"><a class="header-anchor" href="#_35-requestanimationframe对比settimeout" aria-hidden="true">#</a> 35 requestAnimationFrame对比setTimeout</h2><ul><li>**屏幕刷新频率：**屏幕每秒出现图像的次数。普通笔记本为<code>60Hz</code></li><li>**动画原理：**计算机每<code>16.7ms</code>刷新一次，由于人眼的视觉停留，所以看起来是流畅的移动。</li><li>**setTimeout：**通过设定间隔时间来不断改变图像位置，达到动画效果。但是容易出现卡顿抖动的现象；原因是：</li></ul><ol><li><code>settimeout</code>任务被放入异步队列，只有当主线程任务执行完后才会执行队列中的任务，因此实际执行时间总是比设定时间要晚；</li><li><code>settimeout</code>的固定时间间隔不一定与屏幕刷新时间相同，会引起丢帧。</li></ol><blockquote><p>**requestAnimationFrame：**优势：由系统决定回调函数的执行时机。60Hz的刷新频率，那么每次刷新的间隔中会执行一次回调函数，不会引起丢帧，不会卡顿。且由于一旦页面不处于浏览器的当前标签，就会自动停止刷新，这样就节省了CPU、GPU、电力。</p></blockquote><h2 id="_36-xmlhttprequest" tabindex="-1"><a class="header-anchor" href="#_36-xmlhttprequest" aria-hidden="true">#</a> 36 XMLHttpRequest</h2><h3 id="关于http-xmlhttprequest-ajax的关系" tabindex="-1"><a class="header-anchor" href="#关于http-xmlhttprequest-ajax的关系" aria-hidden="true">#</a> 关于http,XMLHttpRequest,Ajax的关系</h3><ul><li><code>http</code>是浏览器和web服务器交换数据的协议,规范</li><li><code>XMLHttpRequest</code>是一个<code>JS</code>对象，是浏览器实现的一组<code>api</code>函数，使用这些函数，浏览器再通过<code>http</code>协议请求和发送数据。</li><li><code>Ajax</code>是一种技术方案，但并不是一种新技术，它最核心的就是依赖浏览器提供的<code>XMLHttpRequest</code>对象。用一句话来概括就是<code>我们使用XMLHttpRequest对象来发送一个Ajax请求</code>。</li></ul><h3 id="xmlhttprequest的发展历程是怎样的" tabindex="-1"><a class="header-anchor" href="#xmlhttprequest的发展历程是怎样的" aria-hidden="true">#</a> XMLHttpRequest的发展历程是怎样的？</h3><p>它最开始只是微软浏览器提供的一个接口，后来各大浏览器纷纷效仿也提供了这个接口，再后来W3C对它进行了标准化，提出了<code>XMLHttpRequest</code>标准。标准又分为<code>Level 1</code>和<code>Level 2</code>。</p><p><code>Level 2</code>相对于<code>Level 1</code>做了很大的改进，具体来说是：</p><ul><li>可以设置HTTP请求的超时时间。</li><li>可以使用FormData对象管理表单数据。</li><li>可以上传文件。</li><li>可以请求不同域名下的数据（跨域请求）。</li><li>可以获取服务器端的二进制数据。</li><li>可以获得数据传输的进度信息。</li></ul><h3 id="使用xmlhttprequest封装一个get和post请求" tabindex="-1"><a class="header-anchor" href="#使用xmlhttprequest封装一个get和post请求" aria-hidden="true">#</a> 使用XMLHttpRequest封装一个get和post请求</h3><p>get请求：</p><p>核心就四步：</p><ol><li><code>var xhr = new XMLHttpRequest()</code></li><li><code>xhr.open(&#39;GET&#39;, &#39;http://www.example.com/api/getname&#39;, true)</code></li><li><code>xhr.onreadystatechange = function () {}</code></li><li><code>xhr.send()</code></li></ol><p>让我们来封装一个简易版的：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>/*
+* xhr的get请求
+* @param url: 请求地址
+* @param params: 请求参数
+* @param onSuccess: 成功回调函数
+* @param onError: 失败回调函数
+*/
+function xhrGet (url, params = {}, onSuccess, onError) {
+  // 兼容IE6
+  var xhr = window.XMLHttpRequest ? new XMLHttpRequest() : new ActiveXObject(&#39;Microsoft.XMLHTTP&#39;);
+  let paramString = formatParams(params);
+  // xhr.open的第三个参数isAsync：是否异步
+  xhr.open(&#39;GET&#39;, `${url}${paramString}`, true);
+  xhr.onreadystatechange = function () {
+    // console.log(e);
+    console.log(this);
+    if (this.readyState === 4) {
+      if (this.status &gt;= 200 &amp;&amp; this.status &lt; 300) {
+        onSuccess(this.response);
+      } else {
+        onError(this.response)
+      }
+    }
+  }
+  xhr.send();
+}
+// 处理参数：如将{name: &#39;lindaidai&#39;}转为&#39;?name=lindaidai&#39;
+function formatParams (params) {
+  var paramString = Object.keys(params).map(key =&gt; {
+    return `${key}=${encodeURIComponent(params[key])}`
+  }).join(&#39;&amp;&#39;);
+  return paramString ? `?${paramString}` : &#39;&#39;
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>（当然上面的兼容<code>IE6</code>估计现在考的不多了，而且我这种写法其实也没啥用，因为如果真是在<code>IE6</code>下的话，后面的<code>Object.keys()</code>等方法也用不了了）</p><p>需要注意的是两种状态，一个是<code>readyState</code>，一个是<code>status</code>。</p><blockquote><p><code>readyState</code>请求状态：</p></blockquote><ul><li>0（未初始化）：还没有调用 open() 方法。</li><li>1（载入）：已调用 send() 方法，正在发送请求。</li><li>2（载入完成）：send() 方法完成，已收到全部响应内容。</li><li>3（解析）：正在解析响应内容。</li><li>4（完成）：响应内容解析完成，可以在客户端调用。</li></ul><blockquote><p><code>status</code>结果状态码：</p></blockquote><ul><li>0 ：如果状态是 UNSENT 或 OPENED；或者如果错误标签被设置(例如跨域时)</li><li>200 成功</li><li>其它HTTP状态码</li></ul><p>post请求：</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>function xhrPost (url, params, onSuccess, onError) {
+  var xhr = new XMLHttpRequest();
+  xhr.open(&#39;POST&#39;, url, true);
+  // ajax的默认请求ContentType:text/plain(纯文本)
+  xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application-x-www-form-urlencode&quot;);
+  xhr.onreadystatechange = function () {
+    if (this.readyState === 4) {
+      if (this.status &gt;= 200 &amp;&amp; this.status &lt; 300) {
+        onSuccess(this.response);
+      } else {
+        onError(this.response);
+      }
+    }
+  }
+  xhr.send(params);
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h2 id="_37-javascript-实现对上传图片的压缩" tabindex="-1"><a class="header-anchor" href="#_37-javascript-实现对上传图片的压缩" aria-hidden="true">#</a> 37 JavaScript 实现对上传图片的压缩？</h2><blockquote><p>答：读取用户上传的 File 对象，读写到画布（canvas）上，利用 Canvas 的 API 进行压缩，完成压缩之后再转成 <code>File（Blob）</code> 对象，上传到远程图片服务器；不过有时候我们也需要将一个 <code>base64</code> 字符串压缩之后再变为 <code>base64</code> 字符串传入到远程数据库或者再转成 <code>File（Blob）</code> 对象。</p></blockquote><p>思路就是 <code>File + Canvas</code> 的 <code>drawImage</code></p><h2 id="参考" tabindex="-1"><a class="header-anchor" href="#参考" aria-hidden="true">#</a> 参考</h2><ul><li><a href="https://juejin.cn/post/6844903974378668039" target="_blank" rel="noopener noreferrer">JS灵魂之问(opens new window)<span><svg class="external-link-icon" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewbox="0 0 100 100" width="15" height="15"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path><polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg><span class="external-link-icon-sr-only">open in new window</span></span></a></li></ul></div><!--[--><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/selected/CSS%E6%A8%A1%E5%9D%97.html" class="" aria-label="CSS模块"><!--[--><!--]--> CSS模块 <!--[--><!--]--></a></span><span class="next"><a href="/selected/ES6%E6%A8%A1%E5%9D%97.html" class="" aria-label="ES6模块"><!--[--><!--]--> ES6模块 <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.12353158.js" defer></script>
+  </body>
+</html>

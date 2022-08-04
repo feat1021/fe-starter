@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="generator" content="VuePress 2.0.0-beta.49">
+    <style>
+      :root {
+        --c-bg: #fff;
+      }
+      html.dark {
+        --c-bg: #22272e;
+      }
+      html, body {
+        background-color: var(--c-bg);
+      }
+    </style>
+    <script>
+      const userMode = localStorage.getItem('vuepress-color-scheme');
+			const systemDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+			if (userMode === 'dark' || (userMode !== 'light' && systemDarkMode)) {
+				document.documentElement.classList.toggle('dark', true);
+			}
+    </script>
+    <title>Vue | Frontend Starter</title><meta name="description" content="">
+    <link rel="modulepreload" href="/assets/app.12353158.js"><link rel="modulepreload" href="/assets/Vue.html.5c58cab9.js"><link rel="modulepreload" href="/assets/Vue.html.a81339b7.js"><link rel="prefetch" href="/assets/index.html.ee998a26.js"><link rel="prefetch" href="/assets/CSS.html.c64e9431.js"><link rel="prefetch" href="/assets/HTML.html.a70e4433.js"><link rel="prefetch" href="/assets/HTTP.html.6dbdd949.js"><link rel="prefetch" href="/assets/JS基础.html.0a913d15.js"><link rel="prefetch" href="/assets/React.html.6802a56c.js"><link rel="prefetch" href="/assets/工程化.html.0c152696.js"><link rel="prefetch" href="/assets/性能.html.090fde92.js"><link rel="prefetch" href="/assets/框架通识.html.1a3f58ab.js"><link rel="prefetch" href="/assets/浏览器.html.2ec19a51.js"><link rel="prefetch" href="/assets/设计模式.html.5761cd54.js"><link rel="prefetch" href="/assets/Bootstrap.html.86ad9734.js"><link rel="prefetch" href="/assets/CSS.html.e3ee6176.js"><link rel="prefetch" href="/assets/HTTP _ HTML.html.6603dd61.js"><link rel="prefetch" href="/assets/JavaScript.html.14aca0a4.js"><link rel="prefetch" href="/assets/Webpack.html.f773c5e1.js"><link rel="prefetch" href="/assets/jQuery.html.c3b9972e.js"><link rel="prefetch" href="/assets/其他.html.c716f6ee.js"><link rel="prefetch" href="/assets/微信小程序.html.0335a142.js"><link rel="prefetch" href="/assets/综合.html.5dfe757e.js"><link rel="prefetch" href="/assets/编程题.html.cbfc1c8c.js"><link rel="prefetch" href="/assets/性能优化.html.30c3f1c5.js"><link rel="prefetch" href="/assets/高频考点.html.2ee4efd2.js"><link rel="prefetch" href="/assets/handwritten.html.879fcb5e.js"><link rel="prefetch" href="/assets/JavaScript.html.bcb5a0d9.js"><link rel="prefetch" href="/assets/Node.html.be9ed4e1.js"><link rel="prefetch" href="/assets/React.html.36beeb6b.js"><link rel="prefetch" href="/assets/Vue.html.b739e835.js"><link rel="prefetch" href="/assets/Webpack.html.b34fb870.js"><link rel="prefetch" href="/assets/综合.html.30e0bc70.js"><link rel="prefetch" href="/assets/CSS模块.html.99bd45d7.js"><link rel="prefetch" href="/assets/ES6模块.html.0f2bfddb.js"><link rel="prefetch" href="/assets/HTML模块.html.4fb65265.js"><link rel="prefetch" href="/assets/HTTP模块.html.b4ce19f7.js"><link rel="prefetch" href="/assets/JS模块.html.015ff251.js"><link rel="prefetch" href="/assets/Node模块.html.b1985276.js"><link rel="prefetch" href="/assets/React模块.html.f53e1f03.js"><link rel="prefetch" href="/assets/Vue模块.html.785747a6.js"><link rel="prefetch" href="/assets/前端安全模块.html.f0f98ff3.js"><link rel="prefetch" href="/assets/前端工程相关.html.183e2c9f.js"><link rel="prefetch" href="/assets/小程序模块.html.f7ab4d91.js"><link rel="prefetch" href="/assets/常用设计模式.html.03f9722f.js"><link rel="prefetch" href="/assets/性能优化相关.html.12e8a2e3.js"><link rel="prefetch" href="/assets/排序算法.html.40481e91.js"><link rel="prefetch" href="/assets/框架通识.html.c3c3096b.js"><link rel="prefetch" href="/assets/浏览器模块.html.24652566.js"><link rel="prefetch" href="/assets/移动多端开发.html.8636371c.js"><link rel="prefetch" href="/assets/计算机通识.html.728b7ceb.js"><link rel="prefetch" href="/assets/404.html.93c18560.js"><link rel="prefetch" href="/assets/index.html.60500264.js"><link rel="prefetch" href="/assets/CSS.html.02fa634c.js"><link rel="prefetch" href="/assets/HTML.html.3a31cd64.js"><link rel="prefetch" href="/assets/HTTP.html.a1df6d3a.js"><link rel="prefetch" href="/assets/JS基础.html.b88ab559.js"><link rel="prefetch" href="/assets/React.html.4ec983c7.js"><link rel="prefetch" href="/assets/工程化.html.863e35db.js"><link rel="prefetch" href="/assets/性能.html.470e0a6f.js"><link rel="prefetch" href="/assets/框架通识.html.32d2fbab.js"><link rel="prefetch" href="/assets/浏览器.html.8279ebd9.js"><link rel="prefetch" href="/assets/设计模式.html.6afe6cf3.js"><link rel="prefetch" href="/assets/Bootstrap.html.2cc414a0.js"><link rel="prefetch" href="/assets/CSS.html.5d66e791.js"><link rel="prefetch" href="/assets/HTTP _ HTML.html.bbea8927.js"><link rel="prefetch" href="/assets/JavaScript.html.07acfd24.js"><link rel="prefetch" href="/assets/Webpack.html.a1c5dce1.js"><link rel="prefetch" href="/assets/jQuery.html.4e2f3899.js"><link rel="prefetch" href="/assets/其他.html.929587e1.js"><link rel="prefetch" href="/assets/微信小程序.html.69cc86fd.js"><link rel="prefetch" href="/assets/综合.html.1c892aa5.js"><link rel="prefetch" href="/assets/编程题.html.5478af99.js"><link rel="prefetch" href="/assets/性能优化.html.337c4654.js"><link rel="prefetch" href="/assets/高频考点.html.8772c401.js"><link rel="prefetch" href="/assets/handwritten.html.0f0ee7e3.js"><link rel="prefetch" href="/assets/JavaScript.html.5dd72bd0.js"><link rel="prefetch" href="/assets/Node.html.7eac5124.js"><link rel="prefetch" href="/assets/React.html.d8ccb952.js"><link rel="prefetch" href="/assets/Vue.html.47efbab1.js"><link rel="prefetch" href="/assets/Webpack.html.793df544.js"><link rel="prefetch" href="/assets/综合.html.ff78888d.js"><link rel="prefetch" href="/assets/CSS模块.html.bcc3cfc7.js"><link rel="prefetch" href="/assets/ES6模块.html.2ea3507a.js"><link rel="prefetch" href="/assets/HTML模块.html.6b729342.js"><link rel="prefetch" href="/assets/HTTP模块.html.2c6adffa.js"><link rel="prefetch" href="/assets/JS模块.html.28259fe6.js"><link rel="prefetch" href="/assets/Node模块.html.c36cd1fb.js"><link rel="prefetch" href="/assets/React模块.html.b09a5954.js"><link rel="prefetch" href="/assets/Vue模块.html.a27ab950.js"><link rel="prefetch" href="/assets/前端安全模块.html.e3aebe2f.js"><link rel="prefetch" href="/assets/前端工程相关.html.281b6ffe.js"><link rel="prefetch" href="/assets/小程序模块.html.493268db.js"><link rel="prefetch" href="/assets/常用设计模式.html.a600f326.js"><link rel="prefetch" href="/assets/性能优化相关.html.aff23982.js"><link rel="prefetch" href="/assets/排序算法.html.361967d5.js"><link rel="prefetch" href="/assets/框架通识.html.7719e539.js"><link rel="prefetch" href="/assets/浏览器模块.html.ac4e495d.js"><link rel="prefetch" href="/assets/移动多端开发.html.d8fc5993.js"><link rel="prefetch" href="/assets/计算机通识.html.0e8ab127.js"><link rel="prefetch" href="/assets/404.html.232c3875.js"><link rel="prefetch" href="/assets/404.176778df.js"><link rel="prefetch" href="/assets/Layout.ac3a6e88.js">
+    <link rel="stylesheet" href="/assets/style.20e644be.css">
+  </head>
+  <body>
+    <div id="app"><!--[--><div class="theme-container"><!--[--><header class="navbar"><div class="toggle-sidebar-button" title="toggle sidebar" aria-expanded="false" role="button" tabindex="0"><div class="icon" aria-hidden="true"><span></span><span></span><span></span></div></div><span><a href="/" class=""><!----><span class="site-name">Frontend Starter</span></a></span><div class="navbar-items-wrapper" style=""><!--[--><!--]--><!----><!--[--><!--]--><button class="toggle-color-mode-button" title="toggle color mode"><svg style="" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M16 12.005a4 4 0 1 1-4 4a4.005 4.005 0 0 1 4-4m0-2a6 6 0 1 0 6 6a6 6 0 0 0-6-6z" fill="currentColor"></path><path d="M5.394 6.813l1.414-1.415l3.506 3.506L8.9 10.318z" fill="currentColor"></path><path d="M2 15.005h5v2H2z" fill="currentColor"></path><path d="M5.394 25.197L8.9 21.691l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 25.005h2v5h-2z" fill="currentColor"></path><path d="M21.687 23.106l1.414-1.415l3.506 3.506l-1.414 1.414z" fill="currentColor"></path><path d="M25 15.005h5v2h-5z" fill="currentColor"></path><path d="M21.687 8.904l3.506-3.506l1.414 1.415l-3.506 3.505z" fill="currentColor"></path><path d="M15 2.005h2v5h-2z" fill="currentColor"></path></svg><svg style="display:none;" class="icon" focusable="false" viewBox="0 0 32 32"><path d="M13.502 5.414a15.075 15.075 0 0 0 11.594 18.194a11.113 11.113 0 0 1-7.975 3.39c-.138 0-.278.005-.418 0a11.094 11.094 0 0 1-3.2-21.584M14.98 3a1.002 1.002 0 0 0-.175.016a13.096 13.096 0 0 0 1.825 25.981c.164.006.328 0 .49 0a13.072 13.072 0 0 0 10.703-5.555a1.01 1.01 0 0 0-.783-1.565A13.08 13.08 0 0 1 15.89 4.38A1.015 1.015 0 0 0 14.98 3z" fill="currentColor"></path></svg></button><!----></div></header><!--]--><div class="sidebar-mask"></div><!--[--><aside class="sidebar"><!----><!--[--><!--]--><ul class="sidebar-items"><!--[--><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">基础 Basic <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/basic/HTTP%20&amp;%20HTML.html" class="sidebar-item" aria-label="HTML、HTTP、Web"><!--[--><!--]--> HTML、HTTP、Web <!--[--><!--]--></a><!----></li><li><a href="/basic/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/basic/JavaScript.html" class="sidebar-item" aria-label="JavaScript"><!--[--><!--]--> JavaScript <!--[--><!--]--></a><!----></li><li><a href="/basic/jQuery.html" class="sidebar-item" aria-label="jQuery"><!--[--><!--]--> jQuery <!--[--><!--]--></a><!----></li><li><a href="/basic/Bootstrap.html" class="sidebar-item" aria-label="Bootstrap"><!--[--><!--]--> Bootstrap <!--[--><!--]--></a><!----></li><li><a href="/basic/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/basic/%E5%BE%AE%E4%BF%A1%E5%B0%8F%E7%A8%8B%E5%BA%8F.html" class="sidebar-item" aria-label="微信小程序"><!--[--><!--]--> 微信小程序 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E7%BC%96%E7%A8%8B%E9%A2%98.html" class="sidebar-item" aria-label="编程题"><!--[--><!--]--> 编程题 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E5%85%B6%E4%BB%96.html" class="sidebar-item" aria-label="其他"><!--[--><!--]--> 其他 <!--[--><!--]--></a><!----></li><li><a href="/basic/%E7%BB%BC%E5%90%88.html" class="sidebar-item" aria-label="综合"><!--[--><!--]--> 综合 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading active collapsible">进阶 Advanced <span class="down arrow"></span></p><ul style="" class="sidebar-item-children"><!--[--><li><a href="/advanced/JS%E5%9F%BA%E7%A1%80.html" class="sidebar-item" aria-label="JS基础"><!--[--><!--]--> JS基础 <!--[--><!--]--></a><!----></li><li><a href="/advanced/HTML.html" class="sidebar-item" aria-label="HTML"><!--[--><!--]--> HTML <!--[--><!--]--></a><!----></li><li><a href="/advanced/CSS.html" class="sidebar-item" aria-label="CSS"><!--[--><!--]--> CSS <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%B5%8F%E8%A7%88%E5%99%A8.html" class="sidebar-item" aria-label="浏览器"><!--[--><!--]--> 浏览器 <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html" class="router-link-active router-link-exact-active router-link-active sidebar-item active" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a><ul style="" class="sidebar-item-children"><!--[--><li><a aria-current="page" href="/advanced/Vue.html#_1-vue-响应式原理" class="router-link-active router-link-exact-active sidebar-item" aria-label="1 Vue 响应式原理"><!--[--><!--]--> 1 Vue 响应式原理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_2-发布订阅模式和观察者模式" class="router-link-active router-link-exact-active sidebar-item" aria-label="2 发布订阅模式和观察者模式"><!--[--><!--]--> 2 发布订阅模式和观察者模式 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_3-为什么使用-virtual-dom" class="router-link-active router-link-exact-active sidebar-item" aria-label="3 为什么使用 Virtual DOM"><!--[--><!--]--> 3 为什么使用 Virtual DOM <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_4-vdom-三个-part" class="router-link-active router-link-exact-active sidebar-item" aria-label="4 VDOM：三个 part"><!--[--><!--]--> 4 VDOM：三个 part <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_5-vue-和-react技术选型" class="router-link-active router-link-exact-active sidebar-item" aria-label="5 vue 和 react技术选型"><!--[--><!--]--> 5 vue 和 react技术选型 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_6-nexttick" class="router-link-active router-link-exact-active sidebar-item" aria-label="6 nextTick"><!--[--><!--]--> 6 nextTick <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_7-生命周期" class="router-link-active router-link-exact-active sidebar-item" aria-label="7 生命周期"><!--[--><!--]--> 7 生命周期 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_8-vue-router" class="router-link-active router-link-exact-active sidebar-item" aria-label="8 vue-router"><!--[--><!--]--> 8 vue-router <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_9-vuex" class="router-link-active router-link-exact-active sidebar-item" aria-label="9 vuex"><!--[--><!--]--> 9 vuex <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_10-vue3带来的新特性-亮点" class="router-link-active router-link-exact-active sidebar-item" aria-label="10 vue3带来的新特性/亮点"><!--[--><!--]--> 10 vue3带来的新特性/亮点 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_11-compositon-api" class="router-link-active router-link-exact-active sidebar-item" aria-label="11 Compositon api"><!--[--><!--]--> 11 Compositon api <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_12-computed-的实现原理" class="router-link-active router-link-exact-active sidebar-item" aria-label="12 computed 的实现原理"><!--[--><!--]--> 12 computed 的实现原理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_13-watch-的理解" class="router-link-active router-link-exact-active sidebar-item" aria-label="13 watch 的理解"><!--[--><!--]--> 13 watch 的理解 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_14-vue-渲染过程" class="router-link-active router-link-exact-active sidebar-item" aria-label="14 vue 渲染过程"><!--[--><!--]--> 14 vue 渲染过程 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_15-说一说keep-alive实现原理" class="router-link-active router-link-exact-active sidebar-item" aria-label="15 说一说keep-alive实现原理"><!--[--><!--]--> 15 说一说keep-alive实现原理 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_16-为什么访问data属性不需要带data" class="router-link-active router-link-exact-active sidebar-item" aria-label="16 为什么访问data属性不需要带data"><!--[--><!--]--> 16 为什么访问data属性不需要带data <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_17-template预编译是什么" class="router-link-active router-link-exact-active sidebar-item" aria-label="17 template预编译是什么"><!--[--><!--]--> 17 template预编译是什么 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_18-介绍一下vue中的diff算法" class="router-link-active router-link-exact-active sidebar-item" aria-label="18 介绍一下Vue中的Diff算法"><!--[--><!--]--> 18 介绍一下Vue中的Diff算法 <!--[--><!--]--></a><!----></li><li><a aria-current="page" href="/advanced/Vue.html#_19-说说vue2-0和vue3-0有什么区别" class="router-link-active router-link-exact-active sidebar-item" aria-label="19 说说Vue2.0和Vue3.0有什么区别"><!--[--><!--]--> 19 说说Vue2.0和Vue3.0有什么区别 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><a href="/advanced/React.html" class="sidebar-item" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E6%80%A7%E8%83%BD.html" class="sidebar-item" aria-label="性能"><!--[--><!--]--> 性能 <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E5%B7%A5%E7%A8%8B%E5%8C%96.html" class="sidebar-item" aria-label="工程化"><!--[--><!--]--> 工程化 <!--[--><!--]--></a><!----></li><li><a href="/advanced/HTTP.html" class="sidebar-item" aria-label="HTTP"><!--[--><!--]--> HTTP <!--[--><!--]--></a><!----></li><li><a href="/advanced/%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="sidebar-item" aria-label="设计模式"><!--[--><!--]--> 设计模式 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">精选 Selected <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/selected/HTML%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="HTML模块"><!--[--><!--]--> HTML模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/CSS%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="CSS模块"><!--[--><!--]--> CSS模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/JS%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="JS模块"><!--[--><!--]--> JS模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/ES6%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="ES6模块"><!--[--><!--]--> ES6模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%B5%8F%E8%A7%88%E5%99%A8%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="浏览器模块"><!--[--><!--]--> 浏览器模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/React%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="React模块"><!--[--><!--]--> React模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/Vue%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="Vue模块"><!--[--><!--]--> Vue模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/Node%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="Node模块"><!--[--><!--]--> Node模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E7%9B%B8%E5%85%B3.html" class="sidebar-item" aria-label="前端工程相关"><!--[--><!--]--> 前端工程相关 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E7%A7%BB%E5%8A%A8%E5%A4%9A%E7%AB%AF%E5%BC%80%E5%8F%91.html" class="sidebar-item" aria-label="移动多端开发"><!--[--><!--]--> 移动多端开发 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%B0%8F%E7%A8%8B%E5%BA%8F%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="小程序模块"><!--[--><!--]--> 小程序模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%89%8D%E7%AB%AF%E5%AE%89%E5%85%A8%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="前端安全模块"><!--[--><!--]--> 前端安全模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96%E7%9B%B8%E5%85%B3.html" class="sidebar-item" aria-label="性能优化相关"><!--[--><!--]--> 性能优化相关 <!--[--><!--]--></a><!----></li><li><a href="/selected/HTTP%E6%A8%A1%E5%9D%97.html" class="sidebar-item" aria-label="HTTP模块"><!--[--><!--]--> HTTP模块 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E5%B8%B8%E7%94%A8%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F.html" class="sidebar-item" aria-label="常用设计模式"><!--[--><!--]--> 常用设计模式 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E6%8E%92%E5%BA%8F%E7%AE%97%E6%B3%95.html" class="sidebar-item" aria-label="排序算法"><!--[--><!--]--> 排序算法 <!--[--><!--]--></a><!----></li><li><a href="/selected/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%80%9A%E8%AF%86.html" class="sidebar-item" aria-label="计算机通识"><!--[--><!--]--> 计算机通识 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">高频 Frequency <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/frequency/%E9%AB%98%E9%A2%91%E8%80%83%E7%82%B9.html" class="sidebar-item" aria-label="高频考点"><!--[--><!--]--> 高频考点 <!--[--><!--]--></a><!----></li><li><a href="/frequency/%E6%80%A7%E8%83%BD%E4%BC%98%E5%8C%96.html" class="sidebar-item" aria-label="性能优化"><!--[--><!--]--> 性能优化 <!--[--><!--]--></a><!----></li><!--]--></ul></li><li><p tabindex="0" class="sidebar-item sidebar-heading collapsible">原理 Principle <span class="right arrow"></span></p><ul style="display:none;" class="sidebar-item-children"><!--[--><li><a href="/principle/React.html" class="sidebar-item" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a><!----></li><li><a href="/principle/Vue.html" class="sidebar-item" aria-label="Vue"><!--[--><!--]--> Vue <!--[--><!--]--></a><!----></li><li><a href="/principle/Webpack.html" class="sidebar-item" aria-label="Webpack"><!--[--><!--]--> Webpack <!--[--><!--]--></a><!----></li><li><a href="/principle/Node.html" class="sidebar-item" aria-label="Node"><!--[--><!--]--> Node <!--[--><!--]--></a><!----></li><li><a href="/principle/JavaScript.html" class="sidebar-item" aria-label="JavaScript"><!--[--><!--]--> JavaScript <!--[--><!--]--></a><!----></li><li><a href="/principle/%E7%BB%BC%E5%90%88.html" class="sidebar-item" aria-label="综合"><!--[--><!--]--> 综合 <!--[--><!--]--></a><!----></li><!--]--></ul></li><!--]--></ul><!--[--><!--]--></aside><!--]--><!--[--><main class="page"><!--[--><!--]--><div class="theme-default-content"><!--[--><!--]--><div><h1 id="vue" tabindex="-1"><a class="header-anchor" href="#vue" aria-hidden="true">#</a> Vue</h1><hr><h3 id="_1-vue-响应式原理" tabindex="-1"><a class="header-anchor" href="#_1-vue-响应式原理" aria-hidden="true">#</a> 1 Vue 响应式原理</h3><blockquote><p>Vue 的响应式原理是核心是通过 ES5 的保护对象的 <code>Object.defindeProperty</code> 中的访问器属性中的 get 和 set 方法，data 中声明的属性都被添加了访问器属性，当读取 data 中的数据时自动调用 get 方法，当修改 data 中的数据时，自动调用 set 方法，检测到数据的变化，会通知观察者 Wacher，观察者 Wacher自动触发重新render 当前组件（子组件不会重新渲染）,生成新的虚拟 DOM 树，Vue 框架会遍历并对比新虚拟 DOM 树和旧虚拟 DOM 树中每个节点的差别，并记录下来，最后，加载操作，将所有记录的不同点，局部修改到真实 DOM树上。</p></blockquote><p><img src="/assets/20210307225291.8ef94f05.png" alt=""></p><ul><li>虚拟DOM (Virtaul DOM): 用 js 对象模拟的，保存当前视图内所有 DOM 节点对象基本描述属性和节点间关系的树结构。用 js 对象，描述每个节点，及其父子关系，形成虚拟 DOM 对象树结构。</li><li>因为只要在 <code>data</code> 中声明的基本数据类型的数据，基本不存在数据不响应问题，所以重点介绍数组和对象在<code>vue</code>中的数据响应问题，vue可以检测对象属性的修改，但无法监听数组的所有变动及对象的新增和删除，只能使用数组变异方法及<code>$set</code>方法。</li></ul><p><img src="/assets/20220307225416.ae3b54e9.png" alt=""></p><blockquote><p>可以看到，<code>arrayMethods</code> 首先继承了 <code>Array</code>，然后对数组中所有能改变数组自身的方法，如 <code>push</code>、<code>pop</code> 等这些方法进行重写。重写后的方法会先执行它们本身原有的逻辑，并对能增加数组长度的 3 个方法 <code>push</code>、<code>unshift</code>、<code>splice</code> 方法做了判断，获取到插入的值，然后把新添加的值变成一个响应式对象，并且再调用 <code>ob.dep.notify()</code> 手动触发依赖通知，这就很好地解释了用 <code>vm.items.splice</code>(<code>newLength</code>) 方法可以检测到变化</p></blockquote><blockquote><p>总结：Vue 采用数据劫持结合发布---订阅模式的方法，通过 <code>Object.defineProperty()</code> 来劫持各个属性的 setter，getter，在数据变动时发布消息给订阅者，触发相应的监听回调。</p></blockquote><p><img src="/assets/20220307225439.d612213d.jpeg" alt=""></p><ul><li><code>Observer</code> 遍历数据对象，给所有属性加上 <code>setter</code> 和 <code>getter</code>，监听数据的变化</li><li><code>compile</code> 解析模板指令，将模板中的变量替换成数据，然后初始化渲染页面视图，并将每个指令对应的节点绑定更新函数，添加监听数据的订阅者，一旦数据有变动，收到通知，更新视图</li></ul><blockquote><p><code>Watcher</code> 订阅者是 <code>Observer</code> 和 <code>Compile</code> 之间通信的桥梁，主要做的事情</p></blockquote><ul><li>在自身实例化时往属性订阅器 (<code>dep</code>) 里面添加自己</li><li>待属性变动 <code>dep.notice()</code> 通知时，调用自身的 <code>update()</code> 方法，并触发 <code>Compile</code> 中绑定的回调</li></ul><p>Object.defineProperty()，那么它的用法是什么，以及优缺点是什么呢？</p><ul><li>可以检测对象中数据发生的修改</li><li>对于复杂的对象，层级很深的话，是不友好的，需要经行深度监听，这样子就需要递归到底，这也是它的缺点。</li><li>对于一个对象中，如果你新增加属性，删除属性，**Object.defineProperty()**是不能观测到的，那么应该如何解决呢？可以通过<code>Vue.set()</code>和<code>Vue.delete()</code>来实现。</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 模拟 Vue 中的 data 选项
+let data = {
+    msg: &#39;hello&#39;
+}
+// 模拟 Vue 的实例
+let vm = {}
+// 数据劫持:当访问或者设置 vm 中的成员的时候，做一些干预操作
+Object.defineProperty(vm, &#39;msg&#39;, {
+  // 可枚举(可遍历)
+  enumerable: true,
+  // 可配置(可以使用 delete 删除，可以通过 defineProperty 重新定义)
+  configurable: true,
+  // 当获取值的时候执行
+  get () {
+    console.log(&#39;get: &#39;, data.msg)
+    return data.msg
+  },
+  // 当设置值的时候执行
+  set (newValue) {
+    console.log(&#39;set: &#39;, newValue)
+    if (newValue === data.msg) {
+      return
+    }
+    data.msg = newValue
+    // 数据更改，更新 DOM 的值
+    document.querySelector(&#39;#app&#39;).textContent = data.msg
+  }
+})
+
+// 测试
+vm.msg = &#39;Hello World&#39;
+console.log(vm.msg)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Vue3.x响应式数据原理</p><blockquote><p><code>Vue3.x</code>改用<code>Proxy</code>替代<code>Object.defineProperty</code>。因为<code>Proxy</code>可以直接监听<code>对象和数组</code>的变化，并且有多达13种拦截方法。并且作为新标准将受到浏览器厂商重点持续的性能优化。</p></blockquote><p><code>Proxy</code>只会代理对象的第一层，那么<code>Vue3</code>又是怎样处理这个问题的呢？</p><blockquote><p>判断当前<code>Reflect.get的</code>返回值是否为<code>Object</code>，如果是则再通过<code>reactive</code>方法做代理， 这样就实现了深度观测。</p></blockquote><p>监测数组的时候可能触发多次get/set，那么如何防止触发多次呢？</p><blockquote><p>我们可以判断<code>key</code>是否为当前被代理对象<code>target</code>自身属性，也可以判断旧值与新值是否相等，只有满足以上两个条件之一时，才有可能执行<code>trigger</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 模拟 Vue 中的 data 选项
+let data = {
+  msg: &#39;hello&#39;,
+  count: 0
+}
+// 模拟 Vue 实例
+let vm = new Proxy(data, {
+  // 当访问 vm 的成员会执行
+  get (target, key) {
+    console.log(&#39;get, key: &#39;, key, target[key])
+    return target[key]
+  },
+  // 当设置 vm 的成员会执行
+  set (target, key, newValue) {
+    console.log(&#39;set, key: &#39;, key, newValue)
+    if (target[key] === newValue) {
+      return
+    }
+    target[key] = newValue
+    document.querySelector(&#39;#app&#39;).textContent = target[key]
+  }
+})
+
+// 测试
+vm.msg = &#39;Hello World&#39;
+console.log(vm.msg)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Proxy 相比于 defineProperty 的优势</p><ul><li>数组变化也能监听到</li><li>不需要深度遍历监听</li></ul><blockquote><p><code>Proxy</code> 是 <code>ES6</code> 中新增的功能，可以用来自定义对象中的操作</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let p = new Proxy(target, handler);
+// `target` 代表需要添加代理的对象
+// `handler` 用来自定义对象中的操作
+// 可以很方便的使用 Proxy 来实现一个数据绑定和监听
+
+let onWatch = (obj, setBind, getLogger) =&gt; {
+  let handler = {
+    get(target, property, receiver) {
+      getLogger(target, property)
+      return Reflect.get(target, property, receiver);
+    },
+    set(target, property, value, receiver) {
+      setBind(value);
+      return Reflect.set(target, property, value);
+    }
+  };
+  return new Proxy(obj, handler);
+};
+
+let obj = { a: 1 }
+let value
+let p = onWatch(obj, (v) =&gt; {
+  value = v
+}, (target, property) =&gt; {
+  console.log(`Get &#39;${property}&#39; = ${target[property]}`);
+})
+p.a = 2 // bind `value` to `2`
+p.a // -&gt; Get &#39;a&#39; = 2
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>总结</p><p><img src="/assets/20210408091523.f3b80ed3.png" alt=""></p><ul><li>Vue <ul><li>记录传入的选项，设置 <code>$data/$el</code></li><li>把 <code>data</code> 的成员注入到 <code>Vue</code> 实例</li><li>负责调用 <code>Observer</code> 实现数据响应式处理(数据劫持)</li><li>负责调用 <code>Compiler</code> 编译指令/插值表达式等</li></ul></li><li><code>Observer</code><ul><li>数据劫持 <ul><li>负责把 <code>data</code> 中的成员转换成 <code>getter/setter</code></li><li>负责把多层属性转换成 <code>getter/setter</code></li><li>如果给属性赋值为新对象，把新对象的成员设置为 <code>getter/setter</code></li></ul></li><li>添加 <code>Dep</code> 和 <code>Watcher</code> 的依赖关系</li><li>数据变化发送通知</li></ul></li><li><code>Compiler</code><ul><li>负责编译模板，解析指令/插值表达式</li><li>负责页面的首次渲染过程</li><li>当数据变化后重新渲染</li></ul></li><li><code>Dep</code><ul><li>收集依赖，添加订阅者(<code>watcher</code>)</li><li>通知所有订阅者</li></ul></li><li><code>Watcher</code><ul><li>自身实例化的时候往<code>dep</code>对象中添加自己</li><li>当数据变化<code>dep</code>通知所有的 <code>Watcher</code> 实例更新视图</li></ul></li></ul><h3 id="_2-发布订阅模式和观察者模式" tabindex="-1"><a class="header-anchor" href="#_2-发布订阅模式和观察者模式" aria-hidden="true">#</a> 2 发布订阅模式和观察者模式</h3><p>1. 发布/订阅模式</p><ul><li>发布/订阅模式 <ul><li>订阅者</li><li>发布者</li><li>信号中心</li></ul></li></ul><blockquote><p>我们假定，存在一个&quot;信号中心&quot;，某个任务执行完成，就向信号中心&quot;发布&quot;(publish)一个信 号，其他任务可以向信号中心&quot;订阅&quot;(subscribe)这个信号，从而知道什么时候自己可以开始执 行。这就叫做&quot;发布/订阅模式&quot;(publish-subscribe pattern)</p></blockquote><blockquote><p>Vue 的自定义事件</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>let vm = new Vue()
+vm.$on(&#39;dataChange&#39;, () =&gt; { console.log(&#39;dataChange&#39;)})
+vm.$on(&#39;dataChange&#39;, () =&gt; {
+  console.log(&#39;dataChange1&#39;)
+})
+vm.$emit(&#39;dataChange&#39;)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>兄弟组件通信过程</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// eventBus.js
+// 事件中心
+let eventHub = new Vue()
+
+// ComponentA.vue
+// 发布者
+addTodo: function () {
+  // 发布消息(事件)
+  eventHub.$emit(&#39;add-todo&#39;, { text: this.newTodoText })
+  this.newTodoText = &#39;&#39;
+}
+// ComponentB.vue
+// 订阅者
+created: function () {
+  // 订阅消息(事件)
+  eventHub.$on(&#39;add-todo&#39;, this.addTodo)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><blockquote><p>模拟 Vue 自定义事件的实现</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>class EventEmitter {
+  constructor(){
+    // { eventType: [ handler1, handler2 ] }
+    this.subs = {}
+  }
+  // 订阅通知
+  $on(eventType, fn) {
+    this.subs[eventType] = this.subs[eventType] || []
+    this.subs[eventType].push(fn)
+  }
+  // 发布通知
+  $emit(eventType) {
+    if(this.subs[eventType]) {
+      this.subs[eventType].forEach(v=&gt;v())
+    }
+  }
+}
+
+// 测试
+var bus = new EventEmitter()
+
+// 注册事件
+bus.$on(&#39;click&#39;, function () {
+  console.log(&#39;click&#39;)
+})
+
+bus.$on(&#39;click&#39;, function () {
+  console.log(&#39;click1&#39;)
+})
+
+// 触发事件
+bus.$emit(&#39;click&#39;)
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>2. 观察者模式</p><ul><li>观察者(订阅者) -- <code>Watcher</code><ul><li><code>update()</code>:当事件发生时，具体要做的事情</li></ul></li><li>目标(发布者) -- <code>Dep</code><ul><li><code>subs</code> 数组:存储所有的观察者</li><li><code>addSub()</code>:添加观察者</li><li><code>notify()</code>:当事件发生，调用所有观察者的 <code>update()</code> 方法</li></ul></li><li>没有事件中心</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 目标(发布者)
+// Dependency
+class Dep {
+  constructor () {
+    // 存储所有的观察者
+    this.subs = []
+  }
+  // 添加观察者
+  addSub (sub) {
+    if (sub &amp;&amp; sub.update) {
+      this.subs.push(sub)
+    }
+  }
+  // 通知所有观察者
+  notify () {
+    this.subs.forEach(sub =&gt; sub.update())
+  }
+}
+
+// 观察者(订阅者)
+class Watcher {
+  update () {
+    console.log(&#39;update&#39;)
+  }
+}
+
+// 测试
+let dep = new Dep()
+let watcher = new Watcher()
+dep.addSub(watcher)
+dep.notify()
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>3. 总结</p><ul><li>观察者模式是由具体目标调度，比如当事件触发，<code>Dep</code> 就会去调用观察者的方法，所以观察者模 式的订阅者与发布者之间是存在依赖的</li><li>发布/订阅模式由统一调度中心调用，因此发布者和订阅者不需要知道对方的存在</li></ul><p><img src="/assets/20210328214834.475410e7.png" alt=""></p><h3 id="_3-为什么使用-virtual-dom" tabindex="-1"><a class="header-anchor" href="#_3-为什么使用-virtual-dom" aria-hidden="true">#</a> 3 为什么使用 Virtual DOM</h3><ul><li>手动操作 <code>DOM</code> 比较麻烦，还需要考虑浏览器兼容性问题，虽然有 <code>jQuery</code> 等库简化 <code>DOM</code> 操作，但是随着项目的复杂 DOM 操作复杂提升</li><li>为了简化 <code>DOM</code> 的复杂操作于是出现了各种 <code>MVVM</code> 框架，<code>MVVM</code> 框架解决了视图和状态的同步问题</li><li>为了简化视图的操作我们可以使用模板引擎，但是模板引擎没有解决跟踪状态变化的问题，于是<code>Virtual DOM</code> 出现了</li><li><code>Virtual DOM</code> 的好处是当状态改变时不需要立即更新 DOM，只需要创建一个虚拟树来描述<code>DOM</code>，<code>Virtual DOM</code> 内部将弄清楚如何有效(<code>diff</code>)的更新 <code>DOM</code></li><li>虚拟 <code>DOM</code> 可以维护程序的状态，跟踪上一次的状态</li><li>通过比较前后两次状态的差异更新真实 <code>DOM</code></li></ul><p>虚拟 DOM 的作用</p><ul><li>维护视图和状态的关系</li><li>复杂视图情况下提升渲染性能</li><li>除了渲染 <code>DOM</code> 以外，还可以实现 <code>SSR(Nuxt.js/Next.js)</code>、原生应用(<code>Weex/React Native</code>)、小程序(<code>mpvue/uni-app</code>)等</li></ul><p><img src="/assets/20210328112610.23237621.png" alt=""></p><h3 id="_4-vdom-三个-part" tabindex="-1"><a class="header-anchor" href="#_4-vdom-三个-part" aria-hidden="true">#</a> 4 VDOM：三个 part</h3><ul><li>虚拟节点类，将真实 <code>DOM</code>节点用 <code>js</code> 对象的形式进行展示，并提供 <code>render</code> 方法，将虚拟节点渲染成真实 <code>DOM</code></li><li>节点 <code>diff</code> 比较：对虚拟节点进行 <code>js</code> 层面的计算，并将不同的操作都记录到 <code>patch</code> 对象</li><li><code>re-render</code>：解析 <code>patch</code> 对象，进行 <code>re-render</code></li></ul><p>补充1��VDOM 的必要性？</p><ul><li>创建真实DOM的代价高：真实的 <code>DOM</code> 节点 <code>node</code> 实现的属性很多，而 <code>vnode</code> 仅仅实现一些必要的属性，相比起来，创建一个 <code>vnode</code> 的成本比较低。</li><li>触发多次浏览器重绘及回流：使用 <code>vnode</code> ，相当于加了一个缓冲，让一次数据变动所带来的所有 <code>node</code> 变化，先在 <code>vnode</code> 中进行修改，然后 <code>diff</code> 之后对所有产生差异的节点集中一次对 <code>DOM tree</code> 进行修改，以减少浏览器的重绘及回流。</li></ul><p>补充2：vue 为什么采用 vdom？</p><blockquote><p>引入 <code>Virtual DOM</code> 在性能方面的考量仅仅是一方面。</p></blockquote><ul><li>性能受场景的影响是非常大的，不同的场景可能造成不同实现方案之间成倍的性能差距，所以依赖细粒度绑定及 <code>Virtual DOM</code> 哪个的性能更好还真不是一个容易下定论的问题。</li><li><code>Vue</code> 之所以引入了 <code>Virtual DOM</code>，更重要的原因是为了解耦 <code>HTML</code>依赖，这带来两个非常重要的好处是：</li></ul><blockquote><ul><li>不再依赖 <code>HTML</code> 解析器进行模版解析，可以进行更多的 <code>AOT</code> 工作提高运行时效率：通过模版 <code>AOT</code> 编译，<code>Vue</code> 的运行时体积可以进一步压缩，运行时效率可以进一步提升；</li><li>可以渲染到 <code>DOM</code> 以外的平台，实现 <code>SSR</code>、同构渲染这些高级特性，<code>Weex</code>等框架应用的就是这一特性。</li></ul></blockquote><blockquote><p>综上，<code>Virtual DOM</code> 在性能上的收益并不是最主要的，更重要的是它使得 <code>Vue</code> 具备了现代框架应有的高级特性。</p></blockquote><h3 id="_5-vue-和-react技术选型" tabindex="-1"><a class="header-anchor" href="#_5-vue-和-react技术选型" aria-hidden="true">#</a> 5 vue 和 react技术选型</h3><p>相同点：</p><ol><li>数据驱动页面，提供响应式的试图组件</li><li>都有virtual DOM,组件化的开发，通过props参数进行父子之间组件传递数据，都实现了webComponents规范</li><li>数据流动单向，都支持服务器的渲染SSR</li><li>都有支持native的方法，react有React native， vue有wexx</li></ol><p>不同点：</p><ol><li>数据绑定：Vue实现了双向的数据绑定，react数据流动是单向的</li><li>数据渲染：大规模的数据渲染，react更快</li><li>使用场景：React配合Redux架构适合大规模多人协作复杂项目，Vue适合小快的项目</li><li>开发风格：react推荐做法jsx + inline style把html和css都写在js了</li></ol><blockquote><p>vue是采用webpack +vue-loader单文件组件格式，html, js, css同一个文件</p></blockquote><h3 id="_6-nexttick" tabindex="-1"><a class="header-anchor" href="#_6-nexttick" aria-hidden="true">#</a> 6 nextTick</h3><blockquote><p><code>nextTick</code> 可以让我们在下次 <code>DOM</code> 更新循环结束之后执行延迟回调，用于获得更新后的 <code>DOM</code></p></blockquote><p><code>nextTick</code>主要使用了宏任务和微任务。根据执行环境分别尝试采用</p><ul><li><code>Promise</code></li><li><code>MutationObserver</code></li><li><code>setImmediate</code></li><li>如果以上都不行则采用<code>setTimeout</code></li></ul><blockquote><p>定义了一个异步方法，多次调用<code>nextTick</code>会将方法存入队列中，通过这个异步方法清空当前队列</p></blockquote><h3 id="_7-生命周期" tabindex="-1"><a class="header-anchor" href="#_7-生命周期" aria-hidden="true">#</a> 7 生命周期</h3><p><img src="/assets/20210408093135.fa723c04.png" alt=""></p><p><em>init</em></p><ul><li><code>initLifecycle/Event</code>，往vm上挂载各种属性</li><li><code>callHook: beforeCreated</code>: 实例刚创建</li><li><code>initInjection/initState</code>: 初始化注入和 <code>data</code> 响应性</li><li><code>created: 创建完成，属性已经绑定， 但还未生成真实</code>dom`</li><li>进行元素的挂载： <code>$el / vm.$mount()</code></li><li>是否有<code>template</code>: 解析成 <code>render function</code><ul><li><code>*.vue</code>文件: <code>vue-loader</code>会将<code>&lt;template&gt;</code>编译成<code>render function</code></li></ul></li><li><code>beforeMount</code>: 模板编译/挂载之前</li><li>执行<code>render function</code>，生成真实的<code>dom</code>，并替换到<code>dom tree</code>中</li><li><code>mounted</code>: 组件已挂载</li></ul><p>update</p><ul><li>执行<code>diff</code>算法，比对改变是否需要触发<code>UI</code>更新</li><li><code>flushScheduleQueue</code></li><li><code>watcher.before</code>: 触发<code>beforeUpdate</code>钩子 - <code>watcher.run()</code>: 执行<code>watcher</code>中的 <code>notify</code>，通知所有依赖项更新UI</li><li>触发<code>updated</code>钩子: 组件已更新</li><li><code>actived / deactivated(keep-alive)</code>: 不销毁，缓存，组件激活与失活</li><li><code>destroy</code><ul><li><code>beforeDestroy</code>: 销毁开始</li><li>销毁自身且递归销毁子组件以及事件监听 <ul><li><code>remove()</code>: 删除节点</li><li><code>watcher.teardown()</code>: 清空依赖</li><li><code>vm.$off()</code>: 解绑监听</li></ul></li><li><code>destroyed</code>: 完成后触发钩子</li></ul></li></ul><table><thead><tr><th>Vue2</th><th>Vue3</th></tr></thead><tbody><tr><td><code>beforeCreate</code></td><td>❌<code>setup</code>(替代)</td></tr><tr><td><code>created</code></td><td>❌<code>setup</code>(替代)</td></tr><tr><td><code>beforeMount</code></td><td><code>onBeforeMount</code></td></tr><tr><td><code>mounted</code></td><td><code>onMounted</code></td></tr><tr><td><code>beforeUpdate</code></td><td><code>onBeforeUpdate</code></td></tr><tr><td><code>updated</code></td><td><code>nUpdated</code></td></tr><tr><td><code>beforeDestroy</code></td><td><code>onBeforeUnmount</code></td></tr><tr><td><code>destroyed</code></td><td><code>onUnmounted</code></td></tr><tr><td><code>errorCaptured</code></td><td><code>onErrorCaptured</code></td></tr><tr><td>-</td><td>🎉<code>onRenderTracked</code></td></tr><tr><td>-</td><td>🎉<code>onRenderTriggered</code></td></tr></tbody></table><blockquote><p>上面是vue的声明周期的简单梳理，接下来我们直接以代码的形式来完成vue的初始化</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>
+new Vue({})
+
+// 初始化Vue实例
+function _init() {
+	 // 挂载属性
+    initLifeCycle(vm)
+    // 初始化事件系统，钩子函数等
+    initEvent(vm)
+    // 编译slot、vnode
+    initRender(vm)
+    // 触发钩子
+    callHook(vm, &#39;beforeCreate&#39;)
+    // 添加inject功能
+    initInjection(vm)
+    // 完成数据响应性 props/data/watch/computed/methods
+    initState(vm)
+    // 添加 provide 功能
+    initProvide(vm)
+    // 触发钩子
+    callHook(vm, &#39;created&#39;)
+
+	 // 挂载节点
+    if (vm.$options.el) {
+        vm.$mount(vm.$options.el)
+    }
+}
+
+// 挂载节点实现
+function mountComponent(vm) {
+	 // 获取 render function
+    if (!this.options.render) {
+        // template to render
+        // Vue.compile = compileToFunctions
+        let { render } = compileToFunctions()
+        this.options.render = render
+    }
+    // 触发钩子
+    callHook(&#39;beforeMounte&#39;)
+    // 初始化观察者
+    // render 渲染 vdom，
+    vdom = vm.render()
+    // update: 根据 diff 出的 patchs 挂载成真实的 dom
+    vm._update(vdom)
+    // 触发钩子
+    callHook(vm, &#39;mounted&#39;)
+}
+
+// 更新节点实现
+funtion queueWatcher(watcher) {
+	nextTick(flushScheduleQueue)
+}
+
+// 清空队列
+function flushScheduleQueue() {
+	 // 遍历队列中所有修改
+    for(){
+	    // beforeUpdate
+        watcher.before()
+
+        // 依赖局部更新节点
+        watcher.update()
+        callHook(&#39;updated&#39;)
+    }
+}
+
+// 销毁实例实现
+Vue.prototype.$destory = function() {
+	 // 触发钩子
+    callHook(vm, &#39;beforeDestory&#39;)
+    // 自身及子节点
+    remove()
+    // 删除依赖
+    watcher.teardown()
+    // 删除监听
+    vm.$off()
+    // 触发钩子
+    callHook(vm, &#39;destoryed&#39;)
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_8-vue-router" tabindex="-1"><a class="header-anchor" href="#_8-vue-router" aria-hidden="true">#</a> 8 vue-router</h3><p>mode</p><ul><li><code>hash</code></li><li><code>history</code></li></ul><p>跳转</p><ul><li><code>this.$router.push()</code></li><li><code>&lt;router-link to=&quot;&quot;&gt;&lt;/router-link&gt;</code></li></ul><p>占位</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;router-view&gt;&lt;/router-view&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><p>vue-router源码实现</p><ul><li>作为一个插件存在:实现<code>VueRouter</code>类和<code>install</code>方法</li><li>实现两个全局组件:<code>router-view</code>用于显示匹配组件内容，<code>router-link</code>用于跳转</li><li>监控<code>url</code>变化:监听<code>hashchange</code>或<code>popstate</code>事件</li><li>响应最新<code>url</code>:创建一个响应式的属性<code>current</code>，当它改变时获取对应组件并显示</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 我们的插件：
+// 1.实现一个Router类并挂载期实例
+// 2.实现两个全局组件router-link和router-view
+let Vue;
+
+class VueRouter {
+  // 核心任务：
+  // 1.监听url变化
+  constructor(options) {
+    this.$options = options;
+
+    // 缓存path和route映射关系
+    // 这样找组件更快
+    this.routeMap = {}
+    this.$options.routes.forEach(route =&gt; {
+      this.routeMap[route.path] = route
+    })
+
+    // 数据响应式
+    // 定义一个响应式的current，则如果他变了，那么使用它的组件会rerender
+    Vue.util.defineReactive(this, &#39;current&#39;, &#39;&#39;)
+
+    // 请确保onHashChange中this指向当前实例
+    window.addEventListener(&#39;hashchange&#39;, this.onHashChange.bind(this))
+    window.addEventListener(&#39;load&#39;, this.onHashChange.bind(this))
+  }
+
+  onHashChange() {
+    // console.log(window.location.hash);
+    this.current = window.location.hash.slice(1) || &#39;/&#39;
+  }
+}
+
+// 插件需要实现install方法
+// 接收一个参数，Vue构造函数，主要用于数据响应式
+VueRouter.install = function (_Vue) {
+  // 保存Vue构造函数在VueRouter中使用
+  Vue = _Vue
+
+  // 任务1：使用混入来做router挂载这件事情
+  Vue.mixin({
+    beforeCreate() {
+      // 只有根实例才有router选项
+      if (this.$options.router) {
+        Vue.prototype.$router = this.$options.router
+      }
+
+    }
+  })
+
+  // 任务2：实现两个全局组件
+  // router-link: 生成一个a标签，在url后面添加#
+  // &lt;a href=&quot;#/about&quot;&gt;aaaa&lt;/a&gt;
+  // &lt;router-link to=&quot;/about&quot;&gt;aaa&lt;/router-link&gt;
+  Vue.component(&#39;router-link&#39;, {
+    props: {
+      to: {
+        type: String,
+        required: true
+      },
+    },
+    render(h) {
+      // h(tag, props, children)
+      return h(&#39;a&#39;,
+        { attrs: { href: &#39;#&#39; + this.to } },
+        this.$slots.default
+      )
+      // 使用jsx
+      // return &lt;a href={&#39;#&#39;+this.to}&gt;{this.$slots.default}&lt;/a&gt;
+    }
+  })
+  Vue.component(&#39;router-view&#39;, {
+    render(h) {
+      // 根据current获取组件并render
+      // current怎么获取?
+      // console.log(&#39;render&#39;,this.$router.current);
+      // 获取要渲染的组件
+      let component = null
+      const { routeMap, current } = this.$router
+      if (routeMap[current]) {
+        component = routeMap[current].component
+      }
+      return h(component)
+    }
+  })
+}
+
+export default VueRouter
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_9-vuex" tabindex="-1"><a class="header-anchor" href="#_9-vuex" aria-hidden="true">#</a> 9 vuex</h3><blockquote><p>Vuex 集中式存储管理应用的所有组件的状态，并以相应的规则保证状态以可预测的方式发生变化</p></blockquote><p>核心概念</p><ul><li><code>state</code>: 状态中心</li><li><code>mutations</code>: 更改状态</li><li><code>actions</code>: 异步更改状态</li><li><code>getters</code>: 获取状态</li><li><code>modules</code>: 将<code>state</code>分成多个<code>modules</code>，便于管理</li></ul><ol><li>状态 - state</li></ol><p>state保存应用状态</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>export default new Vuex.Store({ state: { counter:0 },})
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>状态变更 - mutations</li></ol><blockquote><p><code>mutations</code>用于修改状态，<code>store.js</code></p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>export default new Vuex.Store({
+    mutations:
+    {
+      add(state) {
+        state.counter++
+      }
+    }
+  })
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>派生状态 - getters</li></ol><blockquote><p>从state派生出新状态，类似计算属性</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>export default new Vuex.Store({
+    getters:
+    {
+      doubleCounter(state) { // 计算剩余数量 return state.counter * 2;
+      }
+    }
+  })
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><ol><li>动作 - actions</li></ol><p>加业务逻辑，类似于<code>controller</code></p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>export default new Vuex.Store({
+    actions:
+    {
+      add({
+        commit
+      }) {
+        setTimeout(() = &gt;{}
+      }
+    })
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>测试代码:</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;p @click=&quot;$store.commit(&#39;add&#39;)&quot;&gt;counter: {{$store.state.counter}}&lt;/p&gt;
+&lt;p @click=&quot;$store.dispatch(&#39;add&#39;)&quot;&gt;async counter: {{$store.state.counter}}&lt;/p&gt;
+&lt;p&gt;double:{{$store.getters.doubleCounter}}&lt;/p&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>vuex原理解析</p><ul><li>实现一个插件:声明<code>Store</code>类，挂载<code>$store</code></li><li><code>Store</code>具体实现: <ul><li>创建响应式的<code>state</code>，保存<code>mutations</code>、<code>actions</code>和<code>getters</code></li><li>实现<code>commit</code>根据用户传入<code>type</code>执行对应<code>mutation</code></li><li>实现<code>dispatch</code>根据用户传入<code>type</code>执行对应<code>action</code>，同时传递上下文</li><li>实现<code>getters</code>，按照<code>getters</code>定义对<code>state</code>做派生</li></ul></li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// 目标1：实现Store类，管理state（响应式的），commit方法和dispatch方法
+// 目标2：封装一个插件，使用更容易使用
+let Vue;
+
+class Store {
+  constructor(options) {
+    // 定义响应式的state
+    // this.$store.state.xx
+    // 借鸡生蛋
+    this._vm = new Vue({
+      data: {
+        $$state: options.state
+      }
+    })
+
+    this._mutations = options.mutations
+    this._actions = options.actions
+
+    // 绑定this指向
+    this.commit = this.commit.bind(this)
+    this.dispatch = this.dispatch.bind(this)
+  }
+
+  // 只读
+  get state() {
+    return this._vm._data.$$state
+  }
+
+  set state(val) {
+    console.error(&#39;不能直接赋值呀，请换别的方式！！天王盖地虎！！&#39;);
+
+  }
+
+  // 实现commit方法，可以修改state
+  commit(type, payload) {
+    // 拿出mutations中的处理函数执行它
+    const entry = this._mutations[type]
+    if (!entry) {
+      console.error(&#39;未知mutaion类型&#39;);
+      return
+    }
+
+    entry(this.state, payload)
+  }
+
+  dispatch(type, payload) {
+    const entry = this._actions[type]
+
+    if (!entry) {
+      console.error(&#39;未知action类型&#39;);
+      return
+    }
+
+    // 上下文可以传递当前store实例进去即可
+    entry(this, payload)
+  }
+}
+
+function install(_Vue){
+  Vue = _Vue
+
+  // 混入store实例
+  Vue.mixin({
+    beforeCreate() {
+      if (this.$options.store) {
+        Vue.prototype.$store = this.$options.store
+      }
+    }
+  })
+}
+
+// { Store, install }相当于Vuex
+// 它必须实现install方法
+export default { Store, install }
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_10-vue3带来的新特性-亮点" tabindex="-1"><a class="header-anchor" href="#_10-vue3带来的新特性-亮点" aria-hidden="true">#</a> 10 vue3带来的新特性/亮点</h3><p>1. 压缩包体积更小</p><blockquote><p>当前最小化并被压缩的 Vue 运行时大小约为 20kB（2.6.10 版为 22.8kB）。Vue 3.0捆绑包的大小大约会减少一半，即只有10kB！</p></blockquote><p>2. Object.defineProperty -&gt; Proxy</p><ul><li><code>Object.defineProperty</code>是一个相对比较昂贵的操作，因为它直接操作对象的属性，颗粒度比较小。将它替换为es6的<code>Proxy</code>，在目标对象之上架了一层拦截，代理的是对象而不是对象的属性。这样可以将原本对对象属性的操作变为对整个对象的操作，颗粒度变大。</li><li>javascript引擎在解析的时候希望对象的结构越稳定越好，如果对象一直在变，可优化性降低，proxy不需要对原始对象做太多操作。</li></ul><p>3. Virtual DOM 重构</p><blockquote><p>vdom的本质是一个抽象层，用javascript描述界面渲染成什么样子。react用jsx，没办法检测出可以优化的动态代码，所以做时间分片，vue中足够快的话可以不用时间分片</p></blockquote><ul><li><p>传统vdom的性能瓶颈：</p><ul><li>虽然 Vue 能够保证触发更新的组件最小化，但在单个组件内部依然需要遍历该组件的整个 vdom 树。</li><li>传统 vdom 的性能跟模版大小正相关，跟动态节点的数量无关。在一些组件整个模版内只有少量动态节点的情况下，这些遍历都是性能的浪费。</li><li>JSX 和手写的 render function 是完全动态的，过度的灵活性导致运行时可以用于优化的信息不足</li></ul></li><li><p>那为什么不直接抛弃vdom呢？</p><ul><li>高级场景下手写 <code>render function</code> 获得更强的表达力</li><li>生成的代码更简洁</li><li>兼容2.x</li></ul></li></ul><blockquote><p>vue的特点是底层为Virtual DOM，上层包含有大量静态信息的模版。为了兼容手写 render function，最大化利用模版静态信息，<code>vue3.0采用了动静结合的解决方案</code>，将vdom的操作颗粒度变小，每次触发更新不再以组件为单位进行遍历，主要更改如下</p></blockquote><ul><li>将模版基于动态节点指令切割为嵌套的区块</li><li>每个区块内部的节点结构是固定的</li><li>每个区块只需要以一个 <code>Array</code> 追踪自身包含的动态节点</li></ul><blockquote><p>vue3.0将 vdom 更新性能由与模版整体大小相关提升为与动态内容的数量相关</p></blockquote><p>Vue 3.0 动静结合的 Dom diff</p><blockquote><ul><li>Vue3.0 提出动静结合的 DOM diff 思想，动静结合的 DOM diff其实是在预编译阶段进行了优化。之所以能够做到预编译优化，是因为 Vue core 可以静态分析 template，在解析模版时，整个 parse 的过程是利用正则表达式顺序解析模板，当解析到开始标签、闭合标签和文本的时候都会分别执行对应的回调函数，来达到构造 AST 树的目的。</li><li>借助预编译过程，Vue 可以做到的预编译优化就很强大了。比如在预编译时标记出模版中可能变化的组件节点，再次进行渲染前 diff 时就可以跳过&quot;永远不会变化的节点&quot;，而只需要对比&quot;可能会变化的动态节点&quot;。这也就是动静结合的 DOM diff 将 diff 成本与模版大小正相关优化到与动态节点正相关的理论依据。</li></ul></blockquote><p>4. Performance</p><blockquote><p>vue3在性能方面比vue2快了2倍。</p></blockquote><ul><li>重写了虚拟DOM的实现</li><li>运行时编译</li><li>update性能提高</li><li>SSR速度提高</li></ul><p>5. Tree-shaking support</p><blockquote><p>vue3中的核心api都支持了tree-shaking，这些api都是通过包引入的方式而不是直接在实例化时就注入，只会对使用到的功能或特性进行打包（按需打包），这意味着更多的功能和更小的体积。</p></blockquote><p>6. Composition API</p><blockquote><p>vue2中，我们一般会采用mixin来复用逻辑代码，用倒是挺好用的，不过也存在一些问题：例如代码来源不清晰、方法属性等冲突。基于此在vue3中引入了Composition API（组合API），使用纯函数分隔复用代码。和React中的<code>hooks</code>的概念很相似</p></blockquote><ul><li>更好的逻辑复用和代码组织</li><li>更好的类型推导</li></ul><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>&lt;template&gt;
+    &lt;div&gt;X: {{ x }}&lt;/div&gt;
+    &lt;div&gt;Y: {{ y }}&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { defineComponent, onMounted, onUnmounted, ref } from &quot;vue&quot;;
+
+const useMouseMove = () =&gt; {
+    const x = ref(0);
+    const y = ref(0);
+
+    function move(e) {
+        x.value = e.clientX;
+        y.value = e.clientY;
+    }
+
+    onMounted(() =&gt; {
+        window.addEventListener(&quot;mousemove&quot;, move);
+    });
+
+    onUnmounted(() =&gt; {
+        window.removeEventListener(&quot;mousemove&quot;, move);
+    });
+
+    return { x, y };
+};
+
+export default defineComponent({
+    setup() {
+        const { x, y } = useMouseMove();
+
+        return { x, y };
+    }
+});
+&lt;/script&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>7. 新增的三个组件Fragment、Teleport、Suspense</p><p>Fragment</p><blockquote><p>在书写vue2时，由于组件必须只有一个根节点，很多时候会添加一些没有意义的节点用于包裹。Fragment组件就是用于解决这个问题的（这和React中的Fragment组件是一样的）。</p></blockquote><p>这意味着现在可以这样写组件了。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>/* App.vue */
+&lt;template&gt;
+  &lt;header&gt;...&lt;/header&gt;
+  &lt;main v-bind=&quot;$attrs&quot;&gt;...&lt;/main&gt;
+  &lt;footer&gt;...&lt;/footer&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+export default {};
+&lt;/script&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>或者这样</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// app.js
+import { defineComponent, h, Fragment } from &#39;vue&#39;;
+
+export default defineComponent({
+    render() {
+        return h(Fragment, {}, [
+            h(&#39;header&#39;, {}, [&#39;...&#39;]),
+            h(&#39;main&#39;, {}, [&#39;...&#39;]),
+            h(&#39;footer&#39;, {}, [&#39;...&#39;]),
+        ]);
+    }
+});
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>Teleport</p><blockquote><p>Teleport其实就是React中的Portal。Portal 提供了一种将子节点渲染到存在于父组件以外的 DOM 节点的优秀的方案。</p></blockquote><p>一个 portal 的典型用例是当父组件有 overflow: hidden 或 z-index 样式时，但你需要子组件能够在视觉上&quot;跳出&quot;其容器。例如，对话框、悬浮卡以及提示框。</p><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>/* App.vue */
+&lt;template&gt;
+    &lt;div&gt;123&lt;/div&gt;
+    &lt;Teleport to=&quot;#container&quot;&gt;
+        Teleport
+    &lt;/Teleport&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import { defineComponent } from &quot;vue&quot;;
+
+export default defineComponent({
+    setup() {}
+});
+&lt;/script&gt;
+
+/* index.html */
+&lt;div id=&quot;app&quot;&gt;&lt;/div&gt;
+&lt;div id=&quot;container&quot;&gt;&lt;/div&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p><img src="/assets/20210407162653.149decaa.png" alt=""></p><p>Suspense</p><p>同样的，这和React中的Supense是一样的。</p><blockquote><p><code>Suspense</code> 让你的组件在渲染之前进行&quot;等待&quot;，并在等待时显示 fallback 的内容</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code>// App.vue
+&lt;template&gt;
+    &lt;Suspense&gt;
+        &lt;template #default&gt;
+            &lt;AsyncComponent /&gt;
+        &lt;/template&gt;
+        &lt;template #fallback&gt;
+            Loading...
+        &lt;/template&gt;
+    &lt;/Suspense&gt;
+&lt;/template&gt;
+
+&lt;script lang=&quot;ts&quot;&gt;
+import { defineComponent } from &quot;vue&quot;;
+import AsyncComponent from &#39;./AsyncComponent.vue&#39;;
+
+export default defineComponent({
+    name: &quot;App&quot;,
+
+    components: {
+        AsyncComponent
+    }
+});
+&lt;/script&gt;
+
+// AsyncComponent.vue
+&lt;template&gt;
+    &lt;div&gt;Async Component&lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script lang=&quot;ts&quot;&gt;
+import { defineComponent } from &quot;vue&quot;;
+
+const sleep = () =&gt; {
+    return new Promise(resolve =&gt; setTimeout(resolve, 1000));
+};
+
+export default defineComponent({
+    async setup() {
+        await sleep();
+    }
+});
+&lt;/script&gt;
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><p>8. Better TypeScript support</p><blockquote><p>在vue2中使用过TypesScript的童鞋应该有过体会，写起来实在是有点难受。vue3则是使用ts进行了重写，开发者使用vue3时拥有更好的类型支持和更好的编写体验。</p></blockquote><h3 id="_11-compositon-api" tabindex="-1"><a class="header-anchor" href="#_11-compositon-api" aria-hidden="true">#</a> 11 Compositon api</h3><p><code>Composition API</code>也叫组合式API，是Vue3.x的新特性。</p><blockquote><p>通过创建 Vue 组件，我们可以将接口的可重复部分及其功能提取到可重用的代码段中。仅此一项就可以使我们的应用程序在可维护性和灵活性方面走得更远。然而，我们的经验已经证明，光靠这一点可能是不够的，尤其是当你的应用程序变得非常大的时候------想想几百个组件。在处理如此大的应用程序时，共享和重用代码变得尤为重要</p></blockquote><ul><li>Vue2.0中，随着功能的增加，组件变得越来越复杂，越来越难维护，而难以维护的根本原因是Vue的API设计迫使开发者使用<code>watch，computed，methods</code>选项组织代码，而不是实际的业务逻辑。</li><li>另外Vue2.0缺少一种较为简洁的低成本的机制来完成逻辑复用，虽然可以<code>minxis</code>完成逻辑复用，但是当<code>mixin</code>变多的时候，会使得难以找到对应的<code>data、computed</code>或者<code>method</code>来源于哪个<code>mixin</code>，使得类型推断难以进行。</li><li>所以<code>Composition API</code>的出现，主要是也是为了解决Option API带来的问题，第一个是代码组织问题，<code>Compostion API</code>可以让开发者根据业务逻辑组织自己的代码，让代码具备更好的可读性和可扩展性，也就是说当下一个开发者接触这一段不是他自己写的代码时，他可以更好的利用代码的组织反推出实际的业务逻辑，或者根据业务逻辑更好的理解代码。</li><li>第二个是实现代码的逻辑提取与复用，当然<code>mixin</code>也可以实现逻辑提取与复用，但是像前面所说的，多个<code>mixin</code>作用在同一个组件时，很难看出<code>property</code>是来源于哪个<code>mixin</code>，来源不清楚，另外，多个<code>mixin</code>的<code>property</code>存在变量命名冲突的风险。而<code>Composition API</code>刚好解决了这两个问题。</li></ul><p>通俗的讲：</p><p>没有<code>Composition API</code>之前vue相关业务的代码需要配置到option的特定的区域，中小型项目是没有问题的，但是在大型项目中会导致后期的维护性比较复杂，同时代码可复用性不高。Vue3.x中的composition-api就是为了解决这个问题而生的</p><p>compositon api提供了以下几个函数：</p><ul><li><code>setup</code></li><li><code>ref</code></li><li><code>reactive</code></li><li><code>watchEffect</code></li><li><code>watch</code></li><li><code>computed</code></li><li><code>toRefs</code></li><li>生命周期的<code>hooks</code></li></ul><p>都说Composition API与React Hook很像，说说区别</p><blockquote><p>从React Hook的实现角度看，React Hook是根据useState调用的顺序来确定下一次重渲染时的state是来源于哪个useState，所以出现了以下限制</p></blockquote><ul><li>不能在循环、条件、嵌套函数中调用Hook</li><li>必须确保总是在你的React函数的顶层调用Hook</li><li><code>useEffect、useMemo</code>等函数必须手动确定依赖关系</li></ul><blockquote><p>而Composition API是基于Vue的响应式系统实现的，与React Hook的相比</p></blockquote><ul><li>声明在<code>setup</code>函数内，一次组件实例化只调用一次<code>setup</code>，而React Hook每次重渲染都需要调用Hook，使得React的GC比Vue更有压力，性能也相对于Vue来说也较慢</li><li><code>Compositon API</code>的调用不需要顾虑调用顺序，也可以在循环、条件、嵌套函数中使用</li><li>响应式系统自动实现了依赖收集，进而组件的部分的性能优化由Vue内部自己完成，而<code>React Hook</code>需要手动传入依赖，而且必须必须保证依赖的顺序，让<code>useEffect</code>、<code>useMemo</code>等函数正确的捕获依赖变量，否则会由于依赖不正确使得组件性能下降。</li></ul><blockquote><p>虽然<code>Compositon API</code>看起来比<code>React Hook</code>好用，但是其设计思想也是借鉴<code>React Hook</code>的。</p></blockquote><h3 id="_12-computed-的实现原理" tabindex="-1"><a class="header-anchor" href="#_12-computed-的实现原理" aria-hidden="true">#</a> 12 computed 的实现原理</h3><blockquote><p><code>computed</code> 本质是一个惰性求值的观察者<code>computed watcher</code>。其内部通过 <code>this.dirty</code> 属性标记计算属性是否需要重新求值。</p></blockquote><ul><li>当 computed 的依赖状态发生改变时,就会通知这个惰性的 watcher,<code>computed watcher</code> 通过 <code>this.dep.subs.length</code> 判断有没有订阅者,</li><li>有的话,会重新计算,然后对比新旧值,如果变化了,会重新渲染。 (Vue 想确保不仅仅是计算属性依赖的值发生变化，而是当计算属性<code>最终计算的值</code>发生变化时才会<code>触发渲染 watcher</code> 重新渲染，本质上是一种优化。)</li><li>没有的话,仅仅把 <code>this.dirty = true</code> (当计算属性依赖于其他数据时，属性并不会立即重新计算，只有之后其他地方需要读取属性的时候，它才会真正计算，即具备 lazy（懒计算）特性。)</li></ul><h3 id="_13-watch-的理解" tabindex="-1"><a class="header-anchor" href="#_13-watch-的理解" aria-hidden="true">#</a> 13 watch 的理解</h3><p><code>watch</code>没有缓存性，更多的是观察的作用，可以监听某些数据执行回调。当我们需要<code>深度监听对象中</code>的属性时，可以打开deep：true选项，这样便会对对象中的每一项进行监听。这样会带来性能问题，优化的话可以使用字符串形式监听</p><blockquote><p>注意：Watcher : 观察者对象 , 实例分为<code>渲染 watcher</code> (render watcher),<code>计算属性 watcher</code> (computed watcher),<code>侦听器 watcher</code>（user watcher）三种</p></blockquote><h3 id="_14-vue-渲染过程" tabindex="-1"><a class="header-anchor" href="#_14-vue-渲染过程" aria-hidden="true">#</a> 14 vue 渲染过程</h3><p><img src="/assets/20210504211204.eddec198.png" alt=""></p><ul><li>调用 <code>compile</code> 函数,生成 render 函数字符串 ,编译过程如下: <ul><li>parse 使用大量的正则表达式对template字符串进行解析，将标签、指令、属性等转化为抽象语法树AST。<code>模板 -&gt; AST （最消耗性能）</code></li><li>optimize 遍历AST，找到其中的一些静态节点并进行标记，方便在页面重渲染的时候进行diff比较时，直接跳过这一些静态节点，<code>优化runtime的性能</code></li><li>generate 将最终的AST转化为render函数字符串</li></ul></li><li>调用 <code>new Watcher</code> 函数,监听数据的变化,当数据发生变化时，Render 函数执行生成 vnode 对象</li><li>调用 <code>patch</code> 方法,对比新旧 vnode 对象,通过 DOM diff 算法,添加、修改、删除真正的 DOM 元素</li></ul><h3 id="_15-说一说keep-alive实现原理" tabindex="-1"><a class="header-anchor" href="#_15-说一说keep-alive实现原理" aria-hidden="true">#</a> 15 说一说keep-alive实现原理</h3><blockquote><p>keep-alive<code>组件接受三个属性参数：</code>include<code>、</code>exclude<code>、</code>max</p></blockquote><ul><li><code>include</code> 指定需要缓存的<code>组件name</code>集合，参数格式支持<code>String, RegExp, Array。</code>当为字符串的时候，多个组件名称以逗号隔开。</li><li><code>exclude</code> 指定不需要缓存的<code>组件name</code>集合，参数格式和include一样。</li><li><code>max</code> 指定最多可缓存组件的数量,超过数量删除第一个。参数格式支持String、Number。</li></ul><p>原理</p><p><code>keep-alive</code>实例会缓存对应组件的<code>VNode</code>,如果命中缓存，直接从缓存对象返回对应<code>VNode</code></p><p><code>LRU（Least recently used）</code> 算法根据数据的历史访问记录来进行淘汰数据，其核心思想是&quot;如果数据最近被访问过，那么将来被访问的几率也更高&quot;。(墨菲定律：越担心的事情越会发生)</p><h3 id="_16-为什么访问data属性不需要带data" tabindex="-1"><a class="header-anchor" href="#_16-为什么访问data属性不需要带data" aria-hidden="true">#</a> 16 为什么访问data属性不需要带data</h3><blockquote><p>vue中访问属性代理 <code>this.data.xxx</code> 转换 <code>this.xxx</code> 的实现</p></blockquote><div class="language-text ext-text line-numbers-mode"><pre class="language-text"><code> /** 将 某一个对象的属性 访问 映射到 对象的某一个属性成员上 */
+function proxy( target, prop, key ) {
+  Object.defineProperty( target, key, {
+    enumerable: true,
+    configurable: true,
+    get () {
+      return target[ prop ][ key ];
+    },
+    set ( newVal ) {
+      target[ prop ][ key ] = newVal;
+    }
+  } );
+}
+
+</code></pre><div class="line-numbers" aria-hidden="true"><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div><div class="line-number"></div></div></div><h3 id="_17-template预编译是什么" tabindex="-1"><a class="header-anchor" href="#_17-template预编译是什么" aria-hidden="true">#</a> 17 template预编译是什么</h3><p>对于 Vue 组件来说，模板编译只会在组件实例化的时候编译一次，生成渲染函数之后在也不会进行编译。因此，编译对组件的 runtime 是一种性能损耗。</p><blockquote><p>而模板编译的目的仅仅是将template转化为render function，这个过程，正好可以在项目构建的过程中完成，这样可以让实际组件在 runtime 时直接跳过模板渲染，进而提升性能，这个在项目构建的编译template的过程，就是预编译。</p></blockquote><h3 id="_18-介绍一下vue中的diff算法" tabindex="-1"><a class="header-anchor" href="#_18-介绍一下vue中的diff算法" aria-hidden="true">#</a> 18 介绍一下Vue中的Diff算法</h3><p>在新老虚拟DOM对比时</p><ul><li>首先，对比节点本身，判断是否为同一节点，如果不为相同节点，则删除该节点重新创建节点进行替换</li><li>如果为相同节点，进行patchVnode，判断如何对该节点的子节点进行处理，先判断一方有子节点一方没有子节点的情况(如果新的children没有子节点，将旧的子节点移除)</li><li>比较如果都有子节点，则进行updateChildren，判断如何对这些新老节点的子节点进行操作（diff核心）。 匹配时，找到相同的子节点，递归比较子节点</li></ul><blockquote><p>在diff中，只对同层的子节点进行比较，放弃跨级的节点比较，使得时间复杂从O(n^3)降低值O(n)，也就是说，只有当新旧children都为多个子节点时才需要用核心的Diff算法进行同层级比较。</p></blockquote><h3 id="_19-说说vue2-0和vue3-0有什么区别" tabindex="-1"><a class="header-anchor" href="#_19-说说vue2-0和vue3-0有什么区别" aria-hidden="true">#</a> 19 说说Vue2.0和Vue3.0有什么区别</h3><ul><li>重构响应式系统，使用<code>Proxy</code>替换<code>Object.defineProperty</code>，使用<code>Proxy</code>优势： <ul><li>可直接监听数组类型的数据变化</li><li>监听的目标为对象本身，不需要像<code>Object.defineProperty</code>一样遍历每个属性，有一定的性能提升</li><li>可拦截<code>apply、ownKeys、has</code>等13种方法，而<code>Object.defineProperty</code>不行</li><li>直接实现对象属性的新增/删除</li></ul></li><li>新增<code>Composition API</code>，更好的逻辑复用和代码组织</li><li>重构 <code>Virtual DOM</code><ul><li>模板编译时的优化，将一些静态节点编译成常量</li><li><code>slot</code>优化，将<code>slot</code>编译为<code>lazy</code>函数，将<code>slot</code>的渲染的决定权交给子组件</li><li>模板中内联事件的提取并重用（原本每次渲染都重新生成内联函数）</li></ul></li><li>代码结构调整，更便于Tree shaking，使得体积更小</li><li>使用Typescript替换Flow</li></ul></div><!--[--><!--]--></div><footer class="page-meta"><!----><div class="meta-item last-updated"><span class="meta-item-label">Last Updated: </span><!----></div><!----></footer><nav class="page-nav"><p class="inner"><span class="prev"><a href="/advanced/%E6%A1%86%E6%9E%B6%E9%80%9A%E8%AF%86.html" class="" aria-label="框架通识"><!--[--><!--]--> 框架通识 <!--[--><!--]--></a></span><span class="next"><a href="/advanced/React.html" class="" aria-label="React"><!--[--><!--]--> React <!--[--><!--]--></a></span></p></nav><!--[--><!--]--></main><!--]--></div><!----><!--]--></div>
+    <script type="module" src="/assets/app.12353158.js" defer></script>
+  </body>
+</html>

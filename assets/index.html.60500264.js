@@ -1,0 +1,1 @@
+import{_ as t,o as s,c as _,a as e}from"./app.12353158.js";var c="/assets/20220307225291.049c24f0.png";const a={},n=e("p",null,[e("img",{src:c,alt:"\u9762\u8BD5\u7ECF\u9A8C\u8C08"})],-1),o=[n];function r(l,i){return s(),_("div",null,o)}var f=t(a,[["render",r],["__file","index.html.vue"]]);export{f as default};
