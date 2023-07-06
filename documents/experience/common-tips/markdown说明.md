@@ -1,8 +1,6 @@
----
-theme: github
-highlight: atom-one-dark
----
-# 1. 说明
+# <center>markdown说明</center>
+
+## 1. 说明
 为了对已有知识进行总结，也为了为后来者铺路，我们要有编写文献的习惯。
 
 学会如何快速编写一篇自己思路的`wiki`是必不可少的技能。
@@ -13,7 +11,7 @@ highlight: atom-one-dark
 
 $\color{seagreen}{若想要的内容markdown无法满足，则完全可以用html语言替代}$
 
-# 2. 功能详述
+## 2. 功能详述
 ### 2.1 章节
 $\color{green}{范式:}$ `# 当前章节` `## 子章节`
 

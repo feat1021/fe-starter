@@ -2,6 +2,13 @@
 
 ## 说明
 
+- 没有被子组件使用的`props`会被丢弃，比如传递了`style`，但是子组件没有操作`style`属性，或者没有`restProps`，则`style`无效
+  - React 就像函数一样，不使用就没有效果
+  - Vue 会自动将多余属性挂载在 dom 上
+- 若父组件发生了`re-render`，默认情况下，则子组件也会`re-render`
+  - 默认不会对对 props 进行一致性判定来减少 re-render，就像内部函数一样
+  - 可以通过 React.memo 来减少 re-render
+
 > 以下内容都是聚焦于组件 props，或者是传递 props 给组件之前
 
 ## 1. 尽量使用 `基本类型` 属性
@@ -54,6 +61,8 @@
 
   export default React.memo(FormAction, deepEqual);
   ```
+
+  > 结合[demo](https://github.com/lhz87127855/react-cli-demo) 来看更直观
 
 ## 3. 解构并赋予默认值
 
