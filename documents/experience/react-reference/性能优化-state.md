@@ -75,6 +75,8 @@ const handleChange = (event: CheckboxChangeEvent, selItem: IUserSelectAttr) => {
 
 > 上述两者需要结合 [demo](https://github.com/lhz87127855/react-cli-demo) 来理解
 
+- 高频次修改 state 时，看情况使用【防抖】或【节流】
+
 ## 4. 其他
 
 - 计算 state，使用·来计算出数据，以保证计算数据的不变性的方式，降低 re-render(注意依赖)
