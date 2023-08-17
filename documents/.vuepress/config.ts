@@ -96,6 +96,7 @@ export default defineUserConfig({
           '/experience/form-design/表单设计器渲染.md',
         ],
       },
+      { text: '实战 JS', collapsible: true, children: ['/basic/JS提升/事件循环.md'] },
       {
         text: '通用',
         collapsible: true,
